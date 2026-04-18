@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key></key>
+	<string></string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Google Sign In</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.833367696358-4e7gv5qrqkvs3ftpdd6e5n3orqrb2fdh</string>
+			</array>
+		</dict>
+	</array>
+	<key>GIDClientID</key>
+	<string>833367696358-4e7gv5qrqkvs3ftpdd6e5n3orqrb2fdh.apps.googleusercontent.com</string>
+	<key>GIDConfiguration</key>
+	<string>833367696358-4e7gv5qrqkvs3ftpdd6e5n3orqrb2fdh.apps.googleusercontent.com</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>KottaOne-Regular.ttf</string>
+		<string>MontserratAlternates-Medium.ttf</string>
+		<string>MontserratAlternates-Bold.ttf</string>
+		<string>MontserratAlternates-Regular.ttf</string>
+	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>Image</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>

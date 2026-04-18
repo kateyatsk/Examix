@@ -1,0 +1,3132 @@
+[
+    {
+    "language": "Французский язык",
+    "variant": 1,
+    "progress": 0,
+    "questions": [
+        {
+            "id": "A1",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "... bel automne me rappelle mon enfance.",
+            "type": "single",
+            "options": [
+                {"text": "Cet", "isCorrect": false},
+                {"text": "Celui", "isCorrect": false},
+                {"text": "Cette", "isCorrect": false},
+                {"text": "Ces", "isCorrect": false},
+                {"text": "Ce", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A2",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Donne-moi ta raquette, j’ai prêté ... à Paul.",
+            "type": "single",
+            "options": [
+                {"text": "le sien", "isCorrect": false},
+                {"text": "la mienne", "isCorrect": true},
+                {"text": "le tien", "isCorrect": false},
+                {"text": "les miens", "isCorrect": false},
+                {"text": "le leur", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A3",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Daniel nous a parlé de … projets.",
+            "type": "single",
+            "options": [
+                {"text": "son", "isCorrect": false},
+                {"text": "leur", "isCorrect": false},
+                {"text": "ses", "isCorrect": true},
+                {"text": "votre", "isCorrect": false},
+                {"text": "mon", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A4",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "C'est ... qui préfères le chocolat blanc.",
+            "type": "single",
+            "options": [
+                {"text": "moi", "isCorrect": false},
+                {"text": "elle", "isCorrect": false},
+                {"text": "elles", "isCorrect": false},
+                {"text": "toi", "isCorrect": true},
+                {"text": "vous", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A5",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Marseille est une des plus anciennes villes françaises fondée par des Grecs. Située ... bord de la Méditerranée, elle est devenue ... plus grand port du pays.",
+            "type": "single",
+            "options": [
+                {"text": "sous", "isCorrect": false},
+                {"text": "dans", "isCorrect": false},
+                {"text": "à la", "isCorrect": false},
+                {"text": "sur", "isCorrect": false},
+                {"text": "au", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A6",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Dans cette ville on peut voir beaucoup ... touristes attirés non seulement par son port et sa belle cathédrale.",
+            "type": "single",
+            "options": [
+                {"text": "sous", "isCorrect": false},
+                {"text": "dans", "isCorrect": false},
+                {"text": "à la", "isCorrect": false},
+                {"text": "de", "isCorrect": true},
+                {"text": "au", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A7",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "C'est l'histoire intrigante d'Edmond Dantès qui commence ... Marseille.",
+            "type": "single",
+            "options": [
+                {"text": "en", "isCorrect": false},
+                {"text": "à", "isCorrect": true},
+                {"text": "contre", "isCorrect": false},
+                {"text": "pour", "isCorrect": false},
+                {"text": "près", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A8",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Il demande à Brigitte : « As-tu passé une bonne soirée ? » – Il a demandé à Brigitte ... une bonne soirée.",
+            "type": "single",
+            "options": [
+                {"text": "si tu as passé", "isCorrect": false},
+                {"text": "qu’elle avait passé", "isCorrect": false},
+                {"text": "si elle a passé", "isCorrect": false},
+                {"text": "pour qu’elle passe", "isCorrect": false},
+                {"text": "si elle avait passé", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A9",
+            "title": "Укажите номер подчеркнутого фрагмента, в котором допущена грамматическая ошибка:",
+            "text": "Sans les agriculteurs, la France serait presque entièrement couvert de forêts (1) : après des milliers d’années (2) de travail agricole (3) celles-ci occupent (4) encore un quart du sol (5).",
+            "type": "single",
+            "options": [
+                {"text": "1", "isCorrect": true},
+                {"text": "2", "isCorrect": false},
+                {"text": "3", "isCorrect": false},
+                {"text": "4", "isCorrect": false},
+                {"text": "5", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A10",
+            "title": "Укажите номер подчеркнутого фрагмента, в котором допущена грамматическая ошибка:",
+            "text": "Même si la qualité des produits des grandes surfaces (1) est souvent inférieure à celui (2) des petits commerces, la possibilité de faire (3) toutes les courses dans le même endroit (4) et à meilleur marché attire toujours les clients (5).",
+            "type": "single",
+            "options": [
+                {"text": "1", "isCorrect": false},
+                {"text": "2", "isCorrect": true},
+                {"text": "3", "isCorrect": false},
+                {"text": "4", "isCorrect": false},
+                {"text": "5", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A11",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Assis à l'avant du bateau, le capitaine Hadook entretenait une conversation animée avec le professeur Tournesol. Depuis la veille, ils (A12) ... sur l'Étoile du matin, ils avaient embarqué tôt le matin les nombreuses caisses et (A13) ... le port en début d'après-midi.",
+            "type": "single",
+            "options": [
+                {"text": "navigueraient", "isCorrect": false},
+                {"text": "navigueront", "isCorrect": false},
+                {"text": "viennent de naviguer", "isCorrect": false},
+                {"text": "naviguaient", "isCorrect": true},
+                {"text": "vont naviguer", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A12",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Enfin ils allaient connaître l'île des Tortues dont Tintin (A14) ... la carte quelques semaines auparavant dans le petit coffre.",
+            "type": "single",
+            "options": [
+                {"text": "découvrez", "isCorrect": false},
+                {"text": "découvrirait", "isCorrect": false},
+                {"text": "découvrira", "isCorrect": false},
+                {"text": "découvrait", "isCorrect": false},
+                {"text": "avait découvert", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A13",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Ils ne savaient pas encore ce qui les (A15) ... à l'avenir…",
+            "type": "single",
+            "options": [
+                {"text": "attendrait", "isCorrect": true},
+                {"text": "attende", "isCorrect": false},
+                {"text": "avait attendu", "isCorrect": false},
+                {"text": "a attendu", "isCorrect": false},
+                {"text": "attendrait", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A14",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Malgré le développement rapide de la (A16) … parisienne il reste encore beaucoup de problèmes à (A17) … : logements, transports, besoins culturels, loisirs, espace vert, situation de l’enfance et de la jeunesse.",
+            "type": "single",
+            "options": [
+                {"text": "centre", "isCorrect": false},
+                {"text": "département", "isCorrect": false},
+                {"text": "région", "isCorrect": true},
+                {"text": "village", "isCorrect": false},
+                {"text": "boutique", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A15",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Mais le plus grand problème c’est la pollution de l’environnement et, en premier lieu, la pollution de l’air, due au (A18) … des entreprises industrielles et aux voitures tout (A19) … dans l’air les gaz nocifs, tout en absorbant l’oxygène.",
+            "type": "single",
+            "options": [
+                {"text": "progresser", "isCorrect": false},
+                {"text": "menacer", "isCorrect": false},
+                {"text": "protéger", "isCorrect": true},
+                {"text": "profiter", "isCorrect": false},
+                {"text": "définir", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A16",
+            "title": "Укажите ситуацию, в которой Вы могли бы сказать « Revenons à nos moutons! ».",
+            "text": "",
+            "type": "single",
+            "options": [
+                {"text": "Vous avez envie d’aller au zoo.", "isCorrect": false},
+                {"text": "Vous invitez à goûter un plat.", "isCorrect": false},
+                {"text": "Vous appelez au secours.", "isCorrect": false},
+                {"text": "Vous voulez revenir au sujet de conversation.", "isCorrect": true},
+                {"text": "Vous achetez des billets à la caisse.", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A17",
+            "title": "Укажите реплику, которая уместна в данной ситуации: Vous voulez inviter des amis chez vous. Vous dites :",
+            "text": "",
+            "type": "single",
+            "options": [
+                {"text": "Est-ce qu'on va chez vous ?", "isCorrect": false},
+                {"text": "Je lui rendrai visite plus tard.", "isCorrect": false},
+                {"text": "Ça vous plairait de dîner chez moi ?", "isCorrect": true},
+                {"text": "Si nous allions au café ?", "isCorrect": false},
+                {"text": "Je déteste organiser des fêtes chez moi !", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A18",
+            "title": "Определите правильную последовательность реплик (А–F) в диалоге.",
+            "text": "A) Le mardi 5, le matin, c’est possible ? B) Oui, vous préférez quel jour ? C) Bonjour, Madame, je voudrais un rendez-vous avec le docteur Martin. D) Lefèvre. Pierre Lefèvre. E) Oui. Je note. Vous êtes Monsieur … ? F) Cabinet médical, bonjour.",
+            "type": "single",
+            "options": [
+                {"text": "FAEGBD", "isCorrect": false},
+                {"text": "CDFAEB", "isCorrect": false},
+                {"text": "FBEDCA", "isCorrect": false},
+                {"text": "FCBAED", "isCorrect": true},
+                {"text": "CEABDF", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A19",
+            "title": "Установите соответствие между репликами-стимулами (А–D) и репликами (1–5). Один из вариантов (1–5) является лишним.",
+            "text": "A) Ils parlent à leurs voisins ? B) Tu as des nouvelles d’Isabelle ? C) Vous aidez votre grand-mère ? D) On achète des fleurs à Michèle ? 1) Oui, elle a besoin de mes visites. 2) Oui, ils leur téléphonent chaque soir. 3) Non, elles ne leur adressent pas la parole. 4) Oui, elle a son anniversaire. 5) Oui, elle m’écrit très souvent.",
+            "type": "single",
+            "options": [
+                {"text": "A3B5C1D4", "isCorrect": false},
+                {"text": "A2B5C1D4", "isCorrect": true},
+                {"text": "A3B2C4D1", "isCorrect": false},
+                {"text": "A2B1C5D4", "isCorrect": false},
+                {"text": "A2B4C5D3", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A20",
+            "title": "Укажите, какое из данных высказываний соответствует содержанию текста:",
+            "text": "Chaque année entre 1,2 et 2 milliards de tonnes d’aliments sont gaspillées selon un rapport rendu public par les médias français.",
+            "type": "single",
+            "options": [
+                {"text": "La population de l’Europe et de l’Amérique du Nord se nourrit insuffisamment.", "isCorrect": false},
+                {"text": "Les consommateurs analysent la quantité de nourriture mangée.", "isCorrect": false},
+                {"text": "Le gaspillage alimentaire a des conséquences sur la vie quotidienne de la population et l’environnement du pays.", "isCorrect": true},
+                {"text": "Il existe plusieurs modes de gestion du frigo dans une famille.", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "B1",
+            "title": "Запишите глагол в скобках в соответствующей форме:",
+            "text": "Si ma mère arrivait assez tôt, nous (regarder) un film à la télévision.",
+            "type": "text",
+            "options": [{"text": "regarderions", "isCorrect": true}]
+        },
+        {
+            "id": "B2",
+            "title": "Запишите глагол в скобках в соответствующей форме:",
+            "text": "Téléphone à Marc pour qu’il me (conduire) à l’aéroport.",
+            "type": "text",
+            "options": [{"text": "conduise", "isCorrect": true}]
+        },
+        {
+            "id": "B3",
+            "title": "Вставьте пропущенное местоимение:",
+            "text": "C’est un roman très célèbre ... a gagné le prix Goncourt en 1984.",
+            "type": "text",
+            "options": [{"text": "qui", "isCorrect": true}]
+        },
+        {
+            "id": "B4",
+            "title": "Замените выделенную группу слов соответствующим наречием:",
+            "text": "Tu habites en Italie ? – Oui, j’ … habite depuis plusieurs années.",
+            "type": "text",
+            "options": [{"text": "y", "isCorrect": true}]
+        },
+        {
+            "id": "B5",
+            "title": "Замените подчеркнутую группу слов соответствующим местоимением:",
+            "text": "Il faut téléphoner à mes parents ce soir. – Il faut … téléphoner ce soir.",
+            "type": "text",
+            "options": [{"text": "leur", "isCorrect": true}]
+        },
+        {
+            "id": "B6",
+            "title": "Образуйте однокоренное слово от глагола CONSOMMER:",
+            "text": "des Français qui ont décidé de rompre avec la société de (B6) ... (consommer).",
+            "type": "text",
+            "options": [{"text": "consommation", "isCorrect": true}]
+        },
+        {
+            "id": "B7",
+            "title": "Образуйте однокоренное слово от существительного ÉCOLOGIE:",
+            "text": "Un mode de vie économe et (B7) ... (écologie) auquel ils s’intéressent.",
+            "type": "text",
+            "options": [{"text": "écologique", "isCorrect": true}]
+        },
+        {
+            "id": "B8",
+            "title": "Образуйте однокоренное слово от прилагательного DÉFINITIF:",
+            "text": "Il y a deux ans les décroissants Isabelle et Philippe ont choisi (B8) ... (définitif) de vivre sans voiture.",
+            "type": "text",
+            "options": [{"text": "définitivement", "isCorrect": true}]
+        },
+        {
+            "id": "B9",
+            "title": "Заполните пропуск предложенным словом:",
+            "text": "En avril 2009, l’Assemblée nationale a voté une loi pénalisant le téléchargement (B9) ... sur Internet.",
+            "type": "text",
+            "options": [{"text": "illégal", "isCorrect": true}]
+        },
+        {
+            "id": "B10",
+            "title": "Заполните пропуск предложенным словом:",
+            "text": "Cette loi n’a pas (B10) ... l’unanimité.",
+            "type": "text",
+            "options": [{"text": "fait", "isCorrect": true}]
+        }
+    ]
+},
+    {
+    "language": "Французский язык",
+    "variant": 2,
+    "progress": 0,
+    "questions": [
+        {
+            "id": "A1",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Je vais au cinéma avec ... amis ce soir.",
+            "type": "single",
+            "options": [
+                {"text": "mon", "isCorrect": false},
+                {"text": "ma", "isCorrect": false},
+                {"text": "mes", "isCorrect": true},
+                {"text": "ton", "isCorrect": false},
+                {"text": "sa", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A2",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Elle ... toujours à l'heure.",
+            "type": "single",
+            "options": [
+                {"text": "arrive", "isCorrect": true},
+                {"text": "arrives", "isCorrect": false},
+                {"text": "arrivent", "isCorrect": false},
+                {"text": "arrivons", "isCorrect": false},
+                {"text": "arrivez", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A3",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Nous avons mangé ... pommes hier.",
+            "type": "single",
+            "options": [
+                {"text": "de", "isCorrect": false},
+                {"text": "des", "isCorrect": true},
+                {"text": "les", "isCorrect": false},
+                {"text": "la", "isCorrect": false},
+                {"text": "le", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A4",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Il fait plus froid ... hiver qu'en été.",
+            "type": "single",
+            "options": [
+                {"text": "à", "isCorrect": false},
+                {"text": "en", "isCorrect": true},
+                {"text": "au", "isCorrect": false},
+                {"text": "dans", "isCorrect": false},
+                {"text": "pour", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A5",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Je voudrais ... café, s'il vous plaît.",
+            "type": "single",
+            "options": [
+                {"text": "un", "isCorrect": true},
+                {"text": "une", "isCorrect": false},
+                {"text": "des", "isCorrect": false},
+                {"text": "le", "isCorrect": false},
+                {"text": "la", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A6",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Elle est ... étudiante à l'université.",
+            "type": "single",
+            "options": [
+                {"text": "un", "isCorrect": false},
+                {"text": "une", "isCorrect": true},
+                {"text": "des", "isCorrect": false},
+                {"text": "le", "isCorrect": false},
+                {"text": "la", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A7",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Nous ... allés au parc hier.",
+            "type": "single",
+            "options": [
+                {"text": "sommes", "isCorrect": true},
+                {"text": "êtes", "isCorrect": false},
+                {"text": "sont", "isCorrect": false},
+                {"text": "es", "isCorrect": false},
+                {"text": "est", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A8",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Ils ... leurs devoirs maintenant.",
+            "type": "single",
+            "options": [
+                {"text": "fait", "isCorrect": false},
+                {"text": "fais", "isCorrect": false},
+                {"text": "font", "isCorrect": true},
+                {"text": "faire", "isCorrect": false},
+                {"text": "faisons", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A9",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Elle a acheté ... robe pour la fête.",
+            "type": "single",
+            "options": [
+                {"text": "un", "isCorrect": false},
+                {"text": "une", "isCorrect": true},
+                {"text": "des", "isCorrect": false},
+                {"text": "le", "isCorrect": false},
+                {"text": "la", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A10",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Je ... très content de te voir.",
+            "type": "single",
+            "options": [
+                {"text": "suis", "isCorrect": true},
+                {"text": "es", "isCorrect": false},
+                {"text": "est", "isCorrect": false},
+                {"text": "sommes", "isCorrect": false},
+                {"text": "êtes", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A11",
+            "title": "Выберите правильный вариант:",
+            "text": "Il n'y a pas ... sucre dans mon café.",
+            "type": "single",
+            "options": [
+                {"text": "de", "isCorrect": true},
+                {"text": "du", "isCorrect": false},
+                {"text": "des", "isCorrect": false},
+                {"text": "le", "isCorrect": false},
+                {"text": "la", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A12",
+            "title": "Выберите правильный вариант:",
+            "text": "Nous ... français depuis trois ans.",
+            "type": "single",
+            "options": [
+                {"text": "apprends", "isCorrect": false},
+                {"text": "apprenez", "isCorrect": false},
+                {"text": "apprennent", "isCorrect": false},
+                {"text": "apprenons", "isCorrect": true},
+                {"text": "apprend", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A13",
+            "title": "Выберите правильный вариант:",
+            "text": "Elle est plus grande ... son frère.",
+            "type": "single",
+            "options": [
+                {"text": "que", "isCorrect": true},
+                {"text": "comme", "isCorrect": false},
+                {"text": "de", "isCorrect": false},
+                {"text": "à", "isCorrect": false},
+                {"text": "pour", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A14",
+            "title": "Выберите правильный вариант:",
+            "text": "Je vais ... supermarché cet après-midi.",
+            "type": "single",
+            "options": [
+                {"text": "au", "isCorrect": true},
+                {"text": "à la", "isCorrect": false},
+                {"text": "aux", "isCorrect": false},
+                {"text": "en", "isCorrect": false},
+                {"text": "dans", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A15",
+            "title": "Выберите правильный вариант:",
+            "text": "Ils ... arrivés en retard hier.",
+            "type": "single",
+            "options": [
+                {"text": "est", "isCorrect": false},
+                {"text": "es", "isCorrect": false},
+                {"text": "sommes", "isCorrect": false},
+                {"text": "sont", "isCorrect": true},
+                {"text": "êtes", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A16",
+            "title": "Выберите правильный вариант:",
+            "text": "Nous devons ... nos devoirs ce soir.",
+            "type": "single",
+            "options": [
+                {"text": "fait", "isCorrect": false},
+                {"text": "faire", "isCorrect": true},
+                {"text": "fais", "isCorrect": false},
+                {"text": "faites", "isCorrect": false},
+                {"text": "font", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A17",
+            "title": "Выберите правильный вариант:",
+            "text": "Elle a ... cheveux longs et blonds.",
+            "type": "single",
+            "options": [
+                {"text": "un", "isCorrect": false},
+                {"text": "une", "isCorrect": false},
+                {"text": "des", "isCorrect": true},
+                {"text": "le", "isCorrect": false},
+                {"text": "la", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A18",
+            "title": "Выберите правильный вариант:",
+            "text": "Il fait ... beau aujourd'hui!",
+            "type": "single",
+            "options": [
+                {"text": "très", "isCorrect": true},
+                {"text": "beaucoup", "isCorrect": false},
+                {"text": "trop", "isCorrect": false},
+                {"text": "plus", "isCorrect": false},
+                {"text": "moins", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A19",
+            "title": "Выберите правильный вариант:",
+            "text": "Je préfère ... thé et... café.",
+            "type": "single",
+            "options": [
+                {"text": "le, le", "isCorrect": true},
+                {"text": "le, au", "isCorrect": false},
+                {"text": "le, à la", "isCorrect": false},
+                {"text": "le, au", "isCorrect": false},
+                {"text": "le, au", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A20",
+            "title": "Выберите правильный вариант:",
+            "text": "C'est ... livre intéressant.",
+            "type": "single",
+            "options": [
+                {"text": "un", "isCorrect": true},
+                {"text": "une", "isCorrect": false},
+                {"text": "des", "isCorrect": false},
+                {"text": "le", "isCorrect": false},
+                {"text": "la", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "B1",
+            "title": "Поставьте глагол в правильную форму:",
+            "text": "Elle (partir) ___ demain.",
+            "type": "text",
+            "options": [{"text": "partira", "isCorrect": true}]
+        },
+        {
+            "id": "B2",
+            "title": "Вставьте местоимение:",
+            "text": "C'est le livre ___ j'ai besoin.",
+            "type": "text",
+            "options": [{"text": "dont", "isCorrect": true}]
+        },
+        {
+            "id": "B3",
+            "title": "Замените местоимением:",
+            "text": "Je parle à ma mère → Je ___ parle.",
+            "type": "text",
+            "options": [{"text": "lui", "isCorrect": true}]
+        },
+        {
+            "id": "B4",
+            "title": "Образуйте множественное число:",
+            "text": "un cheval → des ___",
+            "type": "text",
+            "options": [{"text": "chevaux", "isCorrect": true}]
+        },
+        {
+            "id": "B5",
+            "title": "Образуйте наречие:",
+            "text": "Il répond (rapide) ___.",
+            "type": "text",
+            "options": [{"text": "rapidement", "isCorrect": true}]
+        },
+        {
+            "id": "B6",
+            "title": "Образуйте слово:",
+            "text": "C'est un bon ___ (musique).",
+            "type": "text",
+            "options": [{"text": "musicien", "isCorrect": true}]
+        },
+        {
+            "id": "B7",
+            "title": "Образуйте слово:",
+            "text": "Elle vit dans le ___ (heureux).",
+            "type": "text",
+            "options": [{"text": "bonheur", "isCorrect": true}]
+        },
+        {
+            "id": "B8",
+            "title": "Заполните пропуск:",
+            "text": "Il a ___ (beau) parlé.",
+            "type": "text",
+            "options": [{"text": "bien", "isCorrect": true}]
+        },
+        {
+            "id": "B9",
+            "title": "Заполните пропуск:",
+            "text": "Nous avons ___ (vrai) réussi.",
+            "type": "text",
+            "options": [{"text": "vraiment", "isCorrect": true}]
+        },
+        {
+            "id": "B10",
+            "title": "Поставьте глагол:",
+            "text": "Nous (prendre) ___ le train.",
+            "type": "text",
+            "options": [{"text": "prendrons", "isCorrect": true}]
+        }
+    ]
+},
+    {
+    "language": "Французский язык",
+    "variant": 3,
+    "progress": 0,
+    "questions": [
+        {
+            "id": "A1",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "C'est ... livre intéressant.",
+            "type": "single",
+            "options": [
+                {"text": "un", "isCorrect": true},
+                {"text": "une", "isCorrect": false},
+                {"text": "des", "isCorrect": false},
+                {"text": "le", "isCorrect": false},
+                {"text": "la", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A2",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Nous ... français depuis trois ans.",
+            "type": "single",
+            "options": [
+                {"text": "apprends", "isCorrect": false},
+                {"text": "apprenez", "isCorrect": false},
+                {"text": "apprennent", "isCorrect": false},
+                {"text": "apprenons", "isCorrect": true},
+                {"text": "apprend", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A3",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Il n'y a pas ... sucre dans mon café.",
+            "type": "single",
+            "options": [
+                {"text": "de", "isCorrect": true},
+                {"text": "du", "isCorrect": false},
+                {"text": "des", "isCorrect": false},
+                {"text": "le", "isCorrect": false},
+                {"text": "la", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A4",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Elle est plus grande ... son frère.",
+            "type": "single",
+            "options": [
+                {"text": "que", "isCorrect": true},
+                {"text": "comme", "isCorrect": false},
+                {"text": "de", "isCorrect": false},
+                {"text": "à", "isCorrect": false},
+                {"text": "pour", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A5",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Je vais ... supermarché cet après-midi.",
+            "type": "single",
+            "options": [
+                {"text": "au", "isCorrect": true},
+                {"text": "à la", "isCorrect": false},
+                {"text": "aux", "isCorrect": false},
+                {"text": "en", "isCorrect": false},
+                {"text": "dans", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A6",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Ils ... arrivés en retard hier.",
+            "type": "single",
+            "options": [
+                {"text": "est", "isCorrect": false},
+                {"text": "es", "isCorrect": false},
+                {"text": "sommes", "isCorrect": false},
+                {"text": "sont", "isCorrect": true},
+                {"text": "êtes", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A7",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Nous devons ... nos devoirs ce soir.",
+            "type": "single",
+            "options": [
+                {"text": "fait", "isCorrect": false},
+                {"text": "faire", "isCorrect": true},
+                {"text": "fais", "isCorrect": false},
+                {"text": "faites", "isCorrect": false},
+                {"text": "font", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A8",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Elle a ... cheveux longs et blonds.",
+            "type": "single",
+            "options": [
+                {"text": "un", "isCorrect": false},
+                {"text": "une", "isCorrect": false},
+                {"text": "des", "isCorrect": true},
+                {"text": "le", "isCorrect": false},
+                {"text": "la", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A9",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Je préfère ... thé et ... café.",
+            "type": "single",
+            "options": [
+                {"text": "le, le", "isCorrect": false},
+                {"text": "le, au", "isCorrect": false},
+                {"text": "le, à la", "isCorrect": false},
+                {"text": "le, au", "isCorrect": false},
+                {"text": "le, au", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A10",
+            "title": "Выберите правильный вариант для пропуска:",
+            "text": "Il fait ... beau aujourd'hui!",
+            "type": "single",
+            "options": [
+                {"text": "très", "isCorrect": true},
+                {"text": "beaucoup", "isCorrect": false},
+                {"text": "trop", "isCorrect": false},
+                {"text": "plus", "isCorrect": false},
+                {"text": "moins", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "B1",
+            "title": "Запишите глагол в скобках в соответствующей форме:",
+            "text": "Si tu (venir) avec nous, tu (s'amuser) bien.",
+            "type": "text",
+            "options": [
+                {"text": "venais, t'amuserais", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "B2",
+            "title": "Запишите глагол в скобках в соответствующей форме:",
+            "text": "Nous (finir) nos projets demain.",
+            "type": "text",
+            "options": [
+                {"text": "finirons", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "B3",
+            "title": "Вставьте пропущенное местоимение:",
+            "text": "La femme ... je parle est ma professeure.",
+            "type": "text",
+            "options": [
+                {"text": "à qui", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "B4",
+            "title": "Замените выделенную группу слов соответствующим наречием:",
+            "text": "Il va à la bibliothèque souvent. → Il ... va souvent.",
+            "type": "text",
+            "options": [
+                {"text": "y", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "B5",
+            "title": "Замените подчеркнутую группу слов соответствующим местоимением:",
+            "text": "Je donne le livre à mon ami. → Je ... donne le livre.",
+            "type": "text",
+            "options": [
+                {"text": "lui", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "B6",
+            "title": "Образуйте однокоренное слово от глагола LIRE:",
+            "text": "C'est une bonne ... (lire).",
+            "type": "text",
+            "options": [
+                {"text": "lecture", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "B7",
+            "title": "Образуйте однокоренное слово от существительного SCIENCE:",
+            "text": "Il est très ... (science).",
+            "type": "text",
+            "options": [
+                {"text": "scientifique", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "B8",
+            "title": "Образуйте однокоренное слово от прилагательного COURAGEUX:",
+            "text": "Il a agi avec beaucoup de ... (courageux).",
+            "type": "text",
+            "options": [
+                {"text": "courage", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "B9",
+            "title": "Заполните пропуск предложенным словом:",
+            "text": "Elle a ... (bon) réussi son examen.",
+            "type": "text",
+            "options": [
+                {"text": "bien", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "B10",
+            "title": "Заполните пропуск предложенным словом:",
+            "text": "Nous avons ... (certain) gagné le match.",
+            "type": "text",
+            "options": [
+                {"text": "certainement", "isCorrect": true}
+            ]
+        }
+    ]
+},
+    {
+        "language": "Французский язык",
+        "variant": 4,
+        "progress": 0,
+        "questions": [
+            {
+                "id": "A1",
+                "title": "Выберите правильный артикль:",
+                "text": "J'aime beaucoup ... musique classique.",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": true},
+                    {"text": "les", "isCorrect": false},
+                    {"text": "un", "isCorrect": false},
+                    {"text": "une", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A2",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Nous ... nos vacances en France l'année dernière.",
+                "type": "single",
+                "options": [
+                    {"text": "passons", "isCorrect": false},
+                    {"text": "passaient", "isCorrect": false},
+                    {"text": "avons passé", "isCorrect": true},
+                    {"text": "passerons", "isCorrect": false},
+                    {"text": "passer", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A3",
+                "title": "Выберите правильное местоимение:",
+                "text": "C'est le garçon ... j'ai parlé hier.",
+                "type": "single",
+                "options": [
+                    {"text": "qui", "isCorrect": false},
+                    {"text": "que", "isCorrect": false},
+                    {"text": "où", "isCorrect": false},
+                    {"text": "dont", "isCorrect": false},
+                    {"text": "à qui", "isCorrect": true}
+                ]
+            },
+            {
+                "id": "A4",
+                "title": "Выберите правильный предлог:",
+                "text": "Elle habite ... Paris depuis cinq ans.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": true},
+                    {"text": "en", "isCorrect": false},
+                    {"text": "au", "isCorrect": false},
+                    {"text": "aux", "isCorrect": false},
+                    {"text": "dans", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A5",
+                "title": "Выберите правильную форму прилагательного:",
+                "text": "Ces exercices sont très ... (difficile).",
+                "type": "single",
+                "options": [
+                    {"text": "difficile", "isCorrect": false},
+                    {"text": "difficiles", "isCorrect": true},
+                    {"text": "difficilement", "isCorrect": false},
+                    {"text": "difficulté", "isCorrect": false},
+                    {"text": "difficilesse", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A6",
+                "title": "Выберите правильный ответ:",
+                "text": "Qu'est-ce que tu fais ... matin?",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": true},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "les", "isCorrect": false},
+                    {"text": "au", "isCorrect": false},
+                    {"text": "du", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A7",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Si j'... (avoir) plus d'argent, je ... (acheter) une nouvelle voiture.",
+                "type": "single",
+                "options": [
+                    {"text": "ai, achèterai", "isCorrect": false},
+                    {"text": "avais, achèterais", "isCorrect": true},
+                    {"text": "aurais, achèterais", "isCorrect": false},
+                    {"text": "aie, achèterais", "isCorrect": false},
+                    {"text": "aurai, achèterai", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A8",
+                "title": "Выберите правильное слово:",
+                "text": "Je vais au cinéma ... mes amis.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "avec", "isCorrect": true},
+                    {"text": "pour", "isCorrect": false},
+                    {"text": "de", "isCorrect": false},
+                    {"text": "sans", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A9",
+                "title": "Выберите правильный вариант:",
+                "text": "Il faut que tu ... (faire) tes devoirs.",
+                "type": "single",
+                "options": [
+                    {"text": "fais", "isCorrect": false},
+                    {"text": "fait", "isCorrect": false},
+                    {"text": "feras", "isCorrect": false},
+                    {"text": "fasses", "isCorrect": true},
+                    {"text": "fera", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A10",
+                "title": "Выберите правильный перевод:",
+                "text": "Как сказать 'Я хочу пить' по-французски?",
+                "type": "single",
+                "options": [
+                    {"text": "Je veux manger", "isCorrect": false},
+                    {"text": "J'ai faim", "isCorrect": false},
+                    {"text": "Je veux boire", "isCorrect": true},
+                    {"text": "J'ai soif", "isCorrect": false},
+                    {"text": "Je bois", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A11",
+                "title": "Выберите правильный артикль:",
+                "text": "Il mange ... pomme.",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "les", "isCorrect": false},
+                    {"text": "un", "isCorrect": false},
+                    {"text": "une", "isCorrect": true}
+                ]
+            },
+            {
+                "id": "A12",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Tu ... (aller) à l'école demain?",
+                "type": "single",
+                "options": [
+                    {"text": "vas", "isCorrect": true},
+                    {"text": "va", "isCorrect": false},
+                    {"text": "ira", "isCorrect": false},
+                    {"text": "iras", "isCorrect": false},
+                    {"text": "allais", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A13",
+                "title": "Выберите правильное отрицание:",
+                "text": "Je ... aime pas les épinards.",
+                "type": "single",
+                "options": [
+                    {"text": "ne", "isCorrect": true},
+                    {"text": "pas", "isCorrect": false},
+                    {"text": "non", "isCorrect": false},
+                    {"text": "rien", "isCorrect": false},
+                    {"text": "jamais", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A14",
+                "title": "Выберите правильное слово:",
+                "text": "C'est ... livre intéressant.",
+                "type": "single",
+                "options": [
+                    {"text": "un", "isCorrect": true},
+                    {"text": "une", "isCorrect": false},
+                    {"text": "des", "isCorrect": false},
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A15",
+                "title": "Выберите правильный предлог:",
+                "text": "Je suis ... Canada.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "en", "isCorrect": false},
+                    {"text": "au", "isCorrect": true},
+                    {"text": "aux", "isCorrect": false},
+                    {"text": "dans", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A16",
+                "title": "Выберите правильное время:",
+                "text": "Quand il ... (pleuvoir), nous restons à la maison.",
+                "type": "single",
+                "options": [
+                    {"text": "pleut", "isCorrect": true},
+                    {"text": "pleuvra", "isCorrect": false},
+                    {"text": "pleuvait", "isCorrect": false},
+                    {"text": "a plu", "isCorrect": false},
+                    {"text": "pleuvoir", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A17",
+                "title": "Выберите правильное слово:",
+                "text": "Il est ... médecin.",
+                "type": "single",
+                "options": [
+                    {"text": "un", "isCorrect": true},
+                    {"text": "une", "isCorrect": false},
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "des", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A18",
+                "title": "Выберите правильный перевод:",
+                "text": "Как сказать 'Сколько это стоит?' по-французски?",
+                "type": "single",
+                "options": [
+                    {"text": "Comment ça va?", "isCorrect": false},
+                    {"text": "Quel âge as-tu?", "isCorrect": false},
+                    {"text": "Combien ça coûte?", "isCorrect": true},
+                    {"text": "Où est-ce?", "isCorrect": false},
+                    {"text": "Qu'est-ce que c'est?", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A19",
+                "title": "Выберите правильную форму:",
+                "text": "Ce sont ... (beau) fleurs.",
+                "type": "single",
+                "options": [
+                    {"text": "beau", "isCorrect": false},
+                    {"text": "beaux", "isCorrect": true},
+                    {"text": "belle", "isCorrect": false},
+                    {"text": "belles", "isCorrect": false},
+                    {"text": "beauté", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A20",
+                "title": "Выберите правильный ответ:",
+                "text": "Je ne comprends pas. Répétez, ... .",
+                "type": "single",
+                "options": [
+                    {"text": "s'il vous plaît", "isCorrect": true},
+                    {"text": "merci", "isCorrect": false},
+                    {"text": "bonjour", "isCorrect": false},
+                    {"text": "au revoir", "isCorrect": false},
+                    {"text": "excusez-moi", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "B1",
+                "title": "Поставьте глагол в правильную форму:",
+                "text": "Hier, nous (aller) ___ au théâtre.",
+                "type": "text",
+                "options": [{"text": "sommes allés", "isCorrect": true}]
+            },
+            {
+                "id": "B2",
+                "title": "Образуйте наречие от прилагательного:",
+                "text": "Il parle (lent) ___.",
+                "type": "text",
+                "options": [{"text": "lentement", "isCorrect": true}]
+            },
+            {
+                "id": "B3",
+                "title": "Замените выделенное местоимением:",
+                "text": "Je donne le livre à Marie → Je ___ donne le livre.",
+                "type": "text",
+                "options": [{"text": "lui", "isCorrect": true}]
+            },
+            {
+                "id": "B4",
+                "title": "Образуйте множественное число:",
+                "text": "un journal → des ___",
+                "type": "text",
+                "options": [{"text": "journaux", "isCorrect": true}]
+            },
+            {
+                "id": "B5",
+                "title": "Вставьте артикль:",
+                "text": "Elle a ... cheveux longs et blonds.",
+                "type": "text",
+                "options": [{"text": "des", "isCorrect": true}]
+            },
+            {
+                "id": "B6",
+                "title": "Образуйте слово:",
+                "text": "Il est ___ (science).",
+                "type": "text",
+                "options": [{"text": "scientifique", "isCorrect": true}]
+            },
+            {
+                "id": "B7",
+                "title": "Образуйте слово:",
+                "text": "Il a du ___ (courageux).",
+                "type": "text",
+                "options": [{"text": "courage", "isCorrect": true}]
+            },
+            {
+                "id": "B8",
+                "title": "Образуйте женский род:",
+                "text": "un acteur célèbre → une ___ célèbre",
+                "type": "text",
+                "options": [{"text": "actrice", "isCorrect": true}]
+            },
+            {
+                "id": "B9",
+                "title": "Поставьте глагол в futur simple:",
+                "text": "Nous (prendre) ___ le train demain.",
+                "type": "text",
+                "options": [{"text": "prendrons", "isCorrect": true}]
+            },
+            {
+                "id": "B10",
+                "title": "Заполните пропуск:",
+                "text": "Vous avez ... (vrai) passé un bon moment.",
+                "type": "text",
+                "options": [{"text": "vraiment", "isCorrect": true}]
+            }
+        ]
+    },
+    {
+        "language": "Французский язык",
+        "variant": 5,
+        "progress": 0,
+        "questions": [
+            {
+                "id": "A1",
+                "title": "Выберите правильный артикль:",
+                "text": "J'écoute ... musique classique le matin.",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": true},
+                    {"text": "les", "isCorrect": false},
+                    {"text": "un", "isCorrect": false},
+                    {"text": "une", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A2",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Quand il ... (pleuvoir), je reste chez moi.",
+                "type": "single",
+                "options": [
+                    {"text": "pleut", "isCorrect": true},
+                    {"text": "pleuvra", "isCorrect": false},
+                    {"text": "pleuvait", "isCorrect": false},
+                    {"text": "pleuvoir", "isCorrect": false},
+                    {"text": "pleuvent", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A3",
+                "title": "Выберите правильное местоимение:",
+                "text": "C'est le livre ... je pense souvent.",
+                "type": "single",
+                "options": [
+                    {"text": "qui", "isCorrect": false},
+                    {"text": "que", "isCorrect": false},
+                    {"text": "où", "isCorrect": false},
+                    {"text": "dont", "isCorrect": true},
+                    {"text": "à qui", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A4",
+                "title": "Выберите правильный предлог:",
+                "text": "Elle habite ... Brésil depuis deux ans.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "en", "isCorrect": false},
+                    {"text": "au", "isCorrect": true},
+                    {"text": "aux", "isCorrect": false},
+                    {"text": "dans", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A5",
+                "title": "Выберите правильную форму прилагательного:",
+                "text": "Ces exercices sont ... (difficile) que les autres.",
+                "type": "single",
+                "options": [
+                    {"text": "difficile", "isCorrect": false},
+                    {"text": "difficiles", "isCorrect": false},
+                    {"text": "plus difficile", "isCorrect": false},
+                    {"text": "plus difficiles", "isCorrect": true},
+                    {"text": "difficilement", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A6",
+                "title": "Выберите правильный ответ:",
+                "text": "Tu vas ... bibliothèque souvent?",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": true},
+                    {"text": "les", "isCorrect": false},
+                    {"text": "au", "isCorrect": false},
+                    {"text": "à la", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A7",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Si j'... (avoir) le temps, je ... (lire) plus.",
+                "type": "single",
+                "options": [
+                    {"text": "ai, lirai", "isCorrect": false},
+                    {"text": "avais, lirais", "isCorrect": true},
+                    {"text": "aurais, lirais", "isCorrect": false},
+                    {"text": "aie, lises", "isCorrect": false},
+                    {"text": "aurai, lirai", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A8",
+                "title": "Выберите правильное слово:",
+                "text": "Je sors toujours ... mon chien.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "avec", "isCorrect": true},
+                    {"text": "pour", "isCorrect": false},
+                    {"text": "de", "isCorrect": false},
+                    {"text": "sans", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A9",
+                "title": "Выберите правильный вариант:",
+                "text": "Il faut que nous ... (partir) tôt demain.",
+                "type": "single",
+                "options": [
+                    {"text": "partons", "isCorrect": false},
+                    {"text": "partez", "isCorrect": false},
+                    {"text": "partions", "isCorrect": false},
+                    {"text": "partions", "isCorrect": false},
+                    {"text": "partions", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A10",
+                "title": "Выберите правильный перевод:",
+                "text": "Как сказать 'Я устал' по-французски?",
+                "type": "single",
+                "options": [
+                    {"text": "Je veux dormir", "isCorrect": false},
+                    {"text": "J'ai sommeil", "isCorrect": false},
+                    {"text": "Je suis fatigué", "isCorrect": true},
+                    {"text": "Je dors", "isCorrect": false},
+                    {"text": "Je me repose", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A11",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Nous ... (apprendre) le français depuis un an.",
+                "type": "single",
+                "options": [
+                    {"text": "apprenons", "isCorrect": true},
+                    {"text": "apprennez", "isCorrect": false},
+                    {"text": "apprennons", "isCorrect": false},
+                    {"text": "apprenez", "isCorrect": false},
+                    {"text": "apprend", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A12",
+                "title": "Выберите правильный вариант:",
+                "text": "Il n'y a pas ... lait dans le frigo.",
+                "type": "single",
+                "options": [
+                    {"text": "de", "isCorrect": true},
+                    {"text": "du", "isCorrect": false},
+                    {"text": "des", "isCorrect": false},
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A13",
+                "title": "Выберите правильный вариант:",
+                "text": "Ma sœur est ... grande que moi.",
+                "type": "single",
+                "options": [
+                    {"text": "plus", "isCorrect": true},
+                    {"text": "aussi", "isCorrect": false},
+                    {"text": "moins", "isCorrect": false},
+                    {"text": "très", "isCorrect": false},
+                    {"text": "beaucoup", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A14",
+                "title": "Выберите правильный вариант:",
+                "text": "Je vais ... parc ce weekend.",
+                "type": "single",
+                "options": [
+                    {"text": "au", "isCorrect": true},
+                    {"text": "à la", "isCorrect": false},
+                    {"text": "aux", "isCorrect": false},
+                    {"text": "en", "isCorrect": false},
+                    {"text": "dans", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A15",
+                "title": "Выберите правильный вариант:",
+                "text": "Ils ... (arriver) en retard hier soir.",
+                "type": "single",
+                "options": [
+                    {"text": "sont arrivés", "isCorrect": true},
+                    {"text": "ont arrivé", "isCorrect": false},
+                    {"text": "étaient arrivés", "isCorrect": false},
+                    {"text": "arrivaient", "isCorrect": false},
+                    {"text": "arrivèrent", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A16",
+                "title": "Выберите правильный вариант:",
+                "text": "Nous devons ... (faire) nos devoirs maintenant.",
+                "type": "single",
+                "options": [
+                    {"text": "faisons", "isCorrect": false},
+                    {"text": "faites", "isCorrect": false},
+                    {"text": "font", "isCorrect": false},
+                    {"text": "faire", "isCorrect": true},
+                    {"text": "fais", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A17",
+                "title": "Выберите правильный вариант:",
+                "text": "Elle a ... beaux yeux verts.",
+                "type": "single",
+                "options": [
+                    {"text": "un", "isCorrect": false},
+                    {"text": "une", "isCorrect": false},
+                    {"text": "des", "isCorrect": true},
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A18",
+                "title": "Выберите правильный вариант:",
+                "text": "Ce gâteau est ... délicieux!",
+                "type": "single",
+                "options": [
+                    {"text": "très", "isCorrect": true},
+                    {"text": "beaucoup", "isCorrect": false},
+                    {"text": "trop", "isCorrect": false},
+                    {"text": "plus", "isCorrect": false},
+                    {"text": "moins", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A19",
+                "title": "Выберите правильный вариант:",
+                "text": "Je préfère ... café ... thé.",
+                "type": "single",
+                "options": [
+                    {"text": "le, que le", "isCorrect": false},
+                    {"text": "le, au", "isCorrect": false},
+                    {"text": "le, à la", "isCorrect": false},
+                    {"text": "le, au", "isCorrect": false},
+                    {"text": "le, au", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A20",
+                "title": "Выберите правильный вариант:",
+                "text": "C'est ... histoire intéressante.",
+                "type": "single",
+                "options": [
+                    {"text": "un", "isCorrect": false},
+                    {"text": "une", "isCorrect": true},
+                    {"text": "des", "isCorrect": false},
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "B1",
+                "title": "Поставьте глагол в правильную форму:",
+                "text": "Hier, elle (prendre) ___ son petit-déjeuner à 8h.",
+                "type": "text",
+                "options": [{"text": "a pris", "isCorrect": true}]
+            },
+            {
+                "id": "B2",
+                "title": "Образуйте наречие:",
+                "text": "Il conduit (prudent) ___.",
+                "type": "text",
+                "options": [{"text": "prudemment", "isCorrect": true}]
+            },
+            {
+                "id": "B3",
+                "title": "Замените местоимением:",
+                "text": "Je téléphone à ma sœur → Je ___ téléphone.",
+                "type": "text",
+                "options": [{"text": "lui", "isCorrect": true}]
+            },
+            {
+                "id": "B4",
+                "title": "Образуйте множественное число:",
+                "text": "un cheval → des ___",
+                "type": "text",
+                "options": [{"text": "chevaux", "isCorrect": true}]
+            },
+            {
+                "id": "B5",
+                "title": "Образуйте слово от глагола:",
+                "text": "C'est un bon ___ (écrire).",
+                "type": "text",
+                "options": [{"text": "écrit", "isCorrect": true}]
+            },
+            {
+                "id": "B6",
+                "title": "Образуйте слово от существительного:",
+                "text": "Il est ___ (musique).",
+                "type": "text",
+                "options": [{"text": "musicien", "isCorrect": true}]
+            },
+            {
+                "id": "B7",
+                "title": "Образуйте слово от прилагательного:",
+                "text": "Elle cherche le ___ (heureux).",
+                "type": "text",
+                "options": [{"text": "bonheur", "isCorrect": true}]
+            },
+            {
+                "id": "B8",
+                "title": "Заполните пропуск:",
+                "text": "Il a ___ (bon) travaillé.",
+                "type": "text",
+                "options": [{"text": "bien", "isCorrect": true}]
+            },
+            {
+                "id": "B9",
+                "title": "Заполните пропуск:",
+                "text": "Nous avons ___ (certain) réussi.",
+                "type": "text",
+                "options": [{"text": "certainement", "isCorrect": true}]
+            },
+            {
+                "id": "B10",
+                "title": "Образуйте женский род:",
+                "text": "un acteur → une ___",
+                "type": "text",
+                "options": [{"text": "actrice", "isCorrect": true}]
+            }
+        ]
+    },
+    {
+        "language": "Французский язык",
+        "variant": 6,
+        "progress": 0,
+        "questions": [
+            {
+                "id": "A1",
+                "title": "Выберите правильный артикль:",
+                "text": "C'est ... intéressant livre.",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "un", "isCorrect": true},
+                    {"text": "une", "isCorrect": false},
+                    {"text": "des", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A2",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Nous ... (finir) nos devoirs maintenant.",
+                "type": "single",
+                "options": [
+                    {"text": "finissons", "isCorrect": true},
+                    {"text": "finissez", "isCorrect": false},
+                    {"text": "finissent", "isCorrect": false},
+                    {"text": "fini", "isCorrect": false},
+                    {"text": "finiras", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A3",
+                "title": "Выберите правильное местоимение:",
+                "text": "Les enfants ... (voir) dans le parc.",
+                "type": "single",
+                "options": [
+                    {"text": "les", "isCorrect": false},
+                    {"text": "leur", "isCorrect": false},
+                    {"text": "eux", "isCorrect": true},
+                    {"text": "lui", "isCorrect": false},
+                    {"text": "y", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A4",
+                "title": "Выберите правильный предлог:",
+                "text": "Je suis né ... 15 mars.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "en", "isCorrect": false},
+                    {"text": "le", "isCorrect": true},
+                    {"text": "au", "isCorrect": false},
+                    {"text": "du", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A5",
+                "title": "Выберите правильную форму прилагательного:",
+                "text": "Ces robes sont ... (cher).",
+                "type": "single",
+                "options": [
+                    {"text": "cher", "isCorrect": false},
+                    {"text": "chère", "isCorrect": false},
+                    {"text": "chers", "isCorrect": true},
+                    {"text": "chères", "isCorrect": false},
+                    {"text": "chérissent", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A6",
+                "title": "Выберите правильный ответ:",
+                "text": "Qu'est-ce que tu fais ... weekend?",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": true},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "les", "isCorrect": false},
+                    {"text": "au", "isCorrect": false},
+                    {"text": "du", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A7",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Si tu ... (étudier), tu réussirais.",
+                "type": "single",
+                "options": [
+                    {"text": "étudies", "isCorrect": false},
+                    {"text": "étudiais", "isCorrect": true},
+                    {"text": "étudieras", "isCorrect": false},
+                    {"text": "étudier", "isCorrect": false},
+                    {"text": "a étudié", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A8",
+                "title": "Выберите правильное слово:",
+                "text": "Je pense ... mon ami.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": true},
+                    {"text": "de", "isCorrect": false},
+                    {"text": "pour", "isCorrect": false},
+                    {"text": "avec", "isCorrect": false},
+                    {"text": "sans", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A9",
+                "title": "Выберите правильный вариант:",
+                "text": "Il est important que vous ... (être) à l'heure.",
+                "type": "single",
+                "options": [
+                    {"text": "êtes", "isCorrect": false},
+                    {"text": "étiez", "isCorrect": false},
+                    {"text": "soyez", "isCorrect": true},
+                    {"text": "seriez", "isCorrect": false},
+                    {"text": "seront", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A10",
+                "title": "Выберите правильный перевод:",
+                "text": "Как сказать 'Я голоден' по-французски?",
+                "type": "single",
+                "options": [
+                    {"text": "Je veux manger", "isCorrect": false},
+                    {"text": "J'ai faim", "isCorrect": true},
+                    {"text": "Je suis faim", "isCorrect": false},
+                    {"text": "J'ai soif", "isCorrect": false},
+                    {"text": "Je mange", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A11",
+                "title": "Выберите правильный артикль:",
+                "text": "Elle a acheté ... nouvelles chaussures.",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "les", "isCorrect": false},
+                    {"text": "des", "isCorrect": true},
+                    {"text": "une", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A12",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Vous ... (partir) en vacances l'été prochain?",
+                "type": "single",
+                "options": [
+                    {"text": "partez", "isCorrect": false},
+                    {"text": "partirez", "isCorrect": true},
+                    {"text": "partiez", "isCorrect": false},
+                    {"text": "êtes parti", "isCorrect": false},
+                    {"text": "partira", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A13",
+                "title": "Выберите правильное отрицание:",
+                "text": "Je ... comprends ... ce texte.",
+                "type": "single",
+                "options": [
+                    {"text": "ne...pas", "isCorrect": true},
+                    {"text": "pas...ne", "isCorrect": false},
+                    {"text": "non...pas", "isCorrect": false},
+                    {"text": "ne...rien", "isCorrect": false},
+                    {"text": "ne...jamais", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A14",
+                "title": "Выберите правильное слово:",
+                "text": "C'est ... problème difficile.",
+                "type": "single",
+                "options": [
+                    {"text": "un", "isCorrect": true},
+                    {"text": "une", "isCorrect": false},
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "des", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A15",
+                "title": "Выберите правильный предлог:",
+                "text": "Je vais ... Belgique demain.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "en", "isCorrect": true},
+                    {"text": "au", "isCorrect": false},
+                    {"text": "aux", "isCorrect": false},
+                    {"text": "dans", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A16",
+                "title": "Выберите правильное время:",
+                "text": "Quand il ... (pleuvoir), nous prenons un parapluie.",
+                "type": "single",
+                "options": [
+                    {"text": "pleut", "isCorrect": true},
+                    {"text": "pleuvra", "isCorrect": false},
+                    {"text": "pleuvait", "isCorrect": false},
+                    {"text": "a plu", "isCorrect": false},
+                    {"text": "pleuvoir", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A17",
+                "title": "Выберите правильное слово:",
+                "text": "Elle est ... professeur de français.",
+                "type": "single",
+                "options": [
+                    {"text": "un", "isCorrect": false},
+                    {"text": "une", "isCorrect": true},
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "des", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A18",
+                "title": "Выберите правильный перевод:",
+                "text": "Как сказать 'Где находится музей?' по-французски?",
+                "type": "single",
+                "options": [
+                    {"text": "Comment allez-vous?", "isCorrect": false},
+                    {"text": "Quel âge avez-vous?", "isCorrect": false},
+                    {"text": "Où se trouve le musée?", "isCorrect": true},
+                    {"text": "Qu'est-ce que c'est?", "isCorrect": false},
+                    {"text": "Combien ça coûte?", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A19",
+                "title": "Выберите правильную форму:",
+                "text": "Ce sont des ... (beau) tableaux.",
+                "type": "single",
+                "options": [
+                    {"text": "beau", "isCorrect": false},
+                    {"text": "beaux", "isCorrect": true},
+                    {"text": "belle", "isCorrect": false},
+                    {"text": "belles", "isCorrect": false},
+                    {"text": "beauté", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A20",
+                "title": "Выберите правильный ответ:",
+                "text": "Excusez-moi, où est ... gare, s'il vous plaît?",
+                "type": "single",
+                "options": [
+                    {"text": "la", "isCorrect": true},
+                    {"text": "le", "isCorrect": false},
+                    {"text": "les", "isCorrect": false},
+                    {"text": "une", "isCorrect": false},
+                    {"text": "des", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "B1",
+                "title": "Поставьте глагол в правильную форму:",
+                "text": "Hier, il (prendre) ___ son petit-déjeuner à 8h.",
+                "type": "text",
+                "options": [{"text": "a pris", "isCorrect": true}]
+            },
+            {
+                "id": "B2",
+                "title": "Образуйте наречие от прилагательного:",
+                "text": "Elle chante (beau) ___.",
+                "type": "text",
+                "options": [{"text": "bien", "isCorrect": true}]
+            },
+            {
+                "id": "B3",
+                "title": "Замените выделенное местоимением:",
+                "text": "Je parle à mes parents → Je ___ parle.",
+                "type": "text",
+                "options": [{"text": "leur", "isCorrect": true}]
+            },
+            {
+                "id": "B4",
+                "title": "Образуйте множественное число:",
+                "text": "un bijou → des ___",
+                "type": "text",
+                "options": [{"text": "bijoux", "isCorrect": true}]
+            },
+            {
+                "id": "B5",
+                "title": "Вставьте артикль:",
+                "text": "Elle a ... yeux bleus.",
+                "type": "text",
+                "options": [{"text": "les", "isCorrect": true}]
+            },
+            {
+                "id": "B6",
+                "title": "Образуйте слово:",
+                "text": "C'est un ___ (music).",
+                "type": "text",
+                "options": [{"text": "musicien", "isCorrect": true}]
+            },
+            {
+                "id": "B7",
+                "title": "Образуйте слово:",
+                "text": "Il a de la ___ (patient).",
+                "type": "text",
+                "options": [{"text": "patience", "isCorrect": true}]
+            },
+            {
+                "id": "B8",
+                "title": "Образуйте женский род:",
+                "text": "un vendeur → une ___",
+                "type": "text",
+                "options": [{"text": "vendeuse", "isCorrect": true}]
+            },
+            {
+                "id": "B9",
+                "title": "Поставьте глагол в futur simple:",
+                "text": "Tu (venir) ___ demain?",
+                "type": "text",
+                "options": [{"text": "viendras", "isCorrect": true}]
+            },
+            {
+                "id": "B10",
+                "title": "Заполните пропуск:",
+                "text": "Il travaille ___ (beaucoup).",
+                "type": "text",
+                "options": [{"text": "beaucoup", "isCorrect": true}]
+            }
+        ]
+    },
+    {
+        "language": "Французский язык",
+        "variant": 7,
+        "progress": 0,
+        "questions": [
+            {
+                "id": "A1",
+                "title": "Выберите правильный артикль:",
+                "text": "J'ai ... examen demain.",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "un", "isCorrect": true},
+                    {"text": "une", "isCorrect": false},
+                    {"text": "des", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A2",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Tu ... (devoir) finir ce travail aujourd'hui.",
+                "type": "single",
+                "options": [
+                    {"text": "dois", "isCorrect": true},
+                    {"text": "doit", "isCorrect": false},
+                    {"text": "devons", "isCorrect": false},
+                    {"text": "devez", "isCorrect": false},
+                    {"text": "devraient", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A3",
+                "title": "Выберите правильное местоимение:",
+                "text": "C'est la femme ... je pense souvent.",
+                "type": "single",
+                "options": [
+                    {"text": "qui", "isCorrect": false},
+                    {"text": "que", "isCorrect": false},
+                    {"text": "dont", "isCorrect": false},
+                    {"text": "à qui", "isCorrect": true},
+                    {"text": "où", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A4",
+                "title": "Выберите правильный предлог:",
+                "text": "Je suis ... États-Unis.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "en", "isCorrect": false},
+                    {"text": "aux", "isCorrect": true},
+                    {"text": "au", "isCorrect": false},
+                    {"text": "dans", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A5",
+                "title": "Выберите правильную форму прилагательного:",
+                "text": "Une histoire ... (amusant).",
+                "type": "single",
+                "options": [
+                    {"text": "amusant", "isCorrect": false},
+                    {"text": "amusants", "isCorrect": false},
+                    {"text": "amusante", "isCorrect": true},
+                    {"text": "amusantes", "isCorrect": false},
+                    {"text": "amusement", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A6",
+                "title": "Выберите правильный ответ:",
+                "text": "Qu'est-ce que tu fais ... soir?",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": true},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "les", "isCorrect": false},
+                    {"text": "au", "isCorrect": false},
+                    {"text": "du", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A7",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Si j'... (savoir), je te dirais.",
+                "type": "single",
+                "options": [
+                    {"text": "sais", "isCorrect": false},
+                    {"text": "savais", "isCorrect": true},
+                    {"text": "saurais", "isCorrect": false},
+                    {"text": "ai su", "isCorrect": false},
+                    {"text": "saurai", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A8",
+                "title": "Выберите правильное слово:",
+                "text": "Je suis content ... mon résultat.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "de", "isCorrect": true},
+                    {"text": "pour", "isCorrect": false},
+                    {"text": "avec", "isCorrect": false},
+                    {"text": "sans", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A9",
+                "title": "Выберите правильный вариант:",
+                "text": "Il est possible que nous ... (arriver) en retard.",
+                "type": "single",
+                "options": [
+                    {"text": "arrivons", "isCorrect": false},
+                    {"text": "arrivions", "isCorrect": true},
+                    {"text": "arriverons", "isCorrect": false},
+                    {"text": "arriverez", "isCorrect": false},
+                    {"text": "arrivaient", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A10",
+                "title": "Выберите правильный перевод:",
+                "text": "Как сказать 'Мне холодно' по-французски?",
+                "type": "single",
+                "options": [
+                    {"text": "Je suis froid", "isCorrect": false},
+                    {"text": "J'ai froid", "isCorrect": true},
+                    {"text": "Je fais froid", "isCorrect": false},
+                    {"text": "Il fait froid", "isCorrect": false},
+                    {"text": "Je sens froid", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A11",
+                "title": "Выберите правильный артикль:",
+                "text": "Elle écoute ... radio.",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": true},
+                    {"text": "les", "isCorrect": false},
+                    {"text": "un", "isCorrect": false},
+                    {"text": "une", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A12",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Quand est-ce que tu ... (recevoir) cette lettre?",
+                "type": "single",
+                "options": [
+                    {"text": "reçois", "isCorrect": false},
+                    {"text": "as reçu", "isCorrect": true},
+                    {"text": "recevras", "isCorrect": false},
+                    {"text": "recevais", "isCorrect": false},
+                    {"text": "reçoit", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A13",
+                "title": "Выберите правильное отрицание:",
+                "text": "Je ... ai ... idée.",
+                "type": "single",
+                "options": [
+                    {"text": "ne...pas", "isCorrect": true},
+                    {"text": "pas...ne", "isCorrect": false},
+                    {"text": "non...pas", "isCorrect": false},
+                    {"text": "ne...plus", "isCorrect": false},
+                    {"text": "ne...jamais", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A14",
+                "title": "Выберите правильное слово:",
+                "text": "C'est ... excellent restaurant.",
+                "type": "single",
+                "options": [
+                    {"text": "un", "isCorrect": true},
+                    {"text": "une", "isCorrect": false},
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "des", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A15",
+                "title": "Выберите правильный предлог:",
+                "text": "Je vais ... Portugal en juin.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "en", "isCorrect": true},
+                    {"text": "au", "isCorrect": false},
+                    {"text": "aux", "isCorrect": false},
+                    {"text": "aut", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A16",
+                "title": "Выберите правильное время:",
+                "text": "Quand il ... (neiger), les enfants font un bonhomme de neige.",
+                "type": "single",
+                "options": [
+                    {"text": "neige", "isCorrect": true},
+                    {"text": "neigera", "isCorrect": false},
+                    {"text": "neigeait", "isCorrect": false},
+                    {"text": "a neigé", "isCorrect": false},
+                    {"text": "neiger", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A17",
+                "title": "Выберите правильное слово:",
+                "text": "Elle est ... architecte renommée.",
+                "type": "single",
+                "options": [
+                    {"text": "un", "isCorrect": false},
+                    {"text": "une", "isCorrect": true},
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "des", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A18",
+                "title": "Выберите правильный перевод:",
+                "text": "Как сказать 'Сколько вам лет?' по-французски?",
+                "type": "single",
+                "options": [
+                    {"text": "Comment ça va?", "isCorrect": false},
+                    {"text": "Quel âge avez-vous?", "isCorrect": true},
+                    {"text": "Quelle heure est-il?", "isCorrect": false},
+                    {"text": "Qu'est-ce que c'est?", "isCorrect": false},
+                    {"text": "Comment vous appelez-vous?", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A19",
+                "title": "Выберите правильную форму:",
+                "text": "Ce sont des ... (vieux) livres.",
+                "type": "single",
+                "options": [
+                    {"text": "vieux", "isCorrect": true},
+                    {"text": "vieil", "isCorrect": false},
+                    {"text": "vieille", "isCorrect": false},
+                    {"text": "vieilles", "isCorrect": false},
+                    {"text": "vieillesse", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A20",
+                "title": "Выберите правильный ответ:",
+                "text": "Pardon, vous avez ... heure?",
+                "type": "single",
+                "options": [
+                    {"text": "la", "isCorrect": false},
+                    {"text": "le", "isCorrect": false},
+                    {"text": "l'", "isCorrect": true},
+                    {"text": "une", "isCorrect": false},
+                    {"text": "de", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "B1",
+                "title": "Поставьте глагол в правильную форму:",
+                "text": "Hier soir, nous (voir) ___ un film passionnant.",
+                "type": "text",
+                "options": [{"text": "avons vu", "isCorrect": true}]
+            },
+            {
+                "id": "B2",
+                "title": "Образуйте наречие от прилагательного:",
+                "text": "Il répond (polie) ___.",
+                "type": "text",
+                "options": [{"text": "poliment", "isCorrect": true}]
+            },
+            {
+                "id": "B3",
+                "title": "Замените выделенное местоимением:",
+                "text": "J'écris une lettre à mon ami → Je ___ écris une lettre.",
+                "type": "text",
+                "options": [{"text": "lui", "isCorrect": true}]
+            },
+            {
+                "id": "B4",
+                "title": "Образуйте множественное число:",
+                "text": "un genou → des ___",
+                "type": "text",
+                "options": [{"text": "genoux", "isCorrect": true}]
+            },
+            {
+                "id": "B5",
+                "title": "Вставьте артикль:",
+                "text": "Elle a ... cheveux courts.",
+                "type": "text",
+                "options": [{"text": "les", "isCorrect": true}]
+            },
+            {
+                "id": "B6",
+                "title": "Образуйте слово:",
+                "text": "C'est un ___ (art).",
+                "type": "text",
+                "options": [{"text": "artiste", "isCorrect": true}]
+            },
+            {
+                "id": "B7",
+                "title": "Образуйте слово:",
+                "text": "Il montre une grande ___ (sage).",
+                "type": "text",
+                "options": [{"text": "sagesse", "isCorrect": true}]
+            },
+            {
+                "id": "B8",
+                "title": "Образуйте женский род:",
+                "text": "un directeur → une ___",
+                "type": "text",
+                "options": [{"text": "directrice", "isCorrect": true}]
+            },
+            {
+                "id": "B9",
+                "title": "Поставьте глагол в futur simple:",
+                "text": "Je (pouvoir) ___ t'aider demain.",
+                "type": "text",
+                "options": [{"text": "pourrai", "isCorrect": true}]
+            },
+            {
+                "id": "B10",
+                "title": "Заполните пропуск:",
+                "text": "Il parle ___ (clair).",
+                "type": "text",
+                "options": [{"text": "clairement", "isCorrect": true}]
+            }
+        ]
+    },
+    {
+        "language": "Французский язык",
+        "variant": 8,
+        "progress": 0,
+        "questions": [
+            {
+                "id": "A1",
+                "title": "Выберите правильный артикль:",
+                "text": "C'est ... honneur de vous rencontrer.",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "un", "isCorrect": false},
+                    {"text": "l'", "isCorrect": true},
+                    {"text": "les", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A2",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Les enfants ... (courir) dans le parc maintenant.",
+                "type": "single",
+                "options": [
+                    {"text": "cours", "isCorrect": false},
+                    {"text": "court", "isCorrect": false},
+                    {"text": "courent", "isCorrect": true},
+                    {"text": "courons", "isCorrect": false},
+                    {"text": "courez", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A3",
+                "title": "Выберите правильное местоимение:",
+                "text": "Voici le document ... j'ai besoin.",
+                "type": "single",
+                "options": [
+                    {"text": "qui", "isCorrect": false},
+                    {"text": "que", "isCorrect": false},
+                    {"text": "dont", "isCorrect": true},
+                    {"text": "où", "isCorrect": false},
+                    {"text": "lequel", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A4",
+                "title": "Выберите правильный предлог:",
+                "text": "Je suis intéressé ... l'histoire médiévale.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "de", "isCorrect": false},
+                    {"text": "par", "isCorrect": false},
+                    {"text": "pour", "isCorrect": false},
+                    {"text": "par l'", "isCorrect": true}
+                ]
+            },
+            {
+                "id": "A5",
+                "title": "Выберите правильную форму прилагательного:",
+                "text": "Une situation ... (dangereux).",
+                "type": "single",
+                "options": [
+                    {"text": "dangereux", "isCorrect": false},
+                    {"text": "dangereuse", "isCorrect": true},
+                    {"text": "dangereuses", "isCorrect": false},
+                    {"text": "dangereusement", "isCorrect": false},
+                    {"text": "danger", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A6",
+                "title": "Выберите правильный ответ:",
+                "text": "Qu'est-ce que tu fais ... printemps?",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "au", "isCorrect": true},
+                    {"text": "en", "isCorrect": false},
+                    {"text": "aux", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A7",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Si nous ... (avoir) plus de temps, nous ... (visiter) ce musée.",
+                "type": "single",
+                "options": [
+                    {"text": "avons, visiterons", "isCorrect": false},
+                    {"text": "avions, visiterions", "isCorrect": true},
+                    {"text": "aurions, visiterions", "isCorrect": false},
+                    {"text": "ayons, visitions", "isCorrect": false},
+                    {"text": "aurons, visiterons", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A8",
+                "title": "Выберите правильное слово:",
+                "text": "Je suis fier ... mes résultats.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "de", "isCorrect": true},
+                    {"text": "pour", "isCorrect": false},
+                    {"text": "avec", "isCorrect": false},
+                    {"text": "en", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A9",
+                "title": "Выберите правильный вариант:",
+                "text": "Il est nécessaire que tu ... (finir) ce travail aujourd'hui.",
+                "type": "single",
+                "options": [
+                    {"text": "finis", "isCorrect": false},
+                    {"text": "finisses", "isCorrect": true},
+                    {"text": "finiras", "isCorrect": false},
+                    {"text": "finirais", "isCorrect": false},
+                    {"text": "as fini", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A10",
+                "title": "Выберите правильный перевод:",
+                "text": "Как сказать 'Мне нужно уйти' по-французски?",
+                "type": "single",
+                "options": [
+                    {"text": "Je veux partir", "isCorrect": false},
+                    {"text": "Je dois partir", "isCorrect": true},
+                    {"text": "Je peux partir", "isCorrect": false},
+                    {"text": "J'aime partir", "isCorrect": false},
+                    {"text": "Je vais partir", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A11",
+                "title": "Выберите правильный артикль:",
+                "text": "Elle a ... grands yeux expressifs.",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "les", "isCorrect": true},
+                    {"text": "des", "isCorrect": false},
+                    {"text": "aux", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A12",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Quand vous ... (apprendre) cette nouvelle?",
+                "type": "single",
+                "options": [
+                    {"text": "apprenez", "isCorrect": false},
+                    {"text": "avez appris", "isCorrect": true},
+                    {"text": "apprendrez", "isCorrect": false},
+                    {"text": "apprendriez", "isCorrect": false},
+                    {"text": "appreniez", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A13",
+                "title": "Выберите правильное отрицание:",
+                "text": "Je ... connais ... personne ici.",
+                "type": "single",
+                "options": [
+                    {"text": "ne...pas", "isCorrect": true},
+                    {"text": "ne...personne", "isCorrect": false},
+                    {"text": "pas...ne", "isCorrect": false},
+                    {"text": "non...pas", "isCorrect": false},
+                    {"text": "ne...plus", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A14",
+                "title": "Выберите правильное слово:",
+                "text": "C'est ... histoire émouvante.",
+                "type": "single",
+                "options": [
+                    {"text": "un", "isCorrect": false},
+                    {"text": "une", "isCorrect": true},
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "des", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A15",
+                "title": "Выберите правильный предлог:",
+                "text": "Je rêve ... voyager en Asie.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "de", "isCorrect": true},
+                    {"text": "pour", "isCorrect": false},
+                    {"text": "en", "isCorrect": false},
+                    {"text": "avec", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A16",
+                "title": "Выберите правильное время:",
+                "text": "Quand il ... (faire) beau, nous allons à la plage.",
+                "type": "single",
+                "options": [
+                    {"text": "fait", "isCorrect": true},
+                    {"text": "fera", "isCorrect": false},
+                    {"text": "faisait", "isCorrect": false},
+                    {"text": "a fait", "isCorrect": false},
+                    {"text": "ferait", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A17",
+                "title": "Выберите правильное слово:",
+                "text": "Elle est ... excellent médecin.",
+                "type": "single",
+                "options": [
+                    {"text": "un", "isCorrect": false},
+                    {"text": "une", "isCorrect": true},
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "des", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A18",
+                "title": "Выберите правильный перевод:",
+                "text": "Как сказать 'Где ближайшая станция метро?' по-французски?",
+                "type": "single",
+                "options": [
+                    {"text": "Où est la gare?", "isCorrect": false},
+                    {"text": "Où se trouve la station de métro la plus proche?", "isCorrect": true},
+                    {"text": "Comment aller à la station?", "isCorrect": false},
+                    {"text": "Quand part le métro?", "isCorrect": false},
+                    {"text": "Où puis-je prendre le bus?", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A19",
+                "title": "Выберите правильную форму:",
+                "text": "Ce sont des ... (nouveau) élèves.",
+                "type": "single",
+                "options": [
+                    {"text": "nouveau", "isCorrect": false},
+                    {"text": "nouvel", "isCorrect": false},
+                    {"text": "nouveaux", "isCorrect": true},
+                    {"text": "nouvelle", "isCorrect": false},
+                    {"text": "nouvelles", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A20",
+                "title": "Выберите правильный ответ:",
+                "text": "Excusez-moi, ... est la Tour Eiffel?",
+                "type": "single",
+                "options": [
+                    {"text": "où", "isCorrect": true},
+                    {"text": "quand", "isCorrect": false},
+                    {"text": "comment", "isCorrect": false},
+                    {"text": "pourquoi", "isCorrect": false},
+                    {"text": "qui", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "B1",
+                "title": "Поставьте глагол в правильную форму:",
+                "text": "L'année dernière, je (aller) ___ en Italie.",
+                "type": "text",
+                "options": [{"text": "suis allé(e)", "isCorrect": true}]
+            },
+            {
+                "id": "B2",
+                "title": "Образуйте наречие от прилагательного:",
+                "text": "Il travaille (efficace) ___.",
+                "type": "text",
+                "options": [{"text": "efficacement", "isCorrect": true}]
+            },
+            {
+                "id": "B3",
+                "title": "Замените выделенное местоимением:",
+                "text": "Je montre les photos à mes parents → Je ___ montre les photos.",
+                "type": "text",
+                "options": [{"text": "leur", "isCorrect": true}]
+            },
+            {
+                "id": "B4",
+                "title": "Образуйте множественное число:",
+                "text": "un ciel bleu → des ___ bleus",
+                "type": "text",
+                "options": [{"text": "cieux", "isCorrect": true}]
+            },
+            {
+                "id": "B5",
+                "title": "Вставьте артикль:",
+                "text": "Elle a ... mains froides.",
+                "type": "text",
+                "options": [{"text": "les", "isCorrect": true}]
+            },
+            {
+                "id": "B6",
+                "title": "Образуйте слово:",
+                "text": "C'est un ___ (boulanger).",
+                "type": "text",
+                "options": [{"text": "boulanger", "isCorrect": true}]
+            },
+            {
+                "id": "B7",
+                "title": "Образуйте слово:",
+                "text": "Il a une grande ___ (curieux).",
+                "type": "text",
+                "options": [{"text": "curiosité", "isCorrect": true}]
+            },
+            {
+                "id": "B8",
+                "title": "Образуйте женский род:",
+                "text": "un chanteur populaire → une ___ populaire",
+                "type": "text",
+                "options": [{"text": "chanteuse", "isCorrect": true}]
+            },
+            {
+                "id": "B9",
+                "title": "Поставьте глагол в futur simple:",
+                "text": "Vous (venir) ___ à notre fête?",
+                "type": "text",
+                "options": [{"text": "viendrez", "isCorrect": true}]
+            },
+            {
+                "id": "B10",
+                "title": "Заполните пропуск:",
+                "text": "Il chante ___ (faux).",
+                "type": "text",
+                "options": [{"text": "faux", "isCorrect": true}]
+            }
+        ]
+    },
+    {
+        "language": "Французский язык",
+        "variant": 9,
+        "progress": 0,
+        "questions": [
+            {
+                "id": "A1",
+                "title": "Выберите правильный артикль:",
+                "text": "J'ai acheté ... ordinateur portable.",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "un", "isCorrect": true},
+                    {"text": "une", "isCorrect": false},
+                    {"text": "des", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A2",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Nous ... (venir) d'arriver à l'aéroport.",
+                "type": "single",
+                "options": [
+                    {"text": "venons", "isCorrect": true},
+                    {"text": "viennent", "isCorrect": false},
+                    {"text": "venez", "isCorrect": false},
+                    {"text": "veniyons", "isCorrect": false},
+                    {"text": "venuns", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A3",
+                "title": "Выберите правильное местоимение:",
+                "text": "Les livres ... j'ai besoin sont sur l'étagère.",
+                "type": "single",
+                "options": [
+                    {"text": "qui", "isCorrect": false},
+                    {"text": "que", "isCorrect": false},
+                    {"text": "dont", "isCorrect": true},
+                    {"text": "où", "isCorrect": false},
+                    {"text": "lesquels", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A4",
+                "title": "Выберите правильный предлог:",
+                "text": "Elle travaille ... médecine depuis dix ans.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "en", "isCorrect": true},
+                    {"text": "au", "isCorrect": false},
+                    {"text": "pour", "isCorrect": false},
+                    {"text": "dans", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A5",
+                "title": "Выберите правильную форму прилагательного:",
+                "text": "Des problèmes ... (compliqué).",
+                "type": "single",
+                "options": [
+                    {"text": "compliqué", "isCorrect": false},
+                    {"text": "compliquée", "isCorrect": false},
+                    {"text": "compliqués", "isCorrect": true},
+                    {"text": "compliquées", "isCorrect": false},
+                    {"text": "compliquément", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A6",
+                "title": "Выберите правильный ответ:",
+                "text": "Qu'est-ce que tu fais ... été?",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "en", "isCorrect": true},
+                    {"text": "au", "isCorrect": false},
+                    {"text": "aux", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A7",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Si tu ... (vouloir), nous ... (pouvoir) partir plus tôt.",
+                "type": "single",
+                "options": [
+                    {"text": "veux, pouvons", "isCorrect": false},
+                    {"text": "voulais, pourrions", "isCorrect": true},
+                    {"text": "voudras, pourrons", "isCorrect": false},
+                    {"text": "veux, peux", "isCorrect": false},
+                    {"text": "voudrais, pourrais", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A8",
+                "title": "Выберите правильное слово:",
+                "text": "Je suis content ... mes progrès en français.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "de", "isCorrect": true},
+                    {"text": "pour", "isCorrect": false},
+                    {"text": "avec", "isCorrect": false},
+                    {"text": "en", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A9",
+                "title": "Выберите правильный вариант:",
+                "text": "Il est important que vous ... (être) ponctuels.",
+                "type": "single",
+                "options": [
+                    {"text": "êtes", "isCorrect": false},
+                    {"text": "étiez", "isCorrect": false},
+                    {"text": "soyez", "isCorrect": true},
+                    {"text": "serez", "isCorrect": false},
+                    {"text": "seriez", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A10",
+                "title": "Выберите правильный перевод:",
+                "text": "Как сказать 'У меня болит голова' по-французски?",
+                "type": "single",
+                "options": [
+                    {"text": "J'ai mal à la tête", "isCorrect": true},
+                    {"text": "Je suis malade", "isCorrect": false},
+                    {"text": "Ma tête fait mal", "isCorrect": false},
+                    {"text": "J'ai mal au cœur", "isCorrect": false},
+                    {"text": "Je suis fatigué", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A11",
+                "title": "Выберите правильный артикль:",
+                "text": "Elle écoute ... musique classique.",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": true},
+                    {"text": "les", "isCorrect": false},
+                    {"text": "un", "isCorrect": false},
+                    {"text": "une", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A12",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Quand est-ce que tu ... (recevoir) ton diplôme?",
+                "type": "single",
+                "options": [
+                    {"text": "reçois", "isCorrect": false},
+                    {"text": "as reçu", "isCorrect": false},
+                    {"text": "recevras", "isCorrect": true},
+                    {"text": "recevais", "isCorrect": false},
+                    {"text": "reçois", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A13",
+                "title": "Выберите правильное отрицание:",
+                "text": "Je ... ai ... idée.",
+                "type": "single",
+                "options": [
+                    {"text": "ne...pas", "isCorrect": true},
+                    {"text": "pas...ne", "isCorrect": false},
+                    {"text": "non...pas", "isCorrect": false},
+                    {"text": "ne...plus", "isCorrect": false},
+                    {"text": "ne...jamais", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A14",
+                "title": "Выберите правильное слово:",
+                "text": "C'est ... excellent professeur.",
+                "type": "single",
+                "options": [
+                    {"text": "un", "isCorrect": true},
+                    {"text": "une", "isCorrect": false},
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "des", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A15",
+                "title": "Выберите правильный предлог:",
+                "text": "Je vais ... Brésil en janvier.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "en", "isCorrect": false},
+                    {"text": "au", "isCorrect": true},
+                    {"text": "aux", "isCorrect": false},
+                    {"text": "dans", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A16",
+                "title": "Выберите правильное время:",
+                "text": "Quand il ... (pleuvoir), nous restons à la maison.",
+                "type": "single",
+                "options": [
+                    {"text": "pleut", "isCorrect": true},
+                    {"text": "pleuvra", "isCorrect": false},
+                    {"text": "pleuvait", "isCorrect": false},
+                    {"text": "a plu", "isCorrect": false},
+                    {"text": "pleuvoir", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A17",
+                "title": "Выберите правильное слово:",
+                "text": "Elle est ... architecte renommée.",
+                "type": "single",
+                "options": [
+                    {"text": "un", "isCorrect": false},
+                    {"text": "une", "isCorrect": true},
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "des", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A18",
+                "title": "Выберите правильный перевод:",
+                "text": "Как сказать 'Сколько это стоит?' по-французски?",
+                "type": "single",
+                "options": [
+                    {"text": "Comment ça va?", "isCorrect": false},
+                    {"text": "Quel âge avez-vous?", "isCorrect": false},
+                    {"text": "Combien ça coûte?", "isCorrect": true},
+                    {"text": "Qu'est-ce que c'est?", "isCorrect": false},
+                    {"text": "Comment vous appelez-vous?", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A19",
+                "title": "Выберите правильную форму:",
+                "text": "Ce sont des ... (vieux) amis.",
+                "type": "single",
+                "options": [
+                    {"text": "vieux", "isCorrect": true},
+                    {"text": "vieil", "isCorrect": false},
+                    {"text": "vieille", "isCorrect": false},
+                    {"text": "vieilles", "isCorrect": false},
+                    {"text": "vieillesse", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A20",
+                "title": "Выберите правильный ответ:",
+                "text": "Pardon, vous avez ... heure?",
+                "type": "single",
+                "options": [
+                    {"text": "la", "isCorrect": false},
+                    {"text": "le", "isCorrect": false},
+                    {"text": "l'", "isCorrect": true},
+                    {"text": "une", "isCorrect": false},
+                    {"text": "de", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "B1",
+                "title": "Поставьте глагол в правильную форму:",
+                "text": "Hier, nous (voir) ___ un film intéressant.",
+                "type": "text",
+                "options": [{"text": "avons vu", "isCorrect": true}]
+            },
+            {
+                "id": "B2",
+                "title": "Образуйте наречие от прилагательного:",
+                "text": "Il répond (polie) ___.",
+                "type": "text",
+                "options": [{"text": "poliment", "isCorrect": true}]
+            },
+            {
+                "id": "B3",
+                "title": "Замените выделенное местоимением:",
+                "text": "J'écris une lettre à mon ami → Je ___ écris une lettre.",
+                "type": "text",
+                "options": [{"text": "lui", "isCorrect": true}]
+            },
+            {
+                "id": "B4",
+                "title": "Образуйте множественное число:",
+                "text": "un ciel bleu → des ___ bleus",
+                "type": "text",
+                "options": [{"text": "cieux", "isCorrect": true}]
+            },
+            {
+                "id": "B5",
+                "title": "Вставьте артикль:",
+                "text": "Elle a ... cheveux courts.",
+                "type": "text",
+                "options": [{"text": "les", "isCorrect": true}]
+            },
+            {
+                "id": "B6",
+                "title": "Образуйте слово:",
+                "text": "C'est un ___ (boulanger).",
+                "type": "text",
+                "options": [{"text": "boulanger", "isCorrect": true}]
+            },
+            {
+                "id": "B7",
+                "title": "Образуйте слово:",
+                "text": "Il montre une grande ___ (sage).",
+                "type": "text",
+                "options": [{"text": "sagesse", "isCorrect": true}]
+            },
+            {
+                "id": "B8",
+                "title": "Образуйте женский род:",
+                "text": "un directeur → une ___",
+                "type": "text",
+                "options": [{"text": "directrice", "isCorrect": true}]
+            },
+            {
+                "id": "B9",
+                "title": "Поставьте глагол в futur simple:",
+                "text": "Je (pouvoir) ___ t'aider demain.",
+                "type": "text",
+                "options": [{"text": "pourrai", "isCorrect": true}]
+            },
+            {
+                "id": "B10",
+                "title": "Заполните пропуск:",
+                "text": "Il parle ___ (clair).",
+                "type": "text",
+                "options": [{"text": "clairement", "isCorrect": true}]
+            }
+        ]
+    },
+    {
+        "language": "Французский язык",
+        "variant": 10,
+        "progress": 0,
+        "questions": [
+            {
+                "id": "A1",
+                "title": "Выберите правильный артикль:",
+                "text": "C'est ... hôpital moderne.",
+                "type": "single",
+                "options": [
+                    {"text": "le", "isCorrect": false},
+                    {"text": "la", "isCorrect": false},
+                    {"text": "un", "isCorrect": true},
+                    {"text": "une", "isCorrect": false},
+                    {"text": "l'", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A2",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Les étudiants ... (écrire) un essai en ce moment.",
+                "type": "single",
+                "options": [
+                    {"text": "écris", "isCorrect": false},
+                    {"text": "écrit", "isCorrect": false},
+                    {"text": "écrivent", "isCorrect": true},
+                    {"text": "écrivons", "isCorrect": false},
+                    {"text": "écrivez", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A3",
+                "title": "Выберите правильное местоимение:",
+                "text": "Voici les documents ... tu as demandés.",
+                "type": "single",
+                "options": [
+                    {"text": "qui", "isCorrect": false},
+                    {"text": "que", "isCorrect": true},
+                    {"text": "dont", "isCorrect": false},
+                    {"text": "où", "isCorrect": false},
+                    {"text": "lequel", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A4",
+                "title": "Выберите правильный предлог:",
+                "text": "Elle est très douée ... mathématiques.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "en", "isCorrect": true},
+                    {"text": "pour", "isCorrect": false},
+                    {"text": "sur", "isCorrect": false},
+                    {"text": "avec", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A5",
+                "title": "Выберите правильную форму прилагательного:",
+                "text": "Une réponse ... (précis).",
+                "type": "single",
+                "options": [
+                    {"text": "précis", "isCorrect": false},
+                    {"text": "précise", "isCorrect": true},
+                    {"text": "précises", "isCorrect": false},
+                    {"text": "précisément", "isCorrect": false},
+                    {"text": "précision", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A6",
+                "title": "Выберите правильный ответ:",
+                "text": "Nous partons ... vacances demain.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": false},
+                    {"text": "en", "isCorrect": true},
+                    {"text": "au", "isCorrect": false},
+                    {"text": "aux", "isCorrect": false},
+                    {"text": "dans", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A7",
+                "title": "Выберите правильную форму глагола:",
+                "text": "Si j'... (avoir) le temps, je ... (visiter) ce musée.",
+                "type": "single",
+                "options": [
+                    {"text": "ai, visiterai", "isCorrect": false},
+                    {"text": "avais, visiterais", "isCorrect": true},
+                    {"text": "aurais, visiterais", "isCorrect": false},
+                    {"text": "aie, visite", "isCorrect": false},
+                    {"text": "aurai, visiterai", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A8",
+                "title": "Выберите правильное слово:",
+                "text": "Je m'intéresse ... l'histoire ancienne.",
+                "type": "single",
+                "options": [
+                    {"text": "à", "isCorrect": true},
+                    {"text": "de", "isCorrect": false},
+                    {"text": "pour", "isCorrect": false},
+                    {"text": "en", "isCorrect": false},
+                    {"text": "avec", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A9",
+                "title": "Выберите правильный вариант:",
+                "text": "Il faut que nous ... (partir) avant midi.",
+                "type": "single",
+                "options": [
+                    {"text": "partons", "isCorrect": false},
+                    {"text": "partions", "isCorrect": true},
+                    {"text": "partirons", "isCorrect": false},
+                    {"text": "partirez", "isCorrect": false},
+                    {"text": "partaient", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "A10",
+                "title": "Выберите правильный перевод:",
+                "text": "Как сказать 'Мне нужно позвонить' по-французски?",
+                "type": "single",
+                "options": [
+                    {"text": "Je veux téléphoner", "isCorrect": false},
+                    {"text": "Je dois téléphoner", "isCorrect": true},
+                    {"text": "Je peux téléphoner", "isCorrect": false},
+                    {"text": "J'aime téléphoner", "isCorrect": false},
+                    {"text": "Je vais téléphoner", "isCorrect": false}
+                ]
+            },
+            {
+                "id": "B1",
+                "title": "Поставьте глагол в правильную форму:",
+                "text": "L'année dernière, ils (visiter) ___ la France.",
+                "type": "text",
+                "options": [{"text": "ont visité", "isCorrect": true}]
+            },
+            {
+                "id": "B2",
+                "title": "Образуйте наречие от прилагательного:",
+                "text": "Elle parle (clair) ___.",
+                "type": "text",
+                "options": [{"text": "clairement", "isCorrect": true}]
+            },
+            {
+                "id": "B3",
+                "title": "Замените выделенное местоимением:",
+                "text": "Je donne les fleurs à ma mère → Je ___ donne les fleurs.",
+                "type": "text",
+                "options": [{"text": "lui", "isCorrect": true}]
+            },
+            {
+                "id": "B4",
+                "title": "Образуйте множественное число:",
+                "text": "un travail intéressant → des ___ intéressants",
+                "type": "text",
+                "options": [{"text": "travaux", "isCorrect": true}]
+            },
+            {
+                "id": "B5",
+                "title": "Вставьте артикль:",
+                "text": "Elle a ... yeux verts.",
+                "type": "text",
+                "options": [{"text": "les", "isCorrect": true}]
+            },
+            {
+                "id": "B6",
+                "title": "Образуйте слово:",
+                "text": "C'est un ___ (journal).",
+                "type": "text",
+                "options": [{"text": "journaliste", "isCorrect": true}]
+            },
+            {
+                "id": "B7",
+                "title": "Образуйте слово:",
+                "text": "Il a beaucoup d'... (intelligent).",
+                "type": "text",
+                "options": [{"text": "intelligence", "isCorrect": true}]
+            },
+            {
+                "id": "B8",
+                "title": "Образуйте женский род:",
+                "text": "un serveur → une ___",
+                "type": "text",
+                "options": [{"text": "serveuse", "isCorrect": true}]
+            },
+            {
+                "id": "B9",
+                "title": "Поставьте глагол в futur simple:",
+                "text": "Nous (voir) ___ nos amis demain.",
+                "type": "text",
+                "options": [{"text": "verrons", "isCorrect": true}]
+            },
+            {
+                "id": "B10",
+                "title": "Заполните пропуск:",
+                "text": "Il travaille ___ (sérieux).",
+                "type": "text",
+                "options": [{"text": "sérieusement", "isCorrect": true}]
+            }
+        ]
+    }
+    
+]

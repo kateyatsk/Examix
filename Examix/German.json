@@ -1,0 +1,1179 @@
+[
+    {
+    "language": "Немецкий язык",
+    "variant": 1,
+    "progress": 0,
+    "questions": [
+        {
+            "id": "A1",
+            "title": "Выберите правильный вариант для пропуска A1 в тексте:",
+            "text": "Die deutsche Jugend steht unter Druck. Das ist das Ergebnis einer Jugendstudie. Die Studie wurde in (А1) ... Bochum (Nordrhein-Westfalen) durchgeführt.",
+            "type": "single",
+            "options": [
+                {"text": "dem", "isCorrect": false},
+                {"text": "der", "isCorrect": true},
+                {"text": "das", "isCorrect": false},
+                {"text": "einen", "isCorrect": false},
+                {"text": "—", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A2",
+            "title": "Выберите правильный вариант для пропуска A2 в тексте:",
+            "text": "(А2) ... 60 Prozent der jungen Deutschen sind Schule und Studium sehr anstrengend.",
+            "type": "single",
+            "options": [
+                {"text": "Durch", "isCorrect": false},
+                {"text": "Vor", "isCorrect": false},
+                {"text": "Mit", "isCorrect": false},
+                {"text": "An", "isCorrect": false},
+                {"text": "Für", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A3",
+            "title": "Выберите правильный вариант для пропуска A3 в тексте:",
+            "text": "(A3) ... den jungen Schülern zwischen 11 und 14 Jahren machen oft die Eltern Druck.",
+            "type": "single",
+            "options": [
+                {"text": "Zu", "isCorrect": false},
+                {"text": "An", "isCorrect": false},
+                {"text": "Mit", "isCorrect": false},
+                {"text": "Bei", "isCorrect": true},
+                {"text": "Durch", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A4",
+            "title": "Выберите правильный вариант для пропуска A4 в тексте:",
+            "text": "Fast ein Drittel der deutschen Jugendlichen hat auch (A4) ... der Freizeit Stress.",
+            "type": "single",
+            "options": [
+                {"text": "um", "isCorrect": false},
+                {"text": "über", "isCorrect": false},
+                {"text": "in", "isCorrect": true},
+                {"text": "unter", "isCorrect": false},
+                {"text": "durch", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A5",
+            "title": "Выберите правильный вариант для пропуска A5 в тексте:",
+            "text": "Berlin ist die Hauptstadt des vereinigten Deutschlands. Es (A5) ... an der Spree, die in die Havel mündet.",
+            "type": "single",
+            "options": [
+                {"text": "liegst", "isCorrect": false},
+                {"text": "liegen", "isCorrect": false},
+                {"text": "legt", "isCorrect": false},
+                {"text": "liegt", "isCorrect": true},
+                {"text": "liege", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A6",
+            "title": "Выберите правильный вариант для пропуска A6 в тексте:",
+            "text": "Hier kreuzen sich die (A6) ... Handelswege vom Süden nach Norden und vom Westen nach Osten.",
+            "type": "single",
+            "options": [
+                {"text": "alten", "isCorrect": true},
+                {"text": "alte", "isCorrect": false},
+                {"text": "altes", "isCorrect": false},
+                {"text": "alter", "isCorrect": false},
+                {"text": "altem", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A7",
+            "title": "Выберите правильный вариант для пропуска A7 в тексте:",
+            "text": "Heute ist Berlin eine der größten deutschen Städte, (A7) ... seine Bevölkerung mehr als 3 Millionen zählt.",
+            "type": "single",
+            "options": [
+                {"text": "darum", "isCorrect": false},
+                {"text": "dass", "isCorrect": false},
+                {"text": "oder", "isCorrect": false},
+                {"text": "weil", "isCorrect": true},
+                {"text": "denn", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A8",
+            "title": "Выберите правильный вариант для пропуска A8 в тексте:",
+            "text": "Die meisten Touristen, (A8) ... nach Berlin kommen, beginnen ihre Stadtrundfahrt mit der Hauptstraße Berlins „Unter den Linden“.",
+            "type": "single",
+            "options": [
+                {"text": "das", "isCorrect": false},
+                {"text": "dass", "isCorrect": false},
+                {"text": "die", "isCorrect": true},
+                {"text": "denn", "isCorrect": false},
+                {"text": "damit", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A9",
+            "title": "Выберите правильный вариант для пропуска A9 в тексте:",
+            "text": "Ursprünglich (A9) ... es „Friedenstor“.",
+            "type": "single",
+            "options": [
+                {"text": "hießen", "isCorrect": false},
+                {"text": "hieß", "isCorrect": true},
+                {"text": "hießt", "isCorrect": false},
+                {"text": "heißen", "isCorrect": false},
+                {"text": "hieße", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A10",
+            "title": "Выберите правильный вариант для пропуска A10 в тексте:",
+            "text": "Der größte Platz Berlins ist der Alexanderplatz oder einfach Alex: So (A10) ... er von Berlinern genannt.",
+            "type": "single",
+            "options": [
+                {"text": "werden", "isCorrect": false},
+                {"text": "wurden", "isCorrect": false},
+                {"text": "wurdet", "isCorrect": false},
+                {"text": "wurdest", "isCorrect": false},
+                {"text": "wird", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A11",
+            "title": "В каком из предложений необходимо употребить частицу zu?",
+            "type": "single",
+            "options": [
+                {"text": "Ich bleibe hier weiter ... sitzen.", "isCorrect": false},
+                {"text": "Karin darf am Sonntag länger ... schlafen.", "isCorrect": false},
+                {"text": "Dort hinten ist es erlaubt ... parken.", "isCorrect": true},
+                {"text": "Wir hören das Baby ... schreien.", "isCorrect": false},
+                {"text": "Felix muss auch am Sonntag ... arbeiten.", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A12",
+            "title": "Какое из предложений синонимично исходному?",
+            "text": "Wenn das Wetter schlecht ist, gehen die Kinder nicht baden.",
+            "type": "single",
+            "options": [
+                {"text": "Beim schlechten Wetter gehen die Kinder nicht baden.", "isCorrect": true},
+                {"text": "Wenn die Kinder nicht baden gehen, ist das Wetter schlecht.", "isCorrect": false},
+                {"text": "Beim Baden der Kinder ist das Wetter schlecht.", "isCorrect": false},
+                {"text": "Obwohl das Wetter schlecht ist, gehen die Kinder baden.", "isCorrect": false},
+                {"text": "Das Wetter ist schlecht, denn die Kinder gehen nicht baden.", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A13",
+            "title": "Укажите номер подчеркнутого фрагмента, в котором допущена ошибка.",
+            "text": "Als Rüdiger in die neun (1) Klasse ging, beschloss (2) er, den (3) Englischkurs dreimal in (4) der Woche zu (5) besuchen.",
+            "type": "single",
+            "options": [
+                {"text": "1", "isCorrect": true},
+                {"text": "2", "isCorrect": false},
+                {"text": "3", "isCorrect": false},
+                {"text": "4", "isCorrect": false},
+                {"text": "5", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A14",
+            "title": "Укажите номер подчеркнутого фрагмента, в котором допущена ошибка.",
+            "text": "Sein jüngerer (1) Sohn ist (2) die Schule vor (3) einem Jahr beendet und ist (4) auf die Technische Universität gegangen (5).",
+            "type": "single",
+            "options": [
+                {"text": "1", "isCorrect": false},
+                {"text": "2", "isCorrect": false},
+                {"text": "3", "isCorrect": true},
+                {"text": "4", "isCorrect": false},
+                {"text": "5", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A15",
+            "title": "Выберите правильный вариант для пропуска A15 в тексте:",
+            "text": "Besonders im Sommer, wenn es (A15) ... ist, wird Eis sehr gern gegessen.",
+            "type": "single",
+            "options": [
+                {"text": "hell", "isCorrect": false},
+                {"text": "kalt", "isCorrect": false},
+                {"text": "lang", "isCorrect": false},
+                {"text": "schnell", "isCorrect": false},
+                {"text": "heiß", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A16",
+            "title": "Выберите правильный вариант для пропуска A16 в тексте:",
+            "text": "In Österreich (A16) ... man jährlich 7,1 Liter Eis pro Person.",
+            "type": "single",
+            "options": [
+                {"text": "verkauft", "isCorrect": false},
+                {"text": "gibt", "isCorrect": false},
+                {"text": "schenkt", "isCorrect": false},
+                {"text": "findet", "isCorrect": false},
+                {"text": "trinkt", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A17",
+            "title": "Выберите правильный вариант для пропуска A17 в тексте:",
+            "text": "Schon die Chinesen haben vor etwa 4.000 Jahren Eis (A17) ... .",
+            "type": "single",
+            "options": [
+                {"text": "gestellt", "isCorrect": false},
+                {"text": "hergestellt", "isCorrect": true},
+                {"text": "ausgestellt", "isCorrect": false},
+                {"text": "bestellt", "isCorrect": false},
+                {"text": "angestellt", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A18",
+            "title": "Выберите правильный вариант для пропуска A18 в тексте:",
+            "text": "Abhängig von der Sorte und dem (A18) ... verwendet man auch Zutaten wie Kakao, Kaffee, Nüsse, Nugat oder Rosinen.",
+            "type": "single",
+            "options": [
+                {"text": "Geschmack", "isCorrect": true},
+                {"text": "Gehör", "isCorrect": false},
+                {"text": "Gesang", "isCorrect": false},
+                {"text": "Menge", "isCorrect": false},
+                {"text": "Gerücht", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A19",
+            "title": "Выберите правильный вариант для пропуска A19 в тексте:",
+            "text": "Dazu kommen verschiedene (A19) ...",
+            "type": "single",
+            "options": [
+                {"text": "Farbstifte", "isCorrect": false},
+                {"text": "Farbtische", "isCorrect": false},
+                {"text": "Farbstoffe", "isCorrect": true},
+                {"text": "Farbtiefen", "isCorrect": false},
+                {"text": "Farbzeichen", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A20",
+            "title": "Выберите правильный вариант для пропуска A20 в тексте:",
+            "text": "Wenn man Eis in Maßen genießt, bekommt man keine Probleme mit der (A20) ... Man darf Eis nicht zu schnell essen, denn es kann bei manchen Menschen zu Kopfschmerzen führen.",
+            "type": "single",
+            "options": [
+                {"text": "Kopf", "isCorrect": false},
+                {"text": "Körper", "isCorrect": false},
+                {"text": "Schmerzen", "isCorrect": false},
+                {"text": "Immunsystem", "isCorrect": false},
+                {"text": "Gesundheit", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "B1",
+            "title": "Переведите на немецкий язык фрагмент предложения, данный в скобках.",
+            "text": "In drei Wochen beginnt der Computerkurs. Nimmst du auch ... (в нем) teil?",
+            "type": "text",
+            "options": [{"text": "daran", "isCorrect": true}]
+        },
+        {
+            "id": "B2",
+            "title": "Переведите на немецкий язык фрагмент предложения, данный в скобках, используя предложенное слово.",
+            "text": "Die Zugspitze ist der ... (самая высокая (hoch)) Gipfel Deutschlands.",
+            "type": "text",
+            "options": [{"text": "höchste", "isCorrect": true}]
+        },
+        {
+            "id": "B3",
+            "title": "Преобразуйте слово, напечатанное заглавными буквами, так, чтобы оно грамматически соответствовало тексту.",
+            "text": "Als ich nach Deutschland umgezogen (B3 ... SEIN), konnte ich mich an (B4 ... DAS) Essen so früh nicht gewöhnen.",
+            "type": "text",
+            "options": [{"text": "bin/war", "isCorrect": true}]
+        },
+        {
+            "id": "B4",
+            "title": "Преобразуйте слово, напечатанное заглавными буквами, так, чтобы оно грамматически соответствовало тексту.",
+            "text": "Als ich nach Deutschland umgezogen (B3 ... SEIN), konnte ich mich an (B4 ... DAS) Essen so früh nicht gewöhnen.",
+            "type": "text",
+            "options": [{"text": "das", "isCorrect": true}]
+        },
+        {
+            "id": "B5",
+            "title": "Преобразуйте слово, напечатанное заглавными буквами, так, чтобы оно грамматически соответствовало тексту.",
+            "text": "Jetzt finde ich ganz normal um 12 Uhr (B5 ... EIN). Teller Suppe zu essen und um 15 eine Tasse Kaffee zu trinken.",
+            "type": "text",
+            "options": [{"text": "einen", "isCorrect": true}]
+        },
+        {
+            "id": "B6",
+            "title": "Образуйте однокоренное слово от слова, напечатанного заглавными буквами, так, чтобы оно грамматически и лексически соответствовало тексту.",
+            "text": "Das Sandwich ist eine (B6 ... ERFINDEN) des 19. Jahrhunderts.",
+            "type": "text",
+            "options": [{"text": "Erfindung", "isCorrect": true}]
+        },
+        {
+            "id": "B7",
+            "title": "Образуйте однокоренное слово от слова, напечатанного заглавными буквами, так, чтобы оно грамматически и лексически соответствовало тексту.",
+            "text": "Sir John Montagu, der vierte Fürst von Sandwich, war ein (BT ... SPIELEN).",
+            "type": "text",
+            "options": [{"text": "Spieler", "isCorrect": true}]
+        },
+        {
+            "id": "B8",
+            "title": "Образуйте однокоренное слово от слова, напечатанного заглавными буквами, так, чтобы оно грамматически и лексически соответствовало тексту.",
+            "text": "Deshalb machte der (B8 ... FLEIB) Koch ihm Wurst oder Käse zwischen zwei Weißbrotsscheiben, damit sein Herr die Karten mit Fett nicht verschmutzte.",
+            "type": "text",
+            "options": [{"text": "fleißige", "isCorrect": true}]
+        },
+        {
+            "id": "B9",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Seit 1951 finden (B9 ... im Februar die Internationalen Filmfestspiele Berlin statt.",
+            "type": "text",
+            "options": [{"text": "jährlich", "isCorrect": true}]
+        },
+        {
+            "id": "B10",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Nach dem Treffen von Cannes ist die Berlinale das zweitgrößte Filmfestival in der Welt und „das Schaufenster“ des (B10 ... Films.",
+            "type": "text",
+            "options": [{"text": "deutschen", "isCorrect": true}]
+        },
+        {
+            "id": "B11",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Etwa 430 000 Kinobesucher und 19 000 Fachbesucher (B11 ... jedes Jahr die Berlinale erleben.",
+            "type": "text",
+            "options": [{"text": "können", "isCorrect": true}]
+        },
+        {
+            "id": "B12",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Das sind Filmstars, Filmproduzenten, Filmverleiher, Käufer, Finanziers und (B12 ... .",
+            "type": "text",
+            "options": [{"text": "Journalisten", "isCorrect": true}]
+        },
+        {
+            "id": "B13",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Um diesen Preis bewerben sich (B13 ... aus der ganzen Welt.",
+            "type": "text",
+            "options": [{"text": "Filme", "isCorrect": true}]
+        },
+        {
+            "id": "B14",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Neben dem Wettbewerb (B14 ... die Berlinale unter anderem ein Kinderfilmfest, ein Forum für den deutschen Film und ein internationales Forum des Jungen Films.",
+            "type": "text",
+            "options": [{"text": "veranstaltet", "isCorrect": true}]
+        },
+        {
+            "id": "B15",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Außerdem gibt (B15 ... eine Retrospektive, die sich dem Lebenswerk einer großen Filmpersönlichkeit widmet.",
+            "type": "text",
+            "options": [{"text": "es", "isCorrect": true}]
+        },
+        {
+            "id": "B16",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Insgesamt werden hier jährlich etwa 400 kinematographische Werke (B16 ... .",
+            "type": "text",
+            "options": [{"text": "gezeigt", "isCorrect": true}]
+        },
+        {
+            "id": "B17",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Seit 2003 lädt (B17 ... jedes Jahr etwa 350 junge Filmtalente aus aller Welt zur Berlinale ein.",
+            "type": "text",
+            "options": [{"text": "man", "isCorrect": true}]
+        },
+        {
+            "id": "B18",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Hier geht es (B18 ... die Vermittlung von Know-how und den Ideenaustausch.",
+            "type": "text",
+            "options": [{"text": "um", "isCorrect": true}]
+        }
+    ]
+},
+    {
+    "language": "Немецкий язык",
+    "variant": 2,
+    "progress": 0,
+    "questions": [
+        {
+            "id": "A1",
+            "title": "Выберите правильный вариант для пропуска A1 в тексте:",
+            "text": "Sebastian Rickelhoff ist 14 und geht in die 8. Klasse der Realschule in Lennestadt in (A1) ... Nordrhein-Westfalen.",
+            "type": "single",
+            "options": [
+                {"text": "dem", "isCorrect": false},
+                {"text": "—", "isCorrect": true},
+                {"text": "der", "isCorrect": false},
+                {"text": "eines", "isCorrect": false},
+                {"text": "einem", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A2",
+            "title": "Выберите правильный вариант для пропуска A2 в тексте:",
+            "text": "Am Nachmittag macht er Hausaufgaben und lernt (A2) ... die Prüfungen.",
+            "type": "single",
+            "options": [
+                {"text": "für", "isCorrect": true},
+                {"text": "mit", "isCorrect": false},
+                {"text": "zu", "isCorrect": false},
+                {"text": "auf", "isCorrect": false},
+                {"text": "durch", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A3",
+            "title": "Выберите правильный вариант для пропуска A3 в тексте:",
+            "text": "Danach kann Sebastian zum Sport gehen oder (A3) ... Freunden Fahrrad fahren.",
+            "type": "single",
+            "options": [
+                {"text": "um", "isCorrect": false},
+                {"text": "von", "isCorrect": false},
+                {"text": "nach", "isCorrect": false},
+                {"text": "mit", "isCorrect": true},
+                {"text": "für", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A4",
+            "title": "Выберите правильный вариант для пропуска A4 в тексте:",
+            "text": "Der Schüler will (A4) ... jedem Fach gut sein.",
+            "type": "single",
+            "options": [
+                {"text": "zu", "isCorrect": false},
+                {"text": "an", "isCorrect": false},
+                {"text": "in", "isCorrect": true},
+                {"text": "vor", "isCorrect": false},
+                {"text": "durch", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A5",
+            "title": "Выберите правильный вариант для пропуска A5 в тексте:",
+            "text": "Viele Firmen bauen ihre Geräte so, (A5) ... sie nach relativ kurzer Zeit kaputtgehen.",
+            "type": "single",
+            "options": [
+                {"text": "wenn", "isCorrect": false},
+                {"text": "denn", "isCorrect": false},
+                {"text": "weil", "isCorrect": false},
+                {"text": "aber", "isCorrect": false},
+                {"text": "dass", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A6",
+            "title": "Выберите правильный вариант для пропуска A6 в тексте:",
+            "text": "Vor allem elektronische Geräte wie z. B. Handys oder Computer (A6) ... deshalb oft so gebaut.",
+            "type": "single",
+            "options": [
+                {"text": "werden", "isCorrect": true},
+                {"text": "werdet", "isCorrect": false},
+                {"text": "werde", "isCorrect": false},
+                {"text": "wird", "isCorrect": false},
+                {"text": "wirst", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A7",
+            "title": "Выберите правильный вариант для пропуска A7 в тексте:",
+            "text": "Dem Kunden bleibt dann meistens nichts Anderes übrig, als sich ein neues Gerät zu kaufen, (A7) ... Ersatzteile gibt es oft nicht.",
+            "type": "single",
+            "options": [
+                {"text": "weil", "isCorrect": true},
+                {"text": "denn", "isCorrect": false},
+                {"text": "dass", "isCorrect": false},
+                {"text": "darum", "isCorrect": false},
+                {"text": "damit", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A8",
+            "title": "Выберите правильный вариант для пропуска A8 в тексте:",
+            "text": "Für (A8) ... Bauteile bestimmter Elektrogeräte werden teure Metalle wie Gold oder Silber benötigt.",
+            "type": "single",
+            "options": [
+                {"text": "elektronischen", "isCorrect": true},
+                {"text": "elektronisches", "isCorrect": false},
+                {"text": "elektronisch", "isCorrect": false},
+                {"text": "elektronische", "isCorrect": false},
+                {"text": "elektronischem", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A9",
+            "title": "Выберите правильный вариант для пропуска A9 в тексте:",
+            "text": "Ihre Produktion (A9) ... außerdem viel Energie und ist umweltschädlich.",
+            "type": "single",
+            "options": [
+                {"text": "verbrauche", "isCorrect": false},
+                {"text": "verbrauchst", "isCorrect": false},
+                {"text": "verbrauchen", "isCorrect": false},
+                {"text": "verbrauchtet", "isCorrect": false},
+                {"text": "verbraucht", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A10",
+            "title": "Выберите правильный вариант для пропуска A10 в тексте:",
+            "text": "Um an die begehrten Metalle im Schrott zu kommen, (A10) ... die Menschen den Elektromüll.",
+            "type": "single",
+            "options": [
+                {"text": "verbrennt", "isCorrect": false},
+                {"text": "verbrennen", "isCorrect": true},
+                {"text": "verbrenne", "isCorrect": false},
+                {"text": "verbrennst", "isCorrect": false},
+                {"text": "verbrennte", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A11",
+            "title": "В каком из предложений необходимо употребить частицу zu?",
+            "type": "single",
+            "options": [
+                {"text": "Ich will im Sommer nach Deutschland ... fahren.", "isCorrect": false},
+                {"text": "Meine Mutter blieb auf dem Lande ... leben.", "isCorrect": false},
+                {"text": "Die Frau sieht ihre Kinder ... spielen.", "isCorrect": false},
+                {"text": "Ich gehe gewöhnlich abends Tennis ... spielen.", "isCorrect": false},
+                {"text": "Der Lehrer erlaubt den Schülern länger an dem Thema ... arbeiten.", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A12",
+            "title": "Какое из предложений синонимично исходному?",
+            "text": "Wenn Rudi Ferien hatte, besuchte er seine Großeltern auf dem Lande.",
+            "type": "single",
+            "options": [
+                {"text": "Rudi besuchte seine Großeltern auf dem Lande, weil er Ferien hatte.", "isCorrect": false},
+                {"text": "Rudi besuchte seine Großeltern auf dem Lande, denn er hatte Ferien.", "isCorrect": false},
+                {"text": "Rudi hat Ferien und besucht seine Großeltern auf dem Lande.", "isCorrect": false},
+                {"text": "Obwohl Rudi keine Ferien hatte, besuchte er seine Großeltern auf dem Lande.", "isCorrect": false},
+                {"text": "Während der Ferien besuchte Rudi seine Großeltern auf dem Lande.", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A13",
+            "title": "Укажите номер подчеркнутого фрагмента, в котором допущена ошибка.",
+            "text": "Die Jungen aus unserer (1) Klasse gratulierten (2) der Klassenlehrerin zum acht (3) März und schenkten (4) ihr einen (5) Blumenstrauß.",
+            "type": "single",
+            "options": [
+                {"text": "1", "isCorrect": false},
+                {"text": "2", "isCorrect": false},
+                {"text": "3", "isCorrect": true},
+                {"text": "4", "isCorrect": false},
+                {"text": "5", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A14",
+            "title": "Укажите номер подчеркнутого фрагмента, в котором допущена ошибка.",
+            "text": "Es war schönes (1) Herbstwetter: Bunte (2) Blätter sind (3) sich (4) langsam im (5) Wind bewegt.",
+            "type": "single",
+            "options": [
+                {"text": "1", "isCorrect": false},
+                {"text": "2", "isCorrect": false},
+                {"text": "3", "isCorrect": true},
+                {"text": "4", "isCorrect": false},
+                {"text": "5", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A15",
+            "title": "Выберите правильный вариант для пропуска A15 в тексте:",
+            "text": "Auch im Alter kann und soll man sogar Sport (A15) ...",
+            "type": "single",
+            "options": [
+                {"text": "treiben", "isCorrect": true},
+                {"text": "verzichten", "isCorrect": false},
+                {"text": "aufhören", "isCorrect": false},
+                {"text": "bleiben", "isCorrect": false},
+                {"text": "vermeiden", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A16",
+            "title": "Выберите правильный вариант для пропуска A16 в тексте:",
+            "text": "Sie haben weniger gesundheitliche (A16) ... zum Beispiel mit den Herzkrankheiten.",
+            "type": "single",
+            "options": [
+                {"text": "Probleme", "isCorrect": true},
+                {"text": "Stress", "isCorrect": false},
+                {"text": "Risiko", "isCorrect": false},
+                {"text": "Schaden", "isCorrect": false},
+                {"text": "Schmerz", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A17",
+            "title": "Выберите правильный вариант для пропуска A17 в тексте:",
+            "text": "Der Arzt kann dann die Sportarten empfehlen, die kein gesundheitliches (A17) ... mit sich bringen.",
+            "type": "single",
+            "options": [
+                {"text": "Gefahr", "isCorrect": false},
+                {"text": "Stress", "isCorrect": false},
+                {"text": "Krankheit", "isCorrect": false},
+                {"text": "Risiko", "isCorrect": true},
+                {"text": "Schmerz", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A18",
+            "title": "Выберите правильный вариант для пропуска A18 в тексте:",
+            "text": "Man soll schmerzfreies und langsames (A18) ... wählen.",
+            "type": "single",
+            "options": [
+                {"text": "Übung", "isCorrect": false},
+                {"text": "Training", "isCorrect": true},
+                {"text": "Sport", "isCorrect": false},
+                {"text": "Sportart", "isCorrect": false},
+                {"text": "Sportanzug", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A19",
+            "title": "Выберите правильный вариант для пропуска A19 в тексте:",
+            "text": "Wenn man sich in einem Fitnesszentrum an die Fitnesstrainer (A19) ... wird man bestimmt Hilfe bekommen.",
+            "type": "single",
+            "options": [
+                {"text": "geht", "isCorrect": false},
+                {"text": "fragt", "isCorrect": false},
+                {"text": "denkt", "isCorrect": false},
+                {"text": "interessiert", "isCorrect": false},
+                {"text": "wendet", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A20",
+            "title": "Выберите правильный вариант для пропуска A20 в тексте:",
+            "text": "Die Fitnesstrainer werden gemeinsam mit dem Besucher ein (A20) ... Trainingsprogramm zusammenstellen.",
+            "type": "single",
+            "options": [
+                {"text": "einziges", "isCorrect": false},
+                {"text": "schweres", "isCorrect": false},
+                {"text": "individuelles", "isCorrect": true},
+                {"text": "lustiges", "isCorrect": false},
+                {"text": "hohes", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "B1",
+            "title": "Переведите на немецкий язык фрагмент предложения, данный в скобках.",
+            "text": "Wir planen einen Ausflug, aber wir wissen nicht, wie das Wetter morgen ist. Alles hängt ... (от нее) ab.",
+            "type": "text",
+            "options": [{"text": "davon", "isCorrect": true}]
+        },
+        {
+            "id": "B2",
+            "title": "Переведите на немецкий язык фрагмент предложения, данный в скобках, используя предложенное слово.",
+            "text": "Die ... (самая широкая (breit)) Straße in der Stadt heißt Parkstraße.",
+            "type": "text",
+            "options": [{"text": "breiteste", "isCorrect": true}]
+        },
+        {
+            "id": "B3",
+            "title": "Преобразуйте слово, напечатанное заглавными буквами, так, чтобы оно грамматически соответствовало тексту.",
+            "text": "Glückskekse — das ist Gebäck mit (B3 ... EIN) Spruch darin.",
+            "type": "text",
+            "options": [{"text": "einem", "isCorrect": true}]
+        },
+        {
+            "id": "B4",
+            "title": "Преобразуйте слово, напечатанное заглавными буквами, так, чтобы оно грамматически соответствовало тексту.",
+            "text": "Dort (BA ... HABEN) wahrscheinlich Japaner als Erste Glückskekse hergestellt.",
+            "type": "text",
+            "options": [{"text": "haben", "isCorrect": true}]
+        },
+        {
+            "id": "B5",
+            "title": "Преобразуйте слово, напечатанное заглавными буквами, так, чтобы оно грамматически соответствовало тексту.",
+            "text": "Heutzutage bekommt man sie oft in asiatischen Restaurants nach (B5 ... DAS) Essen.",
+            "type": "text",
+            "options": [{"text": "dem", "isCorrect": true}]
+        },
+        {
+            "id": "B6",
+            "title": "Образуйте однокоренное слово от слова, напечатанного заглавными буквами, так, чтобы оно грамматически и лексически соответствовало тексту.",
+            "text": "Ahmet ist ein (B6 ... TÜRKEI) Junge.",
+            "type": "text",
+            "options": [{"text": "türkischer", "isCorrect": true}]
+        },
+        {
+            "id": "B7",
+            "title": "Образуйте однокоренное слово от слова, напечатанного заглавными буквами, так, чтобы оно грамматически и лексически соответствовало тексту.",
+            "text": "Er macht jetzt eine (B7 ... AUSBILDEN) zum Industriekaufmann.",
+            "type": "text",
+            "options": [{"text": "Ausbildung", "isCorrect": true}]
+        },
+        {
+            "id": "B8",
+            "title": "Образуйте однокоренное слово от слова, напечатанного заглавными буквами, так, чтобы оно грамматически и лексически соответствовало тексту.",
+            "text": "Die Geschichte des 21-jährigen Ahmet ist eine Erfolgsgeschichte, aber sie ist eher eine (B8 ... AUSNEHMEN) als Regel.",
+            "type": "text",
+            "options": [{"text": "Ausnahme", "isCorrect": true}]
+        },
+        {
+            "id": "B9",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Heiligabend, Weihnachten, Christfest, Heiliger Christ: das sind die (B9) ... für das beliebteste Fest in Deutschland.",
+            "type": "text",
+            "options": [{"text": "Namen", "isCorrect": true}]
+        },
+        {
+            "id": "B10",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Die Familie kommt zusammen, (B10) ... gibt Geschenke, Festmenüs und Ferien.",
+            "type": "text",
+            "options": [{"text": "es", "isCorrect": true}]
+        },
+        {
+            "id": "B11",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Heiligabend gehört damit zu den wichtigsten (B11) ... des Kirchenjahres.",
+            "type": "text",
+            "options": [{"text": "Festtagen", "isCorrect": true}]
+        },
+        {
+            "id": "B12",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Doch als solches steht es schon (B12) ... nicht mehr für alle Deutschen im Mittelpunkt.",
+            "type": "text",
+            "options": [{"text": "lange", "isCorrect": true}]
+        },
+        {
+            "id": "B13",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Die meisten (B13) ... wahrscheinlich nur die ersten Worte der Weihnachtsgeschichte aufsagen.",
+            "type": "text",
+            "options": [{"text": "können", "isCorrect": true}]
+        },
+        {
+            "id": "B14",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Allerdings glauben nur noch etwa 20 Prozent der Deutschen, dass Maria Jesus Christus (B14) ... einen menschlichen Vater geboren hat.",
+            "type": "text",
+            "options": [{"text": "ohne", "isCorrect": true}]
+        },
+        {
+            "id": "B15",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Für die meisten (B15) ... die biblischen Worte einfach zu Weihnachten.",
+            "type": "text",
+            "options": [{"text": "gehören", "isCorrect": true}]
+        },
+        {
+            "id": "B16",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Es ist alles zusammen: das Fest der Liebe, der (B16) ... Taten und Geschenke.",
+            "type": "text",
+            "options": [{"text": "guten", "isCorrect": true}]
+        },
+        {
+            "id": "B17",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Am Abend des 24. Dezember entzündet (B17) ... die Kerzen des festlich geschmückten Weihnachtsbaumes.",
+            "type": "text",
+            "options": [{"text": "man", "isCorrect": true}]
+        },
+        {
+            "id": "B18",
+            "title": "Заполните пропуск предложенным словом.",
+            "text": "Und die Geschenke werden (B18) ...",
+            "type": "text",
+            "options": [{"text": "überreicht", "isCorrect": true}]
+        }
+    ]
+},
+    {
+    "language": "Немецкий язык",
+    "variant": 3,
+    "progress": 0,
+    "questions": [
+        {
+            "id": "A1",
+            "title": "Прочитайте текст. Выберите один из предложенных вариантов ответа.",
+            "text": "„Ist der Leistungsdruck an deiner Schule groß?“ Diese Frage wurde den Schülern an einigen deutschen Schulen gestellt. Marcel Raddatz aus (41) ... München (Bayern) ist 16 Jahre alt. Er macht sein Abitur auf einem Berufskolleg.",
+            "type": "single",
+            "options": [
+                {"text": "dem", "isCorrect": false},
+                {"text": "einer", "isCorrect": false},
+                {"text": "einem", "isCorrect": false},
+                {"text": "das", "isCorrect": false},
+                {"text": "—", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A2",
+            "title": "Прочитайте текст. Выберите один из предложенных вариантов ответа.",
+            "text": "Zum Thema Leistungsdruck sagt Marcel: „(42) ... mich ist der Leistungsdruck nicht so groß. Aber nicht alle haben es leicht in meiner Klasse.",
+            "type": "single",
+            "options": [
+                {"text": "Von", "isCorrect": false},
+                {"text": "Für", "isCorrect": true},
+                {"text": "Nach", "isCorrect": false},
+                {"text": "An", "isCorrect": false},
+                {"text": "Durch", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A3",
+            "title": "Прочитайте текст. Выберите один из предложенных вариантов ответа.",
+            "text": "Die Schüler kommen (43) ... vielen verschiedenen Schulen auf das Berufskolleg. Nicht alle sind (44) ... dem gleichen Niveau.",
+            "type": "single",
+            "options": [
+                {"text": "mit", "isCorrect": false},
+                {"text": "zu", "isCorrect": false},
+                {"text": "aus", "isCorrect": true},
+                {"text": "vor", "isCorrect": false},
+                {"text": "über", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A4",
+            "title": "Прочитайте текст. Выберите один из предложенных вариантов ответа.",
+            "text": "Manche müssen im Nachhilfeunterricht aufholen, wenn ihre Leistungsfähigkeit nicht den Erwartungen der Lehrer entspricht. Sie haben es dann schwerer als die anderen.",
+            "type": "single",
+            "options": [
+                {"text": "um", "isCorrect": false},
+                {"text": "für", "isCorrect": false},
+                {"text": "über", "isCorrect": false},
+                {"text": "auf", "isCorrect": true},
+                {"text": "aus", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A5",
+            "title": "Прочитайте текст. Выберите один из предложенных вариантов ответа.",
+            "text": "Echte Männer tragen Bärte, sagen die einen. Bärte sind hässlich, finden die anderen. In Deutschland sieht man immer öfter junge Männer, (45) ... einen Bart tragen.",
+            "type": "single",
+            "options": [
+                {"text": "der", "isCorrect": false},
+                {"text": "die", "isCorrect": true},
+                {"text": "aber", "isCorrect": false},
+                {"text": "weil", "isCorrect": false},
+                {"text": "denn", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A6",
+            "title": "Прочитайте текст. Выберите один из предложенных вариантов ответа.",
+            "text": "Bärte sind zurück auf Deutschlands Straßen – vor allem bei Männern unter 30 Jahren. Das ist kein Wunder: Wenn Hollywoodstars wie Brad Pitt oder Leonardo Di Caprio sich mit Bart in der Öffentlichkeit zeigen, (46) ... hat das auch in Deutschland eine Wirkung.",
+            "type": "single",
+            "options": [
+                {"text": "damit", "isCorrect": false},
+                {"text": "weil", "isCorrect": false},
+                {"text": "dann", "isCorrect": true},
+                {"text": "dass", "isCorrect": false},
+                {"text": "obwohl", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A7",
+            "title": "Прочитайте текст. Выберите один из предложенных вариантов ответа.",
+            "text": "Der 52-jährige Willi Preuß ist Präsident des Verbandes Deutscher Bartclubs. Seit Jahren organisiert er Bartmeisterschaften im In- und Ausland. An den Wettbewerben nehmen (47) ... Männer besonders gern teil.",
+            "type": "single",
+            "options": [
+                {"text": "junge", "isCorrect": true},
+                {"text": "jungen", "isCorrect": false},
+                {"text": "junger", "isCorrect": false},
+                {"text": "junges", "isCorrect": false},
+                {"text": "jungen", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A8",
+            "title": "Прочитайте текст. Выберите один из предложенных вариантов ответа.",
+            "text": "Er selbst (48) ... seinen Bart aus Überzeugung: „Weil er bei der Damenwelt gut ankommt. Vorausgesetzt natürlich, der Bart muss sauber und gepflegt sein.“",
+            "type": "single",
+            "options": [
+                {"text": "trägst", "isCorrect": false},
+                {"text": "tragt", "isCorrect": false},
+                {"text": "tragen", "isCorrect": false},
+                {"text": "trugt", "isCorrect": false},
+                {"text": "trägt", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A9",
+            "title": "Прочитайте текст. Выберите один из предложенных вариантов ответа.",
+            "text": "Frisur und Bart (49) ... benutzt, um die Gesichtsform zu verändern. Laut Friseurin Carine Bartholomé (410) ... ein Schnurrbart nur zu schmalen Gesichtern.",
+            "type": "single",
+            "options": [
+                {"text": "werde", "isCorrect": false},
+                {"text": "werdet", "isCorrect": false},
+                {"text": "werden", "isCorrect": true},
+                {"text": "wird", "isCorrect": false},
+                {"text": "wirst", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A10",
+            "title": "Прочитайте текст. Выберите один из предложенных вариантов ответа.",
+            "text": "Dreitagebart und Vollbart hingegen machen runde Gesichter länglicher. Fotograf Gunnar Hämmerle, der für sein Modelog Menschen mit Stil fotografiert, unterstützt den neuen Trend.",
+            "type": "single",
+            "options": [
+                {"text": "passten", "isCorrect": false},
+                {"text": "passtest", "isCorrect": false},
+                {"text": "passen", "isCorrect": false},
+                {"text": "passtet", "isCorrect": false},
+                {"text": "passt", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A11",
+            "title": "В каком из предложений необходимо употребить частицу zu?",
+            "type": "single",
+            "options": [
+                {"text": "Er bleibt im Hof mit den Kindern ... spielen.", "isCorrect": false},
+                {"text": "Ich gehe in die Sporthalle Volleyball ... spielen.", "isCorrect": false},
+                {"text": "Wer hört eine Frau ... singen?", "isCorrect": false},
+                {"text": "Wir müssen alle Papiere in Ordnung ... bringen.", "isCorrect": true},
+                {"text": "William hat die Absicht, nach Rom ... fahren.", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A12",
+            "title": "Какое из предложений синонимично исходному?",
+            "text": "Wenn Anna mit dem Zug reist, liest sie immer Zeitschriften unterwegs.",
+            "type": "single",
+            "options": [
+                {"text": "Anna liest immer Zeitschriften unterwegs, weil sie reist.", "isCorrect": false},
+                {"text": "Bei der Reise mit dem Zug liest Anna immer Zeitschriften unterwegs.", "isCorrect": true},
+                {"text": "Anna reist immer mit dem Zug, um Zeitschriften zu lesen.", "isCorrect": false},
+                {"text": "Anna reiste mit dem Zug und las unterwegs Zeitschriften.", "isCorrect": false},
+                {"text": "Als Anna mit dem Zug reiste, las sie Zeitschriften.", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A13",
+            "title": "Укажите номер подчеркнутого фрагмента, в котором допущена ошибка.",
+            "text": "Mein Freund feiert (1) seinen (2) Geburtstag immer, denn (3) er ist am eins (4) Januar geboren (5).",
+            "type": "single",
+            "options": [
+                {"text": "1", "isCorrect": false},
+                {"text": "2", "isCorrect": false},
+                {"text": "3", "isCorrect": false},
+                {"text": "4", "isCorrect": true},
+                {"text": "5", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A14",
+            "title": "Укажите номер подчеркнутого фрагмента, в котором допущена ошибка.",
+            "text": "Was hat (1) am dreizehnten (2) August in einem kleinen (3) Vorort von (4) Berlin geschehen (5)?",
+            "type": "single",
+            "options": [
+                {"text": "1", "isCorrect": false},
+                {"text": "2", "isCorrect": false},
+                {"text": "3", "isCorrect": false},
+                {"text": "4", "isCorrect": false},
+                {"text": "5", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "A15",
+            "title": "Прочитайте текст. Выберите один из предложенных вариантов ответа.",
+            "text": "Wandern ist eine sehr schöne und gesunde (A15) ... die in Österreich äußerst beliebt ist. 2,6 Millionen Menschen sind jährlich in den (A16) ... unterwegs.",
+            "type": "single",
+            "options": [
+                {"text": "Freizeitangebot", "isCorrect": true},
+                {"text": "Freizeitarbeit", "isCorrect": false},
+                {"text": "Freizeitgestaltung", "isCorrect": false},
+                {"text": "Freizeitindustrie", "isCorrect": false},
+                {"text": "Freizeit", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A16",
+            "title": "Прочитайте текст. Выберите один из предложенных вариантов ответа.",
+            "text": "Die Eindrücke und die Bewegung sorgen für körperliches Wohlbefinden und seelische Gelassenheit. Wer sich richtig (A17) ... kann das Wandern auch wirklich genießen.",
+            "type": "single",
+            "options": [
+                {"text": "Schulen", "isCorrect": false},
+                {"text": "Bergen", "isCorrect": true},
+                {"text": "Flüssen", "isCorrect": false},
+                {"text": "Kaufhäusern", "isCorrect": false},
+                {"text": "Gebäuden", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A17",
+            "title": "Прочитайте текст. Выберите один из предложенных вариантов ответа.",
+            "text": "Die persönliche Vorbereitung, eine gute Planung der Wanderroute und die Ausrüstung sind wichtig, um Bergtouren gut zu überstehen.",
+            "type": "single",
+            "options": [
+                {"text": "vorbereitet", "isCorrect": true},
+                {"text": "plant", "isCorrect": false},
+                {"text": "macht", "isCorrect": false},
+                {"text": "steigt", "isCorrect": false},
+                {"text": "besucht", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A18",
+            "title": "Прочитайте текст. Выберите один из предложенных вариантов ответа.",
+            "text": "Im Gebirge wird es mit zunehmendem Alter immer wichtiger, sich zu akklimatisieren, deshalb soll man sich langsam an die Höhe (A18) ... und nicht gleich am ersten Tag auf den Gipfel steigen.",
+            "type": "single",
+            "options": [
+                {"text": "denken", "isCorrect": false},
+                {"text": "gewöhnen", "isCorrect": true},
+                {"text": "sehen", "isCorrect": false},
+                {"text": "fühlen", "isCorrect": false},
+                {"text": "bewegen", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A19",
+            "title": "Прочитайте текст. Выберите один из предложенных вариантов ответа.",
+            "text": "Bei der Auswahl der Wanderroute soll man bedenken, dass es auch einen Rückweg gibt. Mindestens alle zwei Stunden sollte man eine (A19) ... machen, ein wenig essen und trinken.",
+            "type": "single",
+            "options": [
+                {"text": "Mittagessen", "isCorrect": false},
+                {"text": "Sport", "isCorrect": false},
+                {"text": "Kaffee", "isCorrect": false},
+                {"text": "Pause", "isCorrect": true},
+                {"text": "Gericht", "isCorrect": false}
+            ]
+        },
+        {
+            "id": "A20",
+            "title": "Прочитайте текст. Выберите один из предложенных вариантов ответа.",
+            "text": "Zwei bis vier Liter Flüssigkeit für einen Erwachsenen soll man bei einer Tagestour einplanen. Wenn eine Gruppe unterwegs ist, richtet sich das Tempo nach dem (A20) ... Mitglied.",
+            "type": "single",
+            "options": [
+                {"text": "höchsten", "isCorrect": false},
+                {"text": "lustigsten", "isCorrect": false},
+                {"text": "traurigsten", "isCorrect": false},
+                {"text": "schönsten", "isCorrect": false},
+                {"text": "schwächsten", "isCorrect": true}
+            ]
+        },
+        {
+            "id": "B1",
+            "title": "Переведите на немецкий язык фрагмент предложения, данный в скобках.",
+            "text": "Wartest du auf den Bus schon lange? — Ja, ich warte ... (на него) seit einer halben Stunde.",
+            "type": "text",
+            "options": [{"text": "darauf", "isCorrect": true}]
+        },
+        {
+            "id": "B2",
+            "title": "Переведите на немецкий язык фрагмент предложения, данный в скобках, используя предложенное слово.",
+            "text": "Australien ist der ... (самый маленький (klein)) Kontinent.",
+            "type": "text",
+            "options": [{"text": "kleinste", "isCorrect": true}]
+        },
+        {
+            "id": "B3",
+            "title": "Прочитайте текст. Преобразуйте слово, напечатанное заглавными буквами, так, чтобы оно грамматически соответствовало тексту.",
+            "text": "Die Oper „Der Ring des Nibelungen“ von Richard Wagner ist (B3 ... DIE) längste Oper.",
+            "type": "text",
+            "options": [{"text": "die", "isCorrect": true}]
+        },
+        {
+            "id": "B4",
+            "title": "Прочитайте текст. Преобразуйте слово, напечатанное заглавными буквами, так, чтобы оно грамматически соответствовало тексту.",
+            "text": "Wagner (B4 ... HABEN) an seinem Hauptwerk 26 Jahre gearbeitet.",
+            "type": "text",
+            "options": [{"text": "hat", "isCorrect": true}]
+        },
+        {
+            "id": "B5",
+            "title": "Прочитайте текст. Преобразуйте слово, напечатанное заглавными буквами, так, чтобы оно грамматически соответствовало тексту.",
+            "text": "Außerdem gibt es 34 Solisten plus (B5 ... EIN) Männerchor mit vielen Sängern.",
+            "type": "text",
+            "options": [{"text": "einen", "isCorrect": true}]
+        },
+        {
+            "id": "B6",
+            "title": "Прочитайте текст. Образуйте однокоренное слово от слова, напечатанного заглавными буквами, так, чтобы оно грамматически и лексически соответствовало тексту.",
+            "text": "Thema des Deutschen Museums ist die (B6 ... ENTWICKELN) der Technik und der Naturwissenschaften.",
+            "type": "text",
+            "options": [{"text": "Entwicklung", "isCorrect": true}]
+        },
+        {
+            "id": "B7",
+            "title": "Прочитайте текст. Образуйте однокоренное слово от слова, напечатанного заглавными буквами, так, чтобы оно грамматически и лексически соответствовало тексту.",
+            "text": "Es versucht, Höchstleistungen der (B7 ... FORSCHEN) darzustellen.",
+            "type": "text",
+            "options": [{"text": "Forschung", "isCorrect": true}]
+        },
+        {
+            "id": "B8",
+            "title": "Прочитайте текст. Образуйте однокоренное слово от слова, напечатанного заглавными буквами, так, чтобы оно грамматически и лексически соответствовало тексту.",
+            "text": "Das Deutsche Museum ist wahrscheinlich das größte (B8 ... TECHNIK) Museum der Welt.",
+            "type": "text",
+            "options": [{"text": "technische", "isCorrect": true}]
+        },
+        {
+            "id": "B9",
+            "title": "Прочитайте текст. Заполните пропуск предложенным словом.",
+            "text": "Die Deutschen lieben es, Musik zu hören und auch selbst Musik zu machen. Es gibt zurzeit in Deutschland ganz verschiedene (B9) ... von Pop- und Rockmusik über Techno bis hin zu Volksmusik.",
+            "type": "text",
+            "options": [{"text": "Musikrichtungen", "isCorrect": true}]
+        },
+        {
+            "id": "B10",
+            "title": "Прочитайте текст. Заполните пропуск предложенным словом.",
+            "text": "Die Deutschen mögen Musik aus anderen Ländern sehr (B10) ...",
+            "type": "text",
+            "options": [{"text": "gern", "isCorrect": true}]
+        },
+        {
+            "id": "B11",
+            "title": "Прочитайте текст. Заполните пропуск предложенным словом.",
+            "text": "aber (B11) ... interessieren sich auch für einheimische Künstler.",
+            "type": "text",
+            "options": [{"text": "sie", "isCorrect": true}]
+        },
+        {
+            "id": "B12",
+            "title": "Прочитайте текст. Заполните пропуск предложенным словом.",
+            "text": "International bekannt sind viele Künstler, darunter auch (B12) ... Bands.",
+            "type": "text",
+            "options": [{"text": "deutsche", "isCorrect": true}]
+        },
+        {
+            "id": "B13",
+            "title": "Прочитайте текст. Заполните пропуск предложенным словом.",
+            "text": "In Deutschland gibt (B13) ... auch viele große Musikfestivals.",
+            "type": "text",
+            "options": [{"text": "es", "isCorrect": true}]
+        },
+        {
+            "id": "B14",
+            "title": "Прочитайте текст. Заполните пропуск предложенным словом.",
+            "text": "Dabei (B14) ... man ein paar Tage mit seinen Freunden zelten.",
+            "type": "text",
+            "options": [{"text": "kann", "isCorrect": true}]
+        },
+        {
+            "id": "B15",
+            "title": "Прочитайте текст. Заполните пропуск предложенным словом.",
+            "text": "(B15) ... den deutschlandweit bekannten Musikfestivals gehört Rock am Ring.",
+            "type": "text",
+            "options": [{"text": "Zu", "isCorrect": true}]
+        },
+        {
+            "id": "B16",
+            "title": "Прочитайте текст. Заполните пропуск предложенным словом.",
+            "text": "Auch klassische Musik (B16) ... in Deutschland eine wichtige Rolle.",
+            "type": "text",
+            "options": [{"text": "spielt", "isCorrect": true}]
+        },
+        {
+            "id": "B17",
+            "title": "Прочитайте текст. Заполните пропуск предложенным словом.",
+            "text": "Es gibt viele Orchester und einige schöne Konzert- und (B17) ...",
+            "type": "text",
+            "options": [{"text": "Opernhäuser", "isCorrect": true}]
+        },
+        {
+            "id": "B18",
+            "title": "Прочитайте текст. Заполните пропуск предложенным словом.",
+            "text": "Ihre Kompositionen werden heutzutage noch oft gespielt und gern (B18) ...",
+            "type": "text",
+            "options": [{"text": "gehört", "isCorrect": true}]
+        }
+    ]
+}
+    
+]
