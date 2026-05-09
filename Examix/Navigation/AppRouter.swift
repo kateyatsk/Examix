@@ -30,9 +30,12 @@ final class AppCoordinator: ObservableObject {
         observeAuthState()
     }
 
-    /// Экран входа не используется: всегда основной поток (язык → вкладки).
     private func routeToMainFlow() {
         guard hasShownSplash else { return }
+        if !authManager.isAuthenticated {
+            currentRoute = .auth
+            return
+        }
         if userSettings.selectedLanguage == nil {
             currentRoute = .languageSelection
         } else {

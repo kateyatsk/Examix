@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @EnvironmentObject private var userSettings: UserSettings
     @State private var selectedTab = 0
+    @State private var showFeatureOnboarding = false
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -42,10 +44,25 @@ struct MainTabView: View {
                 .tag(3)
         }
         .accentColor(.stock) // активный цвет вкладки
+        .onAppear {
+            if !userSettings.hasCompletedFeatureOnboarding {
+                showFeatureOnboarding = true
+            }
+        }
+        .onChange(of: userSettings.featureOnboardingReplaySignal) { _, _ in
+            showFeatureOnboarding = true
+        }
+        .fullScreenCover(isPresented: $showFeatureOnboarding) {
+            AppFeatureOnboardingView {
+                userSettings.markFeatureOnboardingCompleted()
+                showFeatureOnboarding = false
+            }
+        }
     }
 }
 
 
 #Preview {
     MainTabView()
+        .environmentObject(UserSettings())
 }

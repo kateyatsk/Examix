@@ -66,6 +66,22 @@
 		B1EABB582DA7E6E600407568 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1EABB572DA7E6E600407568 /* GoogleService-Info.plist */; };
 		B1EABB5B2DA7E80E00407568 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B1EABB5A2DA7E80E00407568 /* GoogleSignIn */; };
 		B1EABB5D2DA7E80E00407568 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B1EABB5C2DA7E80E00407568 /* GoogleSignInSwift */; };
+		E2BAD0212DC7788600275C21 /* ImportedVariantJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BAD0112DC7788600275C11 /* ImportedVariantJSON.swift */; };
+		E2BAD0222DC7788600275C22 /* LocalTestDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BAD0122DC7788600275C12 /* LocalTestDatabase.swift */; };
+		E2BAD0232DC7788600275C23 /* VariantCatalogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BAD0132DC7788600275C13 /* VariantCatalogService.swift */; };
+		F78E433B2F9961DD00DAB031 /* variant_210768.json in Resources */ = {isa = PBXBuildFile; fileRef = F78E43382F9961DD00DAB031 /* variant_210768.json */; };
+		F78E433C2F9961DD00DAB031 /* variant_171090.json in Resources */ = {isa = PBXBuildFile; fileRef = F78E43362F9961DD00DAB031 /* variant_171090.json */; };
+		F78E433D2F9961DD00DAB031 /* variant_308140_final.json in Resources */ = {isa = PBXBuildFile; fileRef = F78E43392F9961DD00DAB031 /* variant_308140_final.json */; };
+		F78E433E2F9961DD00DAB031 /* variant_171099.json in Resources */ = {isa = PBXBuildFile; fileRef = F78E43372F9961DD00DAB031 /* variant_171099.json */; };
+		F78E433F2F9961DD00DAB031 /* variant_123000.json in Resources */ = {isa = PBXBuildFile; fileRef = F78E43352F9961DD00DAB031 /* variant_123000.json */; };
+		F78E43912F95430000DAB051 /* PracticeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78E43902F95430000DAB050 /* PracticeModels.swift */; };
+		F78E43932F95430000DAB053 /* PracticeViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78E43922F95430000DAB052 /* PracticeViews.swift */; };
+		F78E43A12F95440000DAB061 /* ContributionHeatmapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78E43A02F95440000DAB060 /* ContributionHeatmapView.swift */; };
+		F78E43B12F97008100DAB081 /* ExamixChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78E43B02F97008100DAB080 /* ExamixChrome.swift */; };
+		F78E44012FA0420000DAB071 /* KeyboardDismissInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78E44002FA0420000DAB070 /* KeyboardDismissInstaller.swift */; };
+		F78E44112FA0500000DAB081 /* HomeTestProgressChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78E44102FA0500000DAB080 /* HomeTestProgressChart.swift */; };
+		F78E442B2FA0650000DAB0A1 /* BookmarkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78E442A2FA0650000DAB0A0 /* BookmarkService.swift */; };
+		F78E45032FA0800000DAB093 /* AppFeatureOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78E45022FA0800000DAB092 /* AppFeatureOnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -132,6 +148,22 @@
 		B1EABB2D2DA7100C00407568 /* LanguageSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionViewModel.swift; sourceTree = "<group>"; };
 		B1EABB532DA7E56900407568 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		B1EABB572DA7E6E600407568 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E2BAD0112DC7788600275C11 /* ImportedVariantJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportedVariantJSON.swift; sourceTree = "<group>"; };
+		E2BAD0122DC7788600275C12 /* LocalTestDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTestDatabase.swift; sourceTree = "<group>"; };
+		E2BAD0132DC7788600275C13 /* VariantCatalogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantCatalogService.swift; sourceTree = "<group>"; };
+		F78E43352F9961DD00DAB031 /* variant_123000.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = variant_123000.json; sourceTree = "<group>"; };
+		F78E43362F9961DD00DAB031 /* variant_171090.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = variant_171090.json; sourceTree = "<group>"; };
+		F78E43372F9961DD00DAB031 /* variant_171099.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = variant_171099.json; sourceTree = "<group>"; };
+		F78E43382F9961DD00DAB031 /* variant_210768.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = variant_210768.json; sourceTree = "<group>"; };
+		F78E43392F9961DD00DAB031 /* variant_308140_final.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = variant_308140_final.json; sourceTree = "<group>"; };
+		F78E43902F95430000DAB050 /* PracticeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeModels.swift; sourceTree = "<group>"; };
+		F78E43922F95430000DAB052 /* PracticeViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeViews.swift; sourceTree = "<group>"; };
+		F78E43A02F95440000DAB060 /* ContributionHeatmapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionHeatmapView.swift; sourceTree = "<group>"; };
+		F78E43B02F97008100DAB080 /* ExamixChrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamixChrome.swift; sourceTree = "<group>"; };
+		F78E44002FA0420000DAB070 /* KeyboardDismissInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissInstaller.swift; sourceTree = "<group>"; };
+		F78E45022FA0800000DAB092 /* AppFeatureOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeatureOnboardingView.swift; sourceTree = "<group>"; };
+		F78E44102FA0500000DAB080 /* HomeTestProgressChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTestProgressChart.swift; sourceTree = "<group>"; };
+		F78E442A2FA0650000DAB0A0 /* BookmarkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +200,7 @@
 		B10B39C72D65CDC900BB97A8 /* Examix */ = {
 			isa = PBXGroup;
 			children = (
+				F78E433A2F9961DD00DAB031 /* rus */,
 				B170F1BA2DCF610E002F29FD /* App */,
 				B170F1B72DCF6080002F29FD /* Core */,
 				B1A22FD82DB18DD400952E36 /* Navigation */,
@@ -179,6 +212,11 @@
 				B1EABB572DA7E6E600407568 /* GoogleService-Info.plist */,
 				B10B39F02D65F54B00BB97A8 /* Info.plist */,
 				B10B39CE2D65CDCB00BB97A8 /* Preview Content */,
+				F78E43352F9961DD00DAB031 /* variant_123000.json */,
+				F78E43362F9961DD00DAB031 /* variant_171090.json */,
+				F78E43372F9961DD00DAB031 /* variant_171099.json */,
+				F78E43382F9961DD00DAB031 /* variant_210768.json */,
+				F78E43392F9961DD00DAB031 /* variant_308140_final.json */,
 			);
 			path = Examix;
 			sourceTree = "<group>";
@@ -205,6 +243,7 @@
 				B170F1C02DCF6AE9002F29FD /* Shared */,
 				B170F1BB2DCF61ED002F29FD /* Splash */,
 				B170F1BE2DCF625D002F29FD /* Tests */,
+				F78E43942F95430000DAB054 /* Practice */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,6 +273,7 @@
 		B12699852D67032C000BE220 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F78E43B02F97008100DAB080 /* ExamixChrome.swift */,
 				B12699862D670354000BE220 /* LanguageButton.swift */,
 			);
 			path = Components;
@@ -282,6 +322,7 @@
 		B170F1B92DCF60E1002F29FD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E2BAD0302DC7788600275C30 /* LocalTests */,
 				B170F1C72DCF6F79002F29FD /* Firestore */,
 				B170F1C52DCF6CF2002F29FD /* Upload */,
 				B1EABB522DA7E4C800407568 /* Authentication */,
@@ -318,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				B1E4E56E2DA8126A00D0B53F /* HomeView.swift */,
+				F78E44102FA0500000DAB080 /* HomeTestProgressChart.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -336,6 +378,7 @@
 		B170F1BF2DCF62A7002F29FD /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				F78E45022FA0800000DAB092 /* AppFeatureOnboardingView.swift */,
 				B10B39CA2D65CDC900BB97A8 /* LanguageSelectionView.swift */,
 			);
 			path = Onboarding;
@@ -372,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				B1A22FDD2DB19DB100952E36 /* ProfileView.swift */,
+				F78E43A02F95440000DAB060 /* ContributionHeatmapView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -445,6 +489,8 @@
 			isa = PBXGroup;
 			children = (
 				B1E4E5642DA7EFE300D0B53F /* Utilities.swift */,
+				F78E44002FA0420000DAB070 /* KeyboardDismissInstaller.swift */,
+				F78E442A2FA0650000DAB0A0 /* BookmarkService.swift */,
 				B1E4E5702DA813BC00D0B53F /* UserSettings.swift */,
 			);
 			path = Utilities;
@@ -458,6 +504,32 @@
 				B1E4E56A2DA809E300D0B53F /* AuthenticationViewModel.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		E2BAD0302DC7788600275C30 /* LocalTests */ = {
+			isa = PBXGroup;
+			children = (
+				E2BAD0112DC7788600275C11 /* ImportedVariantJSON.swift */,
+				E2BAD0122DC7788600275C12 /* LocalTestDatabase.swift */,
+				E2BAD0132DC7788600275C13 /* VariantCatalogService.swift */,
+				F78E43902F95430000DAB050 /* PracticeModels.swift */,
+			);
+			path = LocalTests;
+			sourceTree = "<group>";
+		};
+		F78E433A2F9961DD00DAB031 /* rus */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = rus;
+			sourceTree = "<group>";
+		};
+		F78E43942F95430000DAB054 /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				F78E43922F95430000DAB052 /* PracticeViews.swift */,
+			);
+			path = Practice;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -548,6 +620,11 @@
 				B10B39DB2D65D7A200BB97A8 /* LogoAnimation.json in Resources */,
 				B10B39F22D66038900BB97A8 /* MontserratAlternates-Regular.ttf in Resources */,
 				B10B39CD2D65CDCB00BB97A8 /* Assets.xcassets in Resources */,
+				F78E433B2F9961DD00DAB031 /* variant_210768.json in Resources */,
+				F78E433C2F9961DD00DAB031 /* variant_171090.json in Resources */,
+				F78E433D2F9961DD00DAB031 /* variant_308140_final.json in Resources */,
+				F78E433E2F9961DD00DAB031 /* variant_171099.json in Resources */,
+				F78E433F2F9961DD00DAB031 /* variant_123000.json in Resources */,
 				B12699842D660F4E000BE220 /* MontserratAlternates-Medium.ttf in Resources */,
 				B170F1B12DCF5785002F29FD /* english_rules.pdf in Resources */,
 				B170F1B22DCF5785002F29FD /* german_rules.pdf in Resources */,
@@ -615,6 +692,7 @@
 				B10B39D92D65CEDA00BB97A8 /* SplashViewModel.swift in Sources */,
 				B10B39C92D65CDC900BB97A8 /* LingvistikApp.swift in Sources */,
 				B1A22FDC2DB19D7B00952E36 /* ResultsView.swift in Sources */,
+				F78E43B12F97008100DAB081 /* ExamixChrome.swift in Sources */,
 				B12699872D670354000BE220 /* LanguageButton.swift in Sources */,
 				B10B39D72D65CE9700BB97A8 /* SplashView.swift in Sources */,
 				B178E8A12DC778F300275BFF /* TestViewLoader.swift in Sources */,
@@ -626,11 +704,14 @@
 				B1EABB2E2DA7100C00407568 /* LanguageSelectionViewModel.swift in Sources */,
 				B1E4E56D2DA80A5C00D0B53F /* RootView.swift in Sources */,
 				B1E4E5652DA7EFE300D0B53F /* Utilities.swift in Sources */,
+				F78E44012FA0420000DAB071 /* KeyboardDismissInstaller.swift in Sources */,
+				F78E442B2FA0650000DAB0A1 /* BookmarkService.swift in Sources */,
 				B16A07422DB9016600FF50B1 /* TestViewModel.swift in Sources */,
 				B16A07402DB9013600FF50B1 /* TestView.swift in Sources */,
 				B1E4E5692DA7FD3500D0B53F /* SignInGoogleHelper.swift in Sources */,
 				B178E89F2DC7778600275BFF /* RemoteTestVariant.swift in Sources */,
 				B1E4E56F2DA8126A00D0B53F /* HomeView.swift in Sources */,
+				F78E44112FA0500000DAB081 /* HomeTestProgressChart.swift in Sources */,
 				B170F1CF2DCFABEC002F29FD /* BookmarksView.swift in Sources */,
 				B1A22FDA2DB18DDF00952E36 /* AppRouter.swift in Sources */,
 				B126998A2D670579000BE220 /* LanguageDetailView.swift in Sources */,
@@ -643,6 +724,13 @@
 				B1A22FDE2DB19DB100952E36 /* ProfileView.swift in Sources */,
 				B170F1B62DCF597A002F29FD /* RulesView.swift in Sources */,
 				B1A22FD72DB1684B00952E36 /* MainTabView.swift in Sources */,
+				E2BAD0212DC7788600275C21 /* ImportedVariantJSON.swift in Sources */,
+				E2BAD0222DC7788600275C22 /* LocalTestDatabase.swift in Sources */,
+				E2BAD0232DC7788600275C23 /* VariantCatalogService.swift in Sources */,
+				F78E43912F95430000DAB051 /* PracticeModels.swift in Sources */,
+				F78E43932F95430000DAB053 /* PracticeViews.swift in Sources */,
+				F78E43A12F95440000DAB061 /* ContributionHeatmapView.swift in Sources */,
+				F78E45032FA0800000DAB093 /* AppFeatureOnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,7 +866,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Examix/Preview Content\"";
-				DEVELOPMENT_TEAM = 62K6UUDZF9;
+				DEVELOPMENT_TEAM = RF7RBCT7VK;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -796,7 +884,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.yatskevitch.Lingvistik;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.yatskevitch.examix.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -816,7 +904,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Examix/Preview Content\"";
-				DEVELOPMENT_TEAM = 62K6UUDZF9;
+				DEVELOPMENT_TEAM = RF7RBCT7VK;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -834,7 +922,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.yatskevitch.Lingvistik;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.yatskevitch.examix.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

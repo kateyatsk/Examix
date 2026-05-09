@@ -12,6 +12,7 @@ struct RemoteTestVariant: Codable {
     let language: String
     let variant: Int
     let questions: [Question]
+    let sourceTitle: String?
 }
 
 final class FirestoreTestService {
@@ -48,7 +49,7 @@ final class FirestoreTestService {
         }
 
         return tests.randomElement().map {
-            TestVariant(language: $0.language, variant: $0.variant, questions: $0.questions)
+            TestVariant(language: $0.language, variant: $0.variant, questions: $0.questions, sourceTitle: $0.sourceTitle)
         }
     }
 

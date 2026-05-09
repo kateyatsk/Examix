@@ -32,16 +32,20 @@ final class AuthenticationManager: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     @Published var user: User? = nil
-    @Published var isAuthenticated = true
+    @Published var isAuthenticated = false
     @Published var isSplashScreenShown = true
     
     private init() {
+        let current = Auth.auth().currentUser
+        user = current
+        isAuthenticated = current != nil
         setupAuthListener()
     }
     
     private func setupAuthListener() {
         Auth.auth().addStateDidChangeListener { [weak self] _, user in
             DispatchQueue.main.async {
+                self?.user = user
                 self?.isAuthenticated = user != nil
             }
         }
@@ -83,7 +87,8 @@ final class AuthenticationManager: ObservableObject {
         }
         try await user.delete()
         DispatchQueue.main.async {
-            self.isAuthenticated = true
+            self.user = nil
+            self.isAuthenticated = false
         }
     }
     
