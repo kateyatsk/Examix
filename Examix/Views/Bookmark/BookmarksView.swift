@@ -1,48 +1,25 @@
 //
 //  BookmarksView.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 10.05.25.
+//  Created by Kate Yatskevich on 10.05.25.
 //
 
 import SwiftUI
 import FirebaseFirestore
 
-// MARK: - Модель
-
-struct Bookmark: Identifiable, Hashable {
-    /// Совпадает с id документа Firestore: `questionId_variant_language`.
-    var id: String { firebaseDocumentId }
-
-    let firebaseDocumentId: String
-    let questionId: String
-    let title: String
-    let text: String
-    let userTextAnswer: String
-    let userSelectedOptions: [String]
-    let options: [String]
-    let correctAnswers: [String]
-    let language: String
-    let variant: Int
-    let questionType: String
-    var userComment: String
-    let bookmarkedAt: Date
-
-    var compositeLine: String {
-        "\(language) · вар. \(variant)"
-    }
-}
-
-// MARK: - Список
 
 struct BookmarksView: View {
-    @State private var bookmarks: [Bookmark] = []
-    @State private var isLoading = false
+    @StateObject private var viewModel = BookmarksViewModel()
     @State private var searchText: String = ""
     @State private var sortNewestFirst = true
     @State private var selectedLanguage: String = "Все языки"
     @State private var selectedType: String = "Все типы"
     @State private var datePeriod: BookmarksDatePeriod = .all
+
+    private var bookmarks: [Bookmark] {
+        viewModel.bookmarks
+    }
 
     private var allLanguages: [String] {
         let langs = Set(bookmarks.map(\.language))
@@ -96,7 +73,7 @@ struct BookmarksView: View {
                         .padding(.top, 10)
                         .padding(.bottom, 12)
 
-                if isLoading {
+                if viewModel.isLoading {
                         Spacer()
                         ProgressView("Загрузка…")
                             .tint(ExamixStyle.accentCool)
@@ -124,7 +101,7 @@ struct BookmarksView: View {
                                 NavigationLink {
                                     BookmarkDetailView(
                                         bookmark: bookmark,
-                                        onBookmarksChanged: { Task { await loadBookmarks() } }
+                                        onBookmarksChanged: { Task { await viewModel.loadBookmarks() } }
                                     )
                                 } label: {
                                     BookmarkResultStyleRow(bookmark: bookmark)
@@ -135,7 +112,7 @@ struct BookmarksView: View {
                                 .listRowBackground(Color.clear)
                                 .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                                     Button(role: .destructive) {
-                                        Task { await deleteBookmark(bookmark) }
+                                        Task { await viewModel.deleteBookmark(bookmark) }
                                     } label: {
                                         Label("Удалить", systemImage: "trash")
                                     }
@@ -150,9 +127,14 @@ struct BookmarksView: View {
                 }
             }
             .navigationTitle("Закладки")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    ExamixToolbarTitle(text: "Закладки")
+                }
+            }
         .onAppear {
-                Task { await loadBookmarks() }
+                Task { await viewModel.loadBookmarks() }
             }
         }
     }
@@ -254,73 +236,8 @@ struct BookmarksView: View {
         )
     }
 
-    private func loadBookmarks() async {
-        do {
-            isLoading = true
-            let userId = try AuthenticationManager.shared.getAuthenticatedUser().uid
-            let snapshot = try await Firestore.firestore()
-                .collection("users").document(userId)
-                .collection("bookmarks")
-                .getDocuments()
-
-            let loaded = snapshot.documents.compactMap { doc -> Bookmark? in
-                guard let qid = doc["id"] as? String,
-                      let title = doc["title"] as? String else { return nil }
-                let text = doc["text"] as? String ?? ""
-                let answer = doc["userTextAnswer"] as? String ?? ""
-                let selected = doc["userSelectedOptions"] as? [String] ?? []
-                let options = (doc["options"] as? [[String: Any]])?.compactMap { $0["text"] as? String } ?? []
-                let correctAnswers = (doc["options"] as? [[String: Any]])?.compactMap {
-                    ($0["isCorrect"] as? Bool == true) ? $0["text"] as? String : nil
-                } ?? []
-                let language = doc["language"] as? String ?? "-"
-                let variant = doc["variant"] as? Int ?? 0
-                let docId = doc.documentID
-                let qType = doc["questionType"] as? String ?? doc["type"] as? String ?? ""
-                let comment = doc["userComment"] as? String ?? ""
-                let ts = (doc["timestamp"] as? Timestamp)?.dateValue() ?? Date()
-                return Bookmark(
-                    firebaseDocumentId: docId,
-                    questionId: qid,
-                    title: title,
-                    text: text,
-                    userTextAnswer: answer,
-                    userSelectedOptions: selected,
-                    options: options,
-                    correctAnswers: correctAnswers,
-                    language: language,
-                    variant: variant,
-                    questionType: qType,
-                    userComment: comment,
-                    bookmarkedAt: ts
-                )
-            }
-
-            await MainActor.run {
-                self.bookmarks = loaded
-                self.isLoading = false
-            }
-        } catch {
-            print("Ошибка загрузки закладок: \(error)")
-            await MainActor.run { isLoading = false }
-        }
-    }
-
-    private func deleteBookmark(_ bookmark: Bookmark) async {
-        do {
-            let userId = try AuthenticationManager.shared.getAuthenticatedUser().uid
-            try await Firestore.firestore()
-                .collection("users").document(userId)
-                .collection("bookmarks").document(bookmark.firebaseDocumentId)
-                .delete()
-            await loadBookmarks()
-        } catch {
-            print("Ошибка удаления закладки: \(error)")
-        }
-    }
 }
 
-// MARK: - Период (как в результатах, упрощённо)
 
 private enum BookmarksDatePeriod: String, CaseIterable, Hashable {
     case all
@@ -338,7 +255,6 @@ private enum BookmarksDatePeriod: String, CaseIterable, Hashable {
     }
 }
 
-// MARK: - Карточка в стиле «Подробные ответы» в результатах
 
 private struct BookmarkResultStyleRow: View {
     let bookmark: Bookmark
@@ -414,11 +330,9 @@ private struct BookmarkResultStyleRow: View {
     }
 }
 
-// MARK: - Детальный экран (как разбор задания в результатах)
 
 private struct BookmarkDetailView: View {
     let bookmark: Bookmark
-    /// После сохранения комментария или удаления закладки.
     let onBookmarksChanged: () -> Void
 
     @Environment(\.dismiss) private var dismiss
@@ -426,7 +340,6 @@ private struct BookmarkDetailView: View {
     @State private var isSavingComment = false
     @State private var showDeleteConfirm = false
     @State private var showCommentSavedToast = false
-    /// После сохранения обновляем базу сравнения (модель `bookmark` из навигации не меняется).
     @State private var savedCommentBaseline: String
 
     private var trimmedDraft: String {
@@ -512,7 +425,7 @@ private struct BookmarkDetailView: View {
                     Task { await saveComment() }
                 } label: {
                     Text(isSavingComment ? "Сохранение…" : "Сохранить комментарий")
-                        .font(.custom("MontserratAlternates-SemiBold", size: 16))
+                        .font(.custom("MontserratAlternates-Bold", size: 16))
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 14)
@@ -614,7 +527,6 @@ private struct BookmarkDetailView: View {
                 withAnimation { showCommentSavedToast = false }
             }
         } catch {
-            print("Ошибка сохранения комментария: \(error)")
         }
     }
 
@@ -630,7 +542,6 @@ private struct BookmarkDetailView: View {
                 dismiss()
             }
         } catch {
-            print("Ошибка удаления: \(error)")
         }
     }
 }

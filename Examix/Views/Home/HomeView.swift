@@ -1,8 +1,8 @@
 //
-//  MainView.swift
-//  Lingvistik
+//  HomeView.swift
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 10.04.25.
+//  Created by Kate Yatskevich on 10.04.25.
 //
 
 import Foundation
@@ -16,6 +16,8 @@ struct HomeView: View {
     @State private var dailyDone = false
     @State private var testsToday = 0
     @State private var totalTests = 0
+    @State private var correctToday = 0
+    @State private var questionsToday = 0
     @State private var practiceSolvedCount = 0
     @State private var practiceRefsTotal = 0
     @State private var weakThemes: [(title: String, solved: Int, total: Int)] = []
@@ -46,58 +48,63 @@ struct HomeView: View {
                 ExamixStyle.practiceScreenWash
                     .ignoresSafeArea()
 
-                ScrollView(.vertical, showsIndicators: true) {
-                    VStack(alignment: .leading, spacing: 22) {
-                        headerWelcome
+                GeometryReader { geo in
+                    ScrollView(.vertical, showsIndicators: true) {
+                        VStack(alignment: .leading, spacing: 22) {
+                            headerWelcome
 
-                        HomeDailyMissionBlock(
-                            practiceLang: practiceLang,
-                            dailyDone: dailyDone,
-                            onOpenDaily: { path.append(Path.practiceDaily) }
-                        )
+                            HomePracticeModesRow(
+                                practiceLang: practiceLang,
+                                onThemes: { path.append(Path.practiceThemes) },
+                                onTypes: { path.append(Path.practiceTypes) }
+                            )
 
-                        if !pendingTestSessions.isEmpty {
-                            HomePendingTestsBlock(
-                                sessions: pendingTestSessions,
-                                onContinue: { session in
-                                    userSettings.selectedVariant = session.variant
-                                    path.append(Path.testView)
-                                },
-                                onRequestDeleteDraft: { session in
-                                    pendingDeleteSession = session
+                            HomeTestPromoBlock(
+                                activityToday: activityToday,
+                                onSolveTest: { path.append(Path.languageDetail) }
+                            )
+
+                            if !pendingTestSessions.isEmpty {
+                                HomePendingTestsBlock(
+                                    sessions: pendingTestSessions,
+                                    onContinue: { session in
+                                        userSettings.selectedVariant = session.variant
+                                        path.append(Path.testView)
+                                    },
+                                    onRequestDeleteDraft: { session in
+                                        pendingDeleteSession = session
+                                    }
+                                )
+                            }
+
+                            HomeDailyMissionBlock(
+                                practiceLang: practiceLang,
+                                dailyDone: dailyDone,
+                                onOpenDaily: { path.append(Path.practiceDaily) }
+                            )
+
+                            HomeStatsBlock(
+                                practiceSolved: practiceSolvedCount,
+                                practiceTotal: practiceRefsTotal,
+                                totalTests: totalTests,
+                                testsToday: testsToday,
+                                correctToday: correctToday,
+                                questionsToday: questionsToday,
+                                weakThemes: weakThemes,
+                                onPracticeWeakTheme: { title in
+                                    path.append(Path.practiceThemeSession([title]))
                                 }
                             )
+
+                            homeProgressChartSection
                         }
-
-                        HomeTestPromoBlock(
-                            activityToday: activityToday,
-                            onSolveTest: { path.append(Path.languageDetail) }
-                        )
-
-                        HomeStatsBlock(
-                            practiceSolved: practiceSolvedCount,
-                            practiceTotal: practiceRefsTotal,
-                            totalTests: totalTests,
-                            testsToday: testsToday,
-                            weakThemes: weakThemes,
-                            onPracticeWeakTheme: { title in
-                                path.append(Path.practiceThemeSession([title]))
-                            }
-                        )
-
-                        HomePracticeModesRow(
-                            practiceLang: practiceLang,
-                            onThemes: { path.append(Path.practiceThemes) },
-                            onTypes: { path.append(Path.practiceTypes) }
-                        )
-
-                        homeProgressChartSection
+                        .frame(width: max(0, geo.size.width - 40), alignment: .leading)
+                        .padding(.horizontal, 20)
+                        .padding(.top, 16)
+                        .padding(.bottom, 36)
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 20)
-                    .padding(.top, 16)
-                    .padding(.bottom, 36)
                 }
+                .clipped()
                 .onAppear {
                     loadDashboard()
                 }
@@ -223,6 +230,8 @@ struct HomeView: View {
             dailyDone = false
             testsToday = 0
             totalTests = 0
+            correctToday = 0
+            questionsToday = 0
             practiceSolvedCount = 0
             practiceRefsTotal = 0
             weakThemes = []
@@ -273,13 +282,18 @@ struct HomeView: View {
 
             var tt = 0
             var td = 0
+            var ct = 0
+            var qt = 0
             var chartRes: [TestResult] = []
             if let uid = try? AuthenticationManager.shared.getAuthenticatedUser().uid,
                let res = try? await FirestoreService().fetchResults(for: uid) {
                 chartRes = res
                 tt = res.count
                 let start = Calendar.current.startOfDay(for: Date())
-                td = res.filter { $0.timestamp >= start }.count
+                let todayResults = res.filter { $0.timestamp >= start }
+                td = todayResults.count
+                ct = todayResults.reduce(0) { $0 + $1.correctAnswers }
+                qt = todayResults.reduce(0) { $0 + $1.totalQuestions }
             }
 
             let pending = PendingTestSessionStore.sessions(uiLearningLanguage: practiceLang)
@@ -288,6 +302,8 @@ struct HomeView: View {
                 dailyDone = dd
                 testsToday = td
                 totalTests = tt
+                correctToday = ct
+                questionsToday = qt
                 practiceSolvedCount = pp
                 practiceRefsTotal = pt
                 weakThemes = wt
@@ -298,7 +314,6 @@ struct HomeView: View {
     }
 }
 
-// MARK: - Незаконченные варианты
 
 private struct HomePendingTestsBlock: View {
     let sessions: [PendingTestSession]
@@ -397,7 +412,6 @@ private struct HomePendingTestsBlock: View {
     }
 }
 
-// MARK: - Таймер до полуночи
 
 private struct HomeMidnightCountdown: View {
     var body: some View {
@@ -428,7 +442,6 @@ private struct HomeMidnightCountdown: View {
     }
 }
 
-// MARK: - Задание дня
 
 private struct HomeDailyMissionBlock: View {
     let practiceLang: String
@@ -507,8 +520,8 @@ private struct HomeDailyMissionBlock: View {
                         colors: practiceLang.isEmpty
                             ? [Color.gray.opacity(0.45), Color.gray.opacity(0.35)]
                             : (dailyDone
-                                ? [Color(red: 0.14, green: 0.45, blue: 0.42), Color(red: 0.12, green: 0.35, blue: 0.4)]
-                                : [ExamixStyle.accentDeep, ExamixStyle.accentCool]),
+                                ? [Color(red: 0.18, green: 0.48, blue: 0.42), Color(red: 0.23, green: 0.38, blue: 0.50)]
+                                : [Color(red: 0.18, green: 0.32, blue: 0.48), Color(red: 0.35, green: 0.58, blue: 0.62)]),
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     )
@@ -522,7 +535,6 @@ private struct HomeDailyMissionBlock: View {
     }
 }
 
-// MARK: - Блок «Решить тест»
 
 private struct HomeTestPromoBlock: View {
     let activityToday: Bool
@@ -531,15 +543,8 @@ private struct HomeTestPromoBlock: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack(alignment: .top, spacing: 16) {
-                Image(.people)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 108, height: 88)
-                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .stroke(ExamixStyle.accentMuted.opacity(0.35), lineWidth: 1)
-                    )
+                DailyPracticeIllustration()
+                    .frame(width: 92, height: 92)
 
                 VStack(alignment: .leading, spacing: 8) {
                     Text(activityToday ? "Так держи!" : "Ты ещё не занимался?")
@@ -576,9 +581,8 @@ private struct HomeTestPromoBlock: View {
                         .fill(
                             LinearGradient(
                                 colors: [
-                                    Color(red: 0.45, green: 0.95, blue: 1),
-                                    ExamixStyle.accentCool,
-                                    Color(red: 0.12, green: 0.38, blue: 0.58)
+                                    Color(red: 0.18, green: 0.34, blue: 0.50),
+                                    Color(red: 0.34, green: 0.56, blue: 0.61)
                                 ],
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
@@ -591,7 +595,7 @@ private struct HomeTestPromoBlock: View {
                             LinearGradient(
                                 colors: [
                                     Color.white.opacity(0.35),
-                                    ExamixStyle.accentCool.opacity(0.5)
+                                    Color(red: 0.34, green: 0.56, blue: 0.61).opacity(0.45)
                                 ],
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
@@ -623,32 +627,102 @@ private struct HomeTestPromoBlock: View {
     }
 }
 
-// MARK: - Статистика и слабые темы
+private struct DailyPracticeIllustration: View {
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .fill(
+                    LinearGradient(
+                        colors: [
+                            Color(red: 0.92, green: 0.96, blue: 1.0),
+                            Color(red: 0.84, green: 0.91, blue: 0.96)
+                        ],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(ExamixStyle.accentMuted.opacity(0.32), lineWidth: 1)
+
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .fill(Color.white.opacity(0.96))
+                .frame(width: 66, height: 72)
+                .shadow(color: Color.black.opacity(0.08), radius: 7, x: 0, y: 4)
+                .rotationEffect(.degrees(-5))
+                .offset(x: -4, y: 0)
+
+            VStack(alignment: .leading, spacing: 7) {
+                ForEach(0..<3, id: \.self) { index in
+                    HStack(spacing: 5) {
+                        Circle()
+                            .fill(index == 0 ? ExamixStyle.statCorrect : ExamixStyle.accentMuted.opacity(0.45))
+                            .frame(width: 7, height: 7)
+                        Capsule()
+                            .fill(ExamixStyle.accentCool.opacity(index == 0 ? 0.45 : 0.18))
+                            .frame(width: index == 1 ? 34 : 42, height: 5)
+                    }
+                }
+            }
+            .padding(.horizontal, 11)
+            .padding(.vertical, 16)
+            .frame(width: 66, height: 72, alignment: .topLeading)
+            .rotationEffect(.degrees(-5))
+            .offset(x: -4, y: 0)
+
+            ZStack {
+                Circle()
+                    .fill(
+                        LinearGradient(
+                            colors: [
+                                Color(red: 0.18, green: 0.52, blue: 0.46),
+                                Color(red: 0.34, green: 0.64, blue: 0.60)
+                            ],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+                    .frame(width: 34, height: 34)
+                    .shadow(color: Color.black.opacity(0.12), radius: 6, x: 0, y: 3)
+
+                Image(systemName: "checkmark")
+                    .font(.system(size: 16, weight: .bold))
+                    .foregroundStyle(.white)
+            }
+            .offset(x: 24, y: 24)
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+    }
+}
+
 
 private struct HomeStatsBlock: View {
     let practiceSolved: Int
     let practiceTotal: Int
     let totalTests: Int
     let testsToday: Int
+    let correctToday: Int
+    let questionsToday: Int
     let weakThemes: [(title: String, solved: Int, total: Int)]
     let onPracticeWeakTheme: (String) -> Void
 
+    private var todayAccuracyText: String {
+        guard questionsToday > 0 else { return "—" }
+        return "\(Int((Double(correctToday) / Double(questionsToday)) * 100))%"
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Сводка за сегодня")
+            Text("Сегодня в обучении")
                 .font(.custom("MontserratAlternates-Bold", size: 17))
                 .foregroundStyle(Color(.darkAccent))
 
             HStack(spacing: 0) {
-                statPill(title: "Тестов всего", value: "\(totalTests)", icon: "star.fill")
-                Divider().frame(height: 36)
                 statPill(title: "Сегодня тестов", value: "\(testsToday)", icon: "calendar")
                 Divider().frame(height: 36)
-                statPill(
-                    title: "Практика",
-                    value: practiceTotal > 0 ? "\(practiceSolved)/\(practiceTotal)" : "—",
-                    icon: "checkmark.circle"
-                )
+                statPill(title: "Всего тестов", value: "\(totalTests)", icon: "star.fill")
+                Divider().frame(height: 36)
+                statPill(title: "Точность сегодня", value: todayAccuracyText, icon: "target")
             }
             .padding(.vertical, 8)
             .background(
@@ -656,27 +730,49 @@ private struct HomeStatsBlock: View {
                     .fill(Color.primary.opacity(0.04))
             )
 
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 12) {
                 HStack {
-                    Text("Темы для внимания")
-                        .font(.custom("MontserratAlternates-Bold", size: 14))
-                        .foregroundStyle(Color(.darkAccent))
+                    HStack(spacing: 8) {
+                        ZStack {
+                            Circle()
+                                .fill(ExamixStyle.actionAqua.opacity(0.16))
+                                .frame(width: 30, height: 30)
+                            Image(systemName: "sparkles")
+                                .font(.system(size: 13, weight: .semibold))
+                                .foregroundStyle(ExamixStyle.actionBlue)
+                        }
+                        Text("На что обратить внимание")
+                            .font(.custom("MontserratAlternates-Bold", size: 14))
+                            .foregroundStyle(Color(.darkAccent))
+                    }
                     Spacer()
-                    Text("обновляется ежедневно")
+                    Text("по твоей практике")
                         .font(.custom("MontserratAlternates-Regular", size: 11))
-                        .foregroundStyle(.tertiary)
+                        .foregroundStyle(ExamixStyle.accentCool.opacity(0.72))
                 }
 
                 if weakThemes.isEmpty {
-                    Text("Мало данных по темам — решай задания по темам или по типу, и список заполнится.")
+                    Text("Пока мало данных: решай задания по темам или типам, и здесь появятся точные подсказки.")
                         .font(.custom("MontserratAlternates-Regular", size: 13))
                         .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .padding(14)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(
+                            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                .fill(Color.white.opacity(0.62))
+                        )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                .stroke(ExamixStyle.accentMuted.opacity(0.18), lineWidth: 1)
+                        )
                 } else {
                     ForEach(weakThemes.indices, id: \.self) { i in
                         Button {
                             onPracticeWeakTheme(weakThemes[i].title)
                         } label: {
                             weakThemeRow(
+                                index: i,
                                 title: weakThemes[i].title,
                                 solved: weakThemes[i].solved,
                                 total: weakThemes[i].total
@@ -686,12 +782,39 @@ private struct HomeStatsBlock: View {
                     }
                 }
             }
+            .padding(14)
+            .background(
+                RoundedRectangle(cornerRadius: 18, style: .continuous)
+                    .fill(
+                        LinearGradient(
+                            colors: [
+                                Color.white.opacity(0.72),
+                                Color(red: 0.88, green: 0.94, blue: 1.0).opacity(0.58)
+                            ],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 18, style: .continuous)
+                    .stroke(ExamixStyle.actionAqua.opacity(0.16), lineWidth: 1)
+            )
         }
         .padding(18)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: 22, style: .continuous)
-                .fill(ExamixStyle.softProfileCard)
+                .fill(
+                    LinearGradient(
+                        colors: [
+                            Color.white.opacity(0.96),
+                            Color(red: 0.91, green: 0.96, blue: 1.0)
+                        ],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
         )
         .overlay(
             RoundedRectangle(cornerRadius: 22, style: .continuous)
@@ -716,10 +839,19 @@ private struct HomeStatsBlock: View {
         .frame(maxWidth: .infinity)
     }
 
-    private func weakThemeRow(title: String, solved: Int, total: Int) -> some View {
+    private func weakThemeRow(index: Int, title: String, solved: Int, total: Int) -> some View {
         let ratio = total > 0 ? Double(solved) / Double(total) : 0
-        return VStack(alignment: .leading, spacing: 6) {
-            HStack(alignment: .center, spacing: 8) {
+        let tint = weakThemeTint(index: index)
+        return VStack(alignment: .leading, spacing: 9) {
+            HStack(alignment: .center, spacing: 10) {
+                Text("\(index + 1)")
+                    .font(.custom("MontserratAlternates-Bold", size: 12))
+                    .foregroundStyle(.white)
+                    .frame(width: 26, height: 26)
+                    .background(
+                        Circle()
+                            .fill(tint)
+                    )
                 Text(title)
                     .font(.custom("MontserratAlternates-Medium", size: 13))
                     .foregroundStyle(Color(.darkAccent))
@@ -727,24 +859,50 @@ private struct HomeStatsBlock: View {
                     .multilineTextAlignment(.leading)
                 Spacer(minLength: 8)
                 Text("\(solved)/\(total)")
-                    .font(.custom("MontserratAlternates-Regular", size: 12))
-                    .foregroundStyle(.secondary)
+                    .font(.custom("MontserratAlternates-Medium", size: 12))
+                    .foregroundStyle(tint)
                 Image(systemName: "chevron.right")
                     .font(.system(size: 11, weight: .semibold))
-                    .foregroundStyle(ExamixStyle.accentCool.opacity(0.85))
+                    .foregroundStyle(tint.opacity(0.8))
             }
-            ProgressView(value: ratio, total: 1.0)
-                .progressViewStyle(.linear)
-                .tint(ExamixStyle.accentCool)
-                .scaleEffect(x: 1, y: 1.35, anchor: .center)
-                .frame(height: 8)
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    Capsule(style: .continuous)
+                        .fill(Color.primary.opacity(0.06))
+                    Capsule(style: .continuous)
+                        .fill(
+                            LinearGradient(
+                                colors: [tint.opacity(0.72), tint.opacity(0.36)],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                        .frame(width: max(8, geo.size.width * CGFloat(ratio)))
+                }
+            }
+            .frame(height: 7)
         }
-        .padding(.vertical, 6)
+        .padding(12)
+        .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(Color.white.opacity(0.72))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .stroke(tint.opacity(0.16), lineWidth: 1)
+        )
         .contentShape(Rectangle())
+    }
+
+    private func weakThemeTint(index: Int) -> Color {
+        switch index % 3 {
+        case 0: return ExamixStyle.actionBlue
+        case 1: return Color(red: 0.12, green: 0.56, blue: 0.58)
+        default: return Color(red: 0.46, green: 0.48, blue: 0.78)
+        }
     }
 }
 
-// MARK: - Практика: темы и типы
 
 private struct HomePracticeModesRow: View {
     let practiceLang: String

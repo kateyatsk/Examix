@@ -1,12 +1,14 @@
 //
 //  UserViewModel.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 11.04.25.
+//  Created by Kate Yatskevich on 11.04.25.
 //
 
 import Combine
+import Foundation
 
+@MainActor
 final class UserViewModel: ObservableObject {
     @Published private(set) var userName: String = "Гость"
     @Published private(set) var userEmail: String?
@@ -16,25 +18,20 @@ final class UserViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     init() {
-        authManager.$userName
-            .assign(to: \.userName, on: self)
-            .store(in: &cancellables)
-        
-        authManager.$userEmail
-            .assign(to: \.userEmail, on: self)
+        authManager.$user
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] user in
+                self?.userName = user?.displayName ?? "Гость"
+                self?.userEmail = user?.email
+            }
             .store(in: &cancellables)
     }
     
     func handleGoogleSignIn(tokens: GoogleSignInResultModel) async {
         isLoading = true
         do {
-            _ = try await authManager.signInWithGoogle(
-                idToken: tokens.idToken,
-                accessToken: tokens.accessToken,
-                displayName: tokens.name
-            )
+            _ = try await authManager.signInWithGoogle(tokens: tokens)
         } catch {
-            print("Ошибка входа: \(error.localizedDescription)")
         }
         isLoading = false
     }

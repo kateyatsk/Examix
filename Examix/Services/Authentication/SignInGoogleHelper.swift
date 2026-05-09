@@ -1,13 +1,16 @@
 //
 //  SignInGoogleHelper.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 10.04.25.
+//  Created by Kate Yatskevich on 10.04.25.
 //
-
 
 import GoogleSignIn
 import GoogleSignInSwift
+
+enum GoogleSignInCancellationError: Error {
+    case cancelled
+}
 
 struct GoogleSignInResultModel {
     let idToken: String
@@ -24,7 +27,13 @@ final class SignInGoogleHelper {
             throw URLError(.cannotFindHost)
         }
         
-        let gidSignInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: topVC)
+        let gidSignInResult: GIDSignInResult
+
+        do {
+            gidSignInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: topVC)
+        } catch let error as NSError where error.domain == kGIDSignInErrorDomain && error.code == GIDSignInError.canceled.rawValue {
+            throw GoogleSignInCancellationError.cancelled
+        }
         
         guard let idToken = gidSignInResult.user.idToken?.tokenString else {
             throw URLError(.badServerResponse)

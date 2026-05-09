@@ -1,8 +1,8 @@
 //
-//  CustomLanguageView.swift
-//  Lingvistik
+//  LanguageButton.swift
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 20.02.25.
+//  Created by Kate Yatskevich on 20.02.25.
 //
 
 import SwiftUI
@@ -14,17 +14,17 @@ struct LanguageButton: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 12)
             .stroke(isSelected ? Color(.stock) : Color(.secondaryBlue), lineWidth: 2)
-            .frame(width: 320, height: 72)
+            .frame(maxWidth: .infinity, minHeight: 60)
             .background(isSelected ? Color(.stock).opacity(0.1) : Color.clear)
             .overlay(
                 HStack {
                     Image(language.flagName)
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 34, height: 24)
+                        .frame(width: 30, height: 22)
                     
                     Text(language.rawValue)
-                        .font(.custom("MontserratAlternates-Medium", size: 18))
+                        .font(.custom("MontserratAlternates-Medium", size: 16))
                         .foregroundColor(isSelected ? Color(.stock) : Color(.darkAccent))
                     
                     Spacer()
@@ -40,7 +40,7 @@ struct LanguageButton: View {
                             .foregroundColor(.darkAccent)
                     }
                 }
-                .padding()
+                .padding(.horizontal, 16)
             )
             .animation(.easeInOut, value: isSelected)
     }

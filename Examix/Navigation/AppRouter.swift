@@ -1,9 +1,10 @@
 //
-//  AppRoute.swift
-//  Lingvistik
+//  AppRouter.swift
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 17.04.25.
+//  Created by Kate Yatskevich on 17.04.25.
 //
+
 import Foundation
 import SwiftUI
 import Combine
@@ -63,7 +64,6 @@ final class AppCoordinator: ObservableObject {
             userSettings.selectedLanguage = nil
             routeToMainFlow()
         } catch {
-            print("Ошибка выхода: \(error.localizedDescription)")
         }
     }
 }

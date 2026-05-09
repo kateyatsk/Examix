@@ -2,32 +2,24 @@
 //  AppFeatureOnboardingView.swift
 //  Examix
 //
-//  Экскурсия по основным разделам после первого входа (или из настроек).
-//
-//  Иллюстрации: добавьте в Assets каталоги изображений с именами из `OnboardingIllustrationAsset`
-//  (1× PNG или PDF вектор). Пока файла нет — абстрактный плейсхолдер и подпись Montserrat.
-//
-//  Запросы для генерации (скопируйте в свой инструмент) — см. `OnboardingImagePrompts` внизу файла.
+//  Created by Kate Yatskevich on 9.05.26.
 //
 
 import SwiftUI
 import UIKit
 
-// MARK: - Одна гарнитура для всего онбординга (текст и метки; иконки — фигуры, не SF Symbols)
 
 private enum OnboardingFont {
     static let nameRegular = "MontserratAlternates-Regular"
     static let nameMedium = "MontserratAlternates-Medium"
-    static let nameSemiBold = "MontserratAlternates-SemiBold"
     static let nameBold = "MontserratAlternates-Bold"
 
     static func regular(_ size: CGFloat) -> Font { .custom(nameRegular, size: size) }
     static func medium(_ size: CGFloat) -> Font { .custom(nameMedium, size: size) }
-    static func semiBold(_ size: CGFloat) -> Font { .custom(nameSemiBold, size: size) }
+    static func semiBold(_ size: CGFloat) -> Font { .custom(nameMedium, size: size) }
     static func bold(_ size: CGFloat) -> Font { .custom(nameBold, size: size) }
 }
 
-// MARK: - Имена ассетов (совпадают с именами Image Set в Assets.xcassets)
 
 enum OnboardingIllustrationAsset: String, CaseIterable {
     case welcome = "onboardingWelcome"
@@ -40,18 +32,16 @@ enum OnboardingIllustrationAsset: String, CaseIterable {
 
 private struct FeatureOnboardingPage {
     let illustrationAsset: OnboardingIllustrationAsset
+    let title: String
     let subtitle: String
     let bullets: [String]
     let gradient: [Color]
 }
 
-// MARK: - Квадратный слот под иллюстрацию (1:1)
 
 private struct OnboardingIllustrationSlot: View {
     let asset: OnboardingIllustrationAsset
-    /// Цвета слайда — для абстрактного плейсхолдера без ассета.
     let accentGradient: [Color]
-    /// Сторона квадрата в pt (картинки в ассетах тоже квадратные).
     let side: CGFloat
 
     private var hasRasterAsset: Bool {
@@ -90,6 +80,7 @@ private struct OnboardingIllustrationSlot: View {
                     .resizable()
                     .renderingMode(.original)
                     .scaledToFit()
+                    .clipShape(RoundedRectangle(cornerRadius: corner, style: .continuous))
                     .padding(side * 0.06)
             } else {
                 ZStack {
@@ -110,7 +101,6 @@ private struct OnboardingIllustrationSlot: View {
     }
 }
 
-/// Плейсхолдер без SF Symbols — только фигуры и Montserrat для подписи снаружи.
 private struct OnboardingIllustrationPlaceholder: View {
     let accent: [Color]
     let side: CGFloat
@@ -142,13 +132,14 @@ private struct OnboardingIllustrationPlaceholder: View {
 }
 
 private enum OnboardingLayout {
-    static let squareMax: CGFloat = 208
-    static let heroVerticalPad: CGFloat = 12
+    static let squareMax: CGFloat = 194
+    static let heroVerticalPad: CGFloat = 16
+    static let screenHorizontal: CGFloat = 22
     static let skipTop: CGFloat = 14
-    static let skipHorizontal: CGFloat = 24
     static let cardPadding: CGFloat = 18
-    static let heroCorner: CGFloat = 26
-    static let cardCorner: CGFloat = 20
+    static let heroCorner: CGFloat = 28
+    static let cardCorner: CGFloat = 24
+    static let buttonCorner: CGFloat = 18
 }
 
 struct AppFeatureOnboardingView: View {
@@ -159,6 +150,7 @@ struct AppFeatureOnboardingView: View {
     private let pages: [FeatureOnboardingPage] = [
         FeatureOnboardingPage(
             illustrationAsset: .welcome,
+            title: "Учись спокойнее",
             subtitle: "Examix помогает готовиться к экзаменам: полные варианты, практика и статистика в одном месте.",
             bullets: [
                 "Решайте задания как на реальном экзамене",
@@ -172,18 +164,18 @@ struct AppFeatureOnboardingView: View {
         ),
         FeatureOnboardingPage(
             illustrationAsset: .home,
-            subtitle: "Центр сценариев: от быстрой практики до полного варианта.",
+            title: "Все сценарии рядом",
+            subtitle: "Быстрая практика, полные варианты и черновики — на главном экране.",
             bullets: [
-                "«Задание дня» — одна короткая сессия с обновлением в полночь",
-                "Полные варианты — выбор предмета и номера варианта",
-                "Черновики — продолжить прерванный тест с того же места",
-                "Практика по темам и по типам заданий (A1, B1…)",
-                "Блок статистики и график результатов по времени"
+                "«Задание дня» — короткая сессия каждый день",
+                "Полные варианты и практика по темам",
+                "Черновики и статистика всегда под рукой"
             ],
             gradient: ExamixStyle.practiceThemesGradientColors
         ),
         FeatureOnboardingPage(
             illustrationAsset: .test,
+            title: "Решай без лишнего стресса",
             subtitle: "Во время решения доступны подсказки и закладки.",
             bullets: [
                 "Лимит подсказок настраивается в разделе «Настройки»",
@@ -197,6 +189,7 @@ struct AppFeatureOnboardingView: View {
         ),
         FeatureOnboardingPage(
             illustrationAsset: .results,
+            title: "Отслеживай свой прогресс",
             subtitle: "Вся история: экзамены и сессии практики.",
             bullets: [
                 "Фильтры по языку, периоду и источнику (вариант / практика)",
@@ -211,6 +204,7 @@ struct AppFeatureOnboardingView: View {
         ),
         FeatureOnboardingPage(
             illustrationAsset: .profile,
+            title: "Собирай достижения",
             subtitle: "Обзор успехов и быстрый доступ к закладкам.",
             bullets: [
                 "Средняя точность по полным вариантам и по предметам",
@@ -224,12 +218,13 @@ struct AppFeatureOnboardingView: View {
         ),
         FeatureOnboardingPage(
             illustrationAsset: .settings,
+            title: "Настрой под себя",
             subtitle: "Персонализация и справочные материалы.",
             bullets: [
                 "Аватар и имя отображаются в профиле",
                 "Предмет обучения влияет на каталог вариантов и практику",
-                "Подсказки, PDF с правилами экзамена",
-                "Экскурсию можно снова открыть здесь в любой момент"
+                "Подсказки и PDF с правилами для выбранного предмета",
+                "Обзор приложения можно открыть здесь в любой момент"
             ],
             gradient: [
                 Color(red: 0.20, green: 0.36, blue: 0.58),
@@ -240,6 +235,18 @@ struct AppFeatureOnboardingView: View {
 
     private var isLastPage: Bool {
         pageIndex >= pages.count - 1
+    }
+
+    private var currentPage: FeatureOnboardingPage {
+        pages[min(max(pageIndex, 0), pages.count - 1)]
+    }
+
+    private var currentButtonGradient: LinearGradient {
+        LinearGradient(
+            colors: currentPage.gradient.map { $0.opacity(0.98) },
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
     }
 
     var body: some View {
@@ -256,7 +263,7 @@ struct AppFeatureOnboardingView: View {
 
             RadialGradient(
                 colors: [
-                    ExamixStyle.accentCool.opacity(0.08),
+                    ExamixStyle.accentCool.opacity(0.12),
                     Color.clear
                 ],
                 center: .topTrailing,
@@ -280,21 +287,23 @@ struct AppFeatureOnboardingView: View {
                     .buttonStyle(.plain)
                     .background(
                         Capsule(style: .continuous)
-                            .fill(Color.primary.opacity(0.06))
+                            .fill(.white.opacity(0.56))
                             .overlay(
                                 Capsule(style: .continuous)
-                                    .stroke(Color.primary.opacity(0.08), lineWidth: 1)
+                                    .stroke(Color.white.opacity(0.7), lineWidth: 1)
                             )
+                            .shadow(color: Color.black.opacity(0.05), radius: 10, x: 0, y: 5)
                     )
                 }
-                .padding(.horizontal, OnboardingLayout.skipHorizontal)
-                .padding(.top, OnboardingLayout.skipTop)
+                .padding(.horizontal, OnboardingLayout.screenHorizontal)
+                .padding(.top, 8)
+                .padding(.bottom, 12)
 
                 TabView(selection: $pageIndex) {
                     ForEach(Array(pages.enumerated()), id: \.offset) { index, page in
                         pageCard(page)
                             .tag(index)
-                            .padding(.horizontal, OnboardingLayout.skipHorizontal)
+                            .padding(.horizontal, OnboardingLayout.screenHorizontal)
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
@@ -320,32 +329,18 @@ struct AppFeatureOnboardingView: View {
                             .frame(maxWidth: .infinity)
                             .padding(.vertical, 15)
                             .background(
-                                RoundedRectangle(cornerRadius: 18, style: .continuous)
-                                    .fill(ExamixStyle.squircleFill)
+                                RoundedRectangle(cornerRadius: OnboardingLayout.buttonCorner, style: .continuous)
+                                    .fill(currentButtonGradient)
                             )
                             .overlay(
-                                RoundedRectangle(cornerRadius: 18, style: .continuous)
+                                RoundedRectangle(cornerRadius: OnboardingLayout.buttonCorner, style: .continuous)
                                     .stroke(Color.white.opacity(0.22), lineWidth: 1)
                             )
-                            .shadow(color: ExamixStyle.accentDeep.opacity(0.28), radius: 18, x: 0, y: 10)
+                            .shadow(color: currentPage.gradient[0].opacity(0.3), radius: 18, x: 0, y: 10)
                     }
                     .buttonStyle(.plain)
-
-                    if pageIndex > 0 {
-                        Button {
-                            withAnimation {
-                                pageIndex -= 1
-                            }
-                        } label: {
-                            Text("Назад")
-                                .font(OnboardingFont.medium(15))
-                                .foregroundStyle(ExamixStyle.accentCool)
-                                .padding(.vertical, 6)
-                        }
-                        .buttonStyle(.plain)
-                    }
                 }
-                .padding(.horizontal, OnboardingLayout.skipHorizontal)
+                .padding(.horizontal, OnboardingLayout.screenHorizontal)
                 .padding(.bottom, 20)
             }
         }
@@ -357,86 +352,142 @@ struct AppFeatureOnboardingView: View {
         contentW: CGFloat,
         squareSide: CGFloat
     ) -> some View {
-        VStack(alignment: .center, spacing: 0) {
-            ZStack {
-                RoundedRectangle(cornerRadius: OnboardingLayout.heroCorner, style: .continuous)
-                    .fill(
-                        LinearGradient(
-                            colors: page.gradient.map { $0.opacity(0.94) },
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-                    .overlay(
-                        RoundedRectangle(cornerRadius: OnboardingLayout.heroCorner, style: .continuous)
-                            .stroke(
-                                LinearGradient(
-                                    colors: [Color.white.opacity(0.35), Color.white.opacity(0.08)],
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing
-                                ),
-                                lineWidth: 1
-                            )
-                    )
-                    .frame(width: contentW, height: squareSide + OnboardingLayout.heroVerticalPad * 2)
-                    .shadow(color: page.gradient[0].opacity(0.32), radius: 20, x: 0, y: 12)
+        VStack(alignment: .center, spacing: 14) {
+            heroPanel(page: page, contentW: contentW, squareSide: squareSide)
+            contentCard(page)
+        }
+        .frame(maxWidth: .infinity, alignment: .top)
+    }
 
-                OnboardingIllustrationSlot(
-                    asset: page.illustrationAsset,
-                    accentGradient: page.gradient,
-                    side: squareSide
+    private func heroPanel(
+        page: FeatureOnboardingPage,
+        contentW: CGFloat,
+        squareSide: CGFloat
+    ) -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: OnboardingLayout.heroCorner, style: .continuous)
+                .fill(
+                    LinearGradient(
+                        colors: page.gradient.map { $0.opacity(0.94) },
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
                 )
-            }
-            .frame(maxWidth: .infinity)
-
-            VStack(alignment: .leading, spacing: 12) {
-                Text(page.subtitle)
-                    .font(OnboardingFont.semiBold(16))
-                    .foregroundStyle(Color(.darkAccent))
-                    .opacity(0.92)
-                    .lineSpacing(3)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-
-                VStack(alignment: .leading, spacing: 8) {
-                    ForEach(page.bullets, id: \.self) { line in
-                        HStack(alignment: .top, spacing: 10) {
-                            Text("✓")
-                                .font(OnboardingFont.bold(11))
-                                .foregroundStyle(ExamixStyle.accentCool)
-                                .frame(width: 20, alignment: .center)
-                                .padding(.top, 3)
-
-                            Text(line)
-                                .font(OnboardingFont.regular(14))
-                                .foregroundStyle(Color(.darkAccent).opacity(0.76))
-                                .lineSpacing(3)
-                                .fixedSize(horizontal: false, vertical: true)
-                        }
+                .overlay(
+                    RoundedRectangle(cornerRadius: OnboardingLayout.heroCorner, style: .continuous)
+                        .stroke(
+                            LinearGradient(
+                                colors: [Color.white.opacity(0.35), Color.white.opacity(0.08)],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ),
+                            lineWidth: 1
+                        )
+                )
+                .frame(width: contentW, height: squareSide + OnboardingLayout.heroVerticalPad * 2)
+                .shadow(color: page.gradient[0].opacity(0.28), radius: 18, x: 0, y: 10)
+                .overlay(alignment: .topLeading) {
+                    HStack(spacing: 8) {
+                        Capsule()
+                            .fill(Color.white.opacity(0.92))
+                            .frame(width: 22, height: 6)
+                        Capsule()
+                            .fill(Color.white.opacity(0.36))
+                            .frame(width: 8, height: 6)
                     }
+                    .padding(18)
+                }
+                .overlay(alignment: .bottomTrailing) {
+                    Circle()
+                        .fill(Color.white.opacity(0.16))
+                        .frame(width: 86, height: 86)
+                        .offset(x: 22, y: 26)
+                }
+
+            OnboardingIllustrationSlot(
+                asset: page.illustrationAsset,
+                accentGradient: page.gradient,
+                side: squareSide
+            )
+        }
+        .frame(maxWidth: .infinity)
+    }
+
+    private func introContent(_ page: FeatureOnboardingPage) -> some View {
+        VStack(alignment: .leading, spacing: 7) {
+            Text(page.title)
+                .font(OnboardingFont.bold(24))
+                .foregroundStyle(Color(.darkAccent))
+                .lineLimit(2)
+                .minimumScaleFactor(0.88)
+                .fixedSize(horizontal: false, vertical: true)
+
+            Text(page.subtitle)
+                .font(OnboardingFont.medium(15))
+                .foregroundStyle(Color(.darkAccent).opacity(0.74))
+                .lineSpacing(3)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+
+    private func bulletsContent(_ page: FeatureOnboardingPage) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            ForEach(page.bullets, id: \.self) { line in
+                HStack(alignment: .top, spacing: 11) {
+                    ZStack {
+                        Circle()
+                            .fill(ExamixStyle.chipFill)
+                            .frame(width: 22, height: 22)
+                        Text("✓")
+                            .font(OnboardingFont.bold(10))
+                            .foregroundStyle(ExamixStyle.accentDeep)
+                    }
+                    .padding(.top, 1)
+
+                    Text(line)
+                        .font(OnboardingFont.regular(14))
+                        .foregroundStyle(Color(.darkAccent).opacity(0.76))
+                        .lineSpacing(3)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
+        }
+    }
+
+    private func contentCard(_ page: FeatureOnboardingPage) -> some View {
+        onboardingCard {
+            VStack(alignment: .leading, spacing: 14) {
+                introContent(page)
+
+                Divider()
+                    .overlay(Color(.darkAccent).opacity(0.08))
+
+                bulletsContent(page)
+            }
+        }
+    }
+
+    private func onboardingCard<Content: View>(@ViewBuilder content: () -> Content) -> some View {
+        content()
             .padding(OnboardingLayout.cardPadding)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(
                 RoundedRectangle(cornerRadius: OnboardingLayout.cardCorner, style: .continuous)
                     .fill(ExamixStyle.cardFill)
-                    .shadow(color: Color.black.opacity(0.07), radius: 14, x: 0, y: 6)
+                    .shadow(color: Color.black.opacity(0.08), radius: 18, x: 0, y: 8)
             )
             .overlay(
                 RoundedRectangle(cornerRadius: OnboardingLayout.cardCorner, style: .continuous)
                     .stroke(
                         LinearGradient(
-                            colors: [ExamixStyle.accentCool.opacity(0.28), Color.gray.opacity(0.1)],
+                            colors: [Color.white.opacity(0.85), ExamixStyle.accentCool.opacity(0.18)],
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
                         ),
                         lineWidth: 1
                     )
             )
-            .padding(.top, 10)
-        }
-        .frame(maxWidth: .infinity, alignment: .top)
     }
 
     private func pageCard(_ page: FeatureOnboardingPage) -> some View {
@@ -488,9 +539,7 @@ struct AppFeatureOnboardingView: View {
     }
 }
 
-// MARK: - Тексты запросов для генерации иллюстраций (по одному на слайд)
 
-/// Общий стиль для всех запросов: добавьте в начало каждого своего промпта этот блок.
 enum OnboardingImagePrompts {
     static let sharedStylePrefix = """
     Единый стиль для набора иллюстраций онбординга мобильного приложения Examix (подготовка к языковым экзаменам). \
@@ -531,7 +580,6 @@ enum OnboardingImagePrompts {
 }
 
 extension OnboardingIllustrationAsset {
-    /// Полный промпт для генерации картинки под этот слайд (имя ассета = `rawValue`).
     var imageGenerationPrompt: String {
         switch self {
         case .welcome: return OnboardingImagePrompts.welcome

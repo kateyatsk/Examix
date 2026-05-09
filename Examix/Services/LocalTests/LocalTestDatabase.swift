@@ -2,7 +2,7 @@
 //  LocalTestDatabase.swift
 //  Examix
 //
-//  SQLite storage for TestVariant payloads (imported from JSON).
+//  Created by Kate Yatskevich on 9.05.26.
 //
 
 import Foundation
@@ -13,7 +13,6 @@ private let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.sel
 final class LocalTestDatabase {
     static let shared = LocalTestDatabase()
 
-    /// Open SQLite connection handle (avoid naming it `db` — clashes with some toolchains / overlays).
     private var databaseHandle: OpaquePointer?
     private let queue = DispatchQueue(label: "examix.localtests.sqlite")
 
@@ -129,7 +128,6 @@ final class LocalTestDatabase {
         }
     }
 
-    /// Все варианты для языка (ключ как в Firestore, например «Русский язык»).
     func fetchAll(language: String) throws -> [TestVariant] {
         try queue.sync {
             try self.fetchAllSync(language: language)

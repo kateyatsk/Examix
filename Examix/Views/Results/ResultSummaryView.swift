@@ -1,8 +1,8 @@
 //
 //  ResultSummaryView.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 10.05.25.
+//  Created by Kate Yatskevich on 10.05.25.
 //
 
 import SwiftUI
@@ -102,7 +102,7 @@ struct ResultSummaryView: View {
                             .multilineTextAlignment(.center)
 
                         Text(encouragement)
-                            .font(.custom("MontserratAlternates-SemiBold", size: 16))
+                            .font(.custom("MontserratAlternates-Bold", size: 16))
                             .foregroundStyle(ExamixStyle.accentCool)
                             .multilineTextAlignment(.center)
                     }
@@ -118,12 +118,7 @@ struct ResultSummaryView: View {
                             .trim(from: 0, to: ringProgress)
                             .stroke(
                                 AngularGradient(
-                                    colors: [
-                                        ExamixStyle.accentDeep,
-                                        ExamixStyle.accentCool,
-                                        ExamixStyle.accentMuted,
-                                        ExamixStyle.accentDeep
-                                    ],
+                                    colors: ExamixStyle.scoreRingGradientColors,
                                     center: .center
                                 ),
                                 style: StrokeStyle(lineWidth: 18, lineCap: .round)
@@ -177,7 +172,7 @@ struct ResultSummaryView: View {
 
                 Button(action: onContinue) {
                     Text("Смотреть разбор")
-                        .font(.custom("MontserratAlternates-SemiBold", size: 17))
+                        .font(.custom("MontserratAlternates-Bold", size: 17))
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 16)
@@ -228,7 +223,7 @@ struct ResultSummaryView: View {
                 .font(.custom("MontserratAlternates-Medium", size: 10))
                 .foregroundStyle(.secondary)
             Text(value)
-                .font(.custom("MontserratAlternates-SemiBold", size: 16))
+                .font(.custom("MontserratAlternates-Bold", size: 16))
                 .foregroundStyle(Color(.darkAccent))
         }
         .frame(maxWidth: .infinity, alignment: .leading)

@@ -20,7 +20,7 @@
 		B10B39F42D66039700BB97A8 /* MontserratAlternates-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B10B39F32D66039700BB97A8 /* MontserratAlternates-Bold.ttf */; };
 		B122666D2DC51FD00092EA51 /* TestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B122666C2DC51FD00092EA51 /* TestResult.swift */; };
 		B122666F2DC5212F0092EA51 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B122666E2DC5212F0092EA51 /* FirestoreService.swift */; };
-		B12266712DC521AB0092EA51 /* RelultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12266702DC521AB0092EA51 /* RelultsViewModel.swift */; };
+		B12266712DC521AB0092EA51 /* ResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12266702DC521AB0092EA51 /* ResultsViewModel.swift */; };
 		B12266752DC554ED0092EA51 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = B12266742DC554ED0092EA51 /* FirebaseFirestoreCombine-Community */; };
 		B12266792DC557540092EA51 /* ResultDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12266782DC557540092EA51 /* ResultDetailView.swift */; };
 		B122667B2DC67D670092EA51 /* UploadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B122667A2DC67D670092EA51 /* UploadTests.swift */; };
@@ -82,6 +82,13 @@
 		F78E44112FA0500000DAB081 /* HomeTestProgressChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78E44102FA0500000DAB080 /* HomeTestProgressChart.swift */; };
 		F78E442B2FA0650000DAB0A1 /* BookmarkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78E442A2FA0650000DAB0A0 /* BookmarkService.swift */; };
 		F78E45032FA0800000DAB093 /* AppFeatureOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78E45022FA0800000DAB092 /* AppFeatureOnboardingView.swift */; };
+		C0DE00012FA1000000000001 /* TestVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE00022FA1000000000002 /* TestVariant.swift */; };
+		C0DE00032FA1000000000003 /* PendingTestSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE00042FA1000000000004 /* PendingTestSession.swift */; };
+		C0DE00052FA1000000000005 /* PendingTestSessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE00062FA1000000000006 /* PendingTestSessionStore.swift */; };
+		C0DE00072FA1000000000007 /* TestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE00082FA1000000000008 /* TestLoader.swift */; };
+		C0DE00092FA1000000000009 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE000A2FA100000000000A /* Bookmark.swift */; };
+		C0DE000B2FA100000000000B /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE000C2FA100000000000C /* BookmarksViewModel.swift */; };
+		C0DE00102FA1100000000010 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE00112FA1100000000011 /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -112,7 +119,7 @@
 		B10B39F32D66039700BB97A8 /* MontserratAlternates-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Bold.ttf"; sourceTree = "<group>"; };
 		B122666C2DC51FD00092EA51 /* TestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResult.swift; sourceTree = "<group>"; };
 		B122666E2DC5212F0092EA51 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
-		B12266702DC521AB0092EA51 /* RelultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelultsViewModel.swift; sourceTree = "<group>"; };
+		B12266702DC521AB0092EA51 /* ResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModel.swift; sourceTree = "<group>"; };
 		B12266782DC557540092EA51 /* ResultDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDetailView.swift; sourceTree = "<group>"; };
 		B122667A2DC67D670092EA51 /* UploadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTests.swift; sourceTree = "<group>"; };
 		B12699832D660F4D000BE220 /* MontserratAlternates-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Medium.ttf"; sourceTree = "<group>"; };
@@ -164,6 +171,13 @@
 		F78E45022FA0800000DAB092 /* AppFeatureOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeatureOnboardingView.swift; sourceTree = "<group>"; };
 		F78E44102FA0500000DAB080 /* HomeTestProgressChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTestProgressChart.swift; sourceTree = "<group>"; };
 		F78E442A2FA0650000DAB0A0 /* BookmarkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkService.swift; sourceTree = "<group>"; };
+		C0DE00022FA1000000000002 /* TestVariant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVariant.swift; sourceTree = "<group>"; };
+		C0DE00042FA1000000000004 /* PendingTestSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingTestSession.swift; sourceTree = "<group>"; };
+		C0DE00062FA1000000000006 /* PendingTestSessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingTestSessionStore.swift; sourceTree = "<group>"; };
+		C0DE00082FA1000000000008 /* TestLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoader.swift; sourceTree = "<group>"; };
+		C0DE000A2FA100000000000A /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		C0DE000C2FA100000000000C /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
+		C0DE00112FA1100000000011 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,7 +216,7 @@
 			children = (
 				F78E433A2F9961DD00DAB031 /* rus */,
 				B170F1BA2DCF610E002F29FD /* App */,
-				B170F1B72DCF6080002F29FD /* Core */,
+				B1D18D132DA5742F0081CCBD /* Models */,
 				B1A22FD82DB18DD400952E36 /* Navigation */,
 				B170F1AB2DCF54B4002F29FD /* Resources */,
 				B170F1B92DCF60E1002F29FD /* Services */,
@@ -246,17 +260,6 @@
 				F78E43942F95430000DAB054 /* Practice */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		B10B39E82D65E50100BB97A8 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				B10B39D82D65CED900BB97A8 /* SplashViewModel.swift */,
-				B1EABB2D2DA7100C00407568 /* LanguageSelectionViewModel.swift */,
-				B16A07412DB9016600FF50B1 /* TestViewModel.swift */,
-				B12266702DC521AB0092EA51 /* RelultsViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B10B39EC2D65F1DC00BB97A8 /* Fonts */ = {
@@ -310,15 +313,6 @@
 			path = Rules;
 			sourceTree = "<group>";
 		};
-		B170F1B72DCF6080002F29FD /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				B1D18D132DA5742F0081CCBD /* Model */,
-				B10B39E82D65E50100BB97A8 /* ViewModel */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
 		B170F1B92DCF60E1002F29FD /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				B10B39D62D65CE9700BB97A8 /* SplashView.swift */,
+				B10B39D82D65CED900BB97A8 /* SplashViewModel.swift */,
 				B10B39DC2D65D7EA00BB97A8 /* LottieAnimation.swift */,
 			);
 			path = Splash;
@@ -351,6 +346,8 @@
 			isa = PBXGroup;
 			children = (
 				B1EABB532DA7E56900407568 /* AuthenticationView.swift */,
+				B1E4E56A2DA809E300D0B53F /* AuthenticationViewModel.swift */,
+				C0DE00112FA1100000000011 /* UserViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -370,6 +367,7 @@
 				B16A07672DBAE01700FF50B1 /* ChooseVariantView.swift */,
 				B12699892D670579000BE220 /* LanguageDetailView.swift */,
 				B16A073F2DB9013600FF50B1 /* TestView.swift */,
+				B16A07412DB9016600FF50B1 /* TestViewModel.swift */,
 				B178E8A02DC778F300275BFF /* TestViewLoader.swift */,
 			);
 			path = Tests;
@@ -380,6 +378,7 @@
 			children = (
 				F78E45022FA0800000DAB092 /* AppFeatureOnboardingView.swift */,
 				B10B39CA2D65CDC900BB97A8 /* LanguageSelectionView.swift */,
+				B1EABB2D2DA7100C00407568 /* LanguageSelectionViewModel.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -397,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				B1A22FDB2DB19D7B00952E36 /* ResultsView.swift */,
+				B12266702DC521AB0092EA51 /* ResultsViewModel.swift */,
 				B12266782DC557540092EA51 /* ResultDetailView.swift */,
 				B170F1C82DCF6FD9002F29FD /* ResultSummaryView.swift */,
 			);
@@ -457,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				B170F1CE2DCFABEC002F29FD /* BookmarksView.swift */,
+				C0DE000C2FA100000000000C /* BookmarksViewModel.swift */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";
@@ -476,13 +477,16 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		B1D18D132DA5742F0081CCBD /* Model */ = {
+		B1D18D132DA5742F0081CCBD /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				B1D18D142DA5745E0081CCBD /* LanguageModel.swift */,
 				B122666C2DC51FD00092EA51 /* TestResult.swift */,
+				C0DE00022FA1000000000002 /* TestVariant.swift */,
+				C0DE00042FA1000000000004 /* PendingTestSession.swift */,
+				C0DE000A2FA100000000000A /* Bookmark.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B1E4E5632DA7EFC000D0B53F /* Utilities */ = {
@@ -501,7 +505,6 @@
 			children = (
 				B1E4E5662DA7F16400D0B53F /* AuthenticationManager.swift */,
 				B1E4E5682DA7FD3500D0B53F /* SignInGoogleHelper.swift */,
-				B1E4E56A2DA809E300D0B53F /* AuthenticationViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -512,6 +515,8 @@
 				E2BAD0112DC7788600275C11 /* ImportedVariantJSON.swift */,
 				E2BAD0122DC7788600275C12 /* LocalTestDatabase.swift */,
 				E2BAD0132DC7788600275C13 /* VariantCatalogService.swift */,
+				C0DE00062FA1000000000006 /* PendingTestSessionStore.swift */,
+				C0DE00082FA1000000000008 /* TestLoader.swift */,
 				F78E43902F95430000DAB050 /* PracticeModels.swift */,
 			);
 			path = LocalTests;
@@ -699,7 +704,7 @@
 				B170F1C92DCF6FD9002F29FD /* ResultSummaryView.swift in Sources */,
 				B122666D2DC51FD00092EA51 /* TestResult.swift in Sources */,
 				B12266792DC557540092EA51 /* ResultDetailView.swift in Sources */,
-				B12266712DC521AB0092EA51 /* RelultsViewModel.swift in Sources */,
+				B12266712DC521AB0092EA51 /* ResultsViewModel.swift in Sources */,
 				B1E4E56B2DA809E300D0B53F /* AuthenticationViewModel.swift in Sources */,
 				B1EABB2E2DA7100C00407568 /* LanguageSelectionViewModel.swift in Sources */,
 				B1E4E56D2DA80A5C00D0B53F /* RootView.swift in Sources */,
@@ -713,6 +718,9 @@
 				B1E4E56F2DA8126A00D0B53F /* HomeView.swift in Sources */,
 				F78E44112FA0500000DAB081 /* HomeTestProgressChart.swift in Sources */,
 				B170F1CF2DCFABEC002F29FD /* BookmarksView.swift in Sources */,
+				C0DE00092FA1000000000009 /* Bookmark.swift in Sources */,
+				C0DE000B2FA100000000000B /* BookmarksViewModel.swift in Sources */,
+				C0DE00102FA1100000000010 /* UserViewModel.swift in Sources */,
 				B1A22FDA2DB18DDF00952E36 /* AppRouter.swift in Sources */,
 				B126998A2D670579000BE220 /* LanguageDetailView.swift in Sources */,
 				B122667B2DC67D670092EA51 /* UploadTests.swift in Sources */,
@@ -720,6 +728,8 @@
 				B122666F2DC5212F0092EA51 /* FirestoreService.swift in Sources */,
 				B1EABB542DA7E56900407568 /* AuthenticationView.swift in Sources */,
 				B1D18D152DA5745E0081CCBD /* LanguageModel.swift in Sources */,
+				C0DE00012FA1000000000001 /* TestVariant.swift in Sources */,
+				C0DE00032FA1000000000003 /* PendingTestSession.swift in Sources */,
 				B10B39DD2D65D7EB00BB97A8 /* LottieAnimation.swift in Sources */,
 				B1A22FDE2DB19DB100952E36 /* ProfileView.swift in Sources */,
 				B170F1B62DCF597A002F29FD /* RulesView.swift in Sources */,
@@ -727,6 +737,8 @@
 				E2BAD0212DC7788600275C21 /* ImportedVariantJSON.swift in Sources */,
 				E2BAD0222DC7788600275C22 /* LocalTestDatabase.swift in Sources */,
 				E2BAD0232DC7788600275C23 /* VariantCatalogService.swift in Sources */,
+				C0DE00052FA1000000000005 /* PendingTestSessionStore.swift in Sources */,
+				C0DE00072FA1000000000007 /* TestLoader.swift in Sources */,
 				F78E43912F95430000DAB051 /* PracticeModels.swift in Sources */,
 				F78E43932F95430000DAB053 /* PracticeViews.swift in Sources */,
 				F78E43A12F95440000DAB061 /* ContributionHeatmapView.swift in Sources */,

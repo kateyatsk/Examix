@@ -2,17 +2,15 @@
 //  ImportedVariantJSON.swift
 //  Examix
 //
-//  DTO + mapping from exported CT JSON into app TestVariant / Question models.
+//  Created by Kate Yatskevich on 9.05.26.
 //
 
 import Foundation
 
-// MARK: - JSON DTO
 
 struct ImportedVariantDTO: Decodable {
     let variantId: Int
     let title: String?
-    /// Подпись варианта в UI (например «ЦТ 2021 года») из экспорта JSON.
     let sourceTitle: String?
     let subjectCode: String
     let instructions: [String]?
@@ -40,7 +38,6 @@ struct ImportedTaskDTO: Decodable {
     let themeTitle: String?
     let prompt: String
     let options: [ImportedOptionDTO]
-    /// Экспорт ЦТ часто кладёт фрагмент в `passage`; в других выгрузках встречается `passageText`.
     let passage: String?
     let passageText: String?
     let correctAnswerRaw: String?
@@ -73,7 +70,6 @@ struct ImportedTaskDTO: Decodable {
 
     var correctAnswerNormalized: ImportedCorrectAnswer? { correctAnswerNormalizedStorage }
 
-    /// Первый непустой фрагмент чтения из ключей `passage` или `passageText`.
     var resolvedReadingPassage: String? {
         for raw in [passage, passageText] {
             let t = raw?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
@@ -88,7 +84,6 @@ struct ImportedOptionDTO: Decodable {
     let text: String
 }
 
-// MARK: - Flexible correctAnswerNormalized
 
 struct ImportedMatchingPair: Equatable {
     let left: String
@@ -120,7 +115,6 @@ private struct MatchingPairDTO: Decodable {
     let right: Int
 }
 
-// MARK: - Subject → Firestore language key
 
 enum SubjectCodeMapper {
     static func firestoreLanguage(forSubjectCode code: String) -> String {
@@ -133,7 +127,6 @@ enum SubjectCodeMapper {
     }
 }
 
-// MARK: - Map to TestVariant
 
 enum ImportedVariantMapper {
     static func map(dto: ImportedVariantDTO) -> TestVariant {
@@ -145,14 +138,12 @@ enum ImportedVariantMapper {
 
     private static func mapTask(_ t: ImportedTaskDTO) -> Question {
         let id = t.typeCode
-        /// В интерфейсе теста показываем только формулировку задания; тема (`themeTitle`) не выводится.
         let title = t.prompt.trimmingCharacters(in: .whitespacesAndNewlines)
         let text = t.resolvedReadingPassage
         let explanation = mappedExplanation(t)
         let themeTitle = themeTitle(for: t)
 
         switch (t.answerMode, t.answerInputType) {
-        /// Ответ набором цифр/символов в поле ввода (например B1, B7, B16), а не чекбоксы по вариантам.
         case ("multi_select", "text"):
             return shortTextQuestion(t, id: id, title: title, text: text, explanation: explanation, themeTitle: themeTitle, normalization: textNormalizationForFreeAnswer(t))
         case ("selection", "checkbox"), ("multi_select", _):

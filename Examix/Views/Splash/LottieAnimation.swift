@@ -1,8 +1,8 @@
 //
 //  LottieAnimation.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 19.02.25.
+//  Created by Kate Yatskevich on 19.02.25.
 //
 
 import SwiftUI
@@ -11,12 +11,13 @@ import Lottie
 struct LottieView: UIViewRepresentable {
     
     var filename: String
+    var loopMode: LottieLoopMode = .playOnce
     
     func makeUIView(context: UIViewRepresentableContext<LottieView>) ->  UIView {
         let view = UIView(frame: .zero)
         
         let animationView = LottieAnimationView(name: filename)
-        animationView.loopMode = .playOnce
+        animationView.loopMode = loopMode
         animationView.contentMode = .scaleAspectFit
         animationView.play()
         

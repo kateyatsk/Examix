@@ -2,12 +2,11 @@
 //  PracticeModels.swift
 //  Examix
 //
-//  Ссылки на задания в локальной базе, прогресс «решено» и выборки для практики.
+//  Created by Kate Yatskevich on 9.05.26.
 //
 
 import Foundation
 
-/// Уникальная ссылка на одно задание внутри варианта (индекс в массиве `questions`).
 struct PracticeQuestionRef: Hashable, Codable {
     let language: String
     let variant: Int
@@ -43,7 +42,6 @@ final class PracticeProgressStore {
 
 enum PracticeLibrary {
 
-    // MARK: - Задание дня (одно на календарные сутки, смена в полночь)
 
     private static let dayKeyFormatter: DateFormatter = {
         let f = DateFormatter()
@@ -54,7 +52,6 @@ enum PracticeLibrary {
         return f
     }()
 
-    /// Ключ календарного дня для локальной полуночи (текущая time zone).
     static func calendarDayKey(for date: Date = Date(), calendar: Calendar = .current) -> String {
         let comps = calendar.dateComponents([.year, .month, .day], from: date)
         var c = DateComponents()
@@ -72,7 +69,6 @@ enum PracticeLibrary {
         "dailySolved:\(dayKey):\(languageKey)"
     }
 
-    /// Стабильный хеш строки между запусками (не используйте Swift `Hasher` для этого).
     static func stableHash64(_ string: String) -> UInt64 {
         var h: UInt64 = 14_695_981_103_932_746_037
         for b in string.utf8 {
@@ -82,7 +78,6 @@ enum PracticeLibrary {
         return h
     }
 
-    /// Одно задание на день: детерминированный выбор из списка ссылок.
     static func dailyRef(forDayKey dayKey: String, languageKey: String, refs: [PracticeQuestionRef]) -> PracticeQuestionRef? {
         guard !refs.isEmpty else { return nil }
         let sorted = refs.sorted { $0.stableKey < $1.stableKey }
@@ -99,7 +94,6 @@ enum PracticeLibrary {
         themesAggregateProgress(themeTitles: Set([title]), variants: variants, store: store)
     }
 
-    /// Все задания по любой из тем и сколько из них отмечено решённым в соответствующих бакетах тем.
     static func themesAggregateProgress(themeTitles: Set<String>, variants: [TestVariant], store: PracticeProgressStore) -> (solved: Int, total: Int) {
         let all = allRefs(from: variants).filter { ref in
             guard let v = variants.first(where: { $0.language == ref.language && $0.variant == ref.variant }),
@@ -120,7 +114,6 @@ enum PracticeLibrary {
         return (solved, all.count)
     }
 
-    /// Все задания выбранных типов и сколько решено по бакетам типов.
     static func typesAggregateProgress(typeCodes: Set<String>, variants: [TestVariant], store: PracticeProgressStore) -> (solved: Int, total: Int) {
         let all = allRefs(from: variants).filter { ref in
             guard let v = variants.first(where: { $0.language == ref.language && $0.variant == ref.variant }),
@@ -140,7 +133,6 @@ enum PracticeLibrary {
         return (solved, all.count)
     }
 
-    /// Кандидаты для практики сразу по нескольким типам (незакрытые в соответствующем бакете типа).
     static func refs(
         typeCodes: Set<String>,
         from variants: [TestVariant],
@@ -156,7 +148,6 @@ enum PracticeLibrary {
         }
     }
 
-    /// Несколько тем: задание учитывается в бакете своей темы.
     static func refs(
         themeTitles: Set<String>,
         from variants: [TestVariant],

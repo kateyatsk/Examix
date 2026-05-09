@@ -1,8 +1,8 @@
 //
 //  RulesView.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 10.05.25.
+//  Created by Kate Yatskevich on 10.05.25.
 //
 
 import Foundation
@@ -28,7 +28,7 @@ struct RulesView: View {
                 Button("Найти") {
                     committedSearch = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
                 }
-                .font(.custom("MontserratAlternates-SemiBold", size: 15))
+                .font(.custom("MontserratAlternates-Bold", size: 15))
                 .foregroundStyle(ExamixStyle.accentCool)
                 .disabled(searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                 .opacity(searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? 0.45 : 1)

@@ -1,8 +1,8 @@
 //
 //  BookmarkService.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 4.05.25.
+//  Created by Kate Yatskevich on 4.05.25.
 //
 
 import FirebaseFirestore
@@ -10,7 +10,6 @@ import FirebaseFirestore
 final class BookmarkService {
     private let db = Firestore.firestore()
 
-    /// Идентификатор документа совпадает с логикой в `TestView` / `BookmarksView`.
     private static func bookmarkDocumentId(questionId: String, variant: Int, language: String) -> String {
         "\(questionId)_\(variant)_\(language)"
     }

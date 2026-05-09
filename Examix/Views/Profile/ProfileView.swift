@@ -1,8 +1,8 @@
 //
 //  ProfileView.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 17.04.25.
+//  Created by Kate Yatskevich on 17.04.25.
 //
 
 import SwiftUI
@@ -42,7 +42,6 @@ struct ProfileView: View {
         }
     }
 
-    /// Средняя точность по всем полным вариантам за всё время (все предметы).
     private var lifetimeAverageAccuracyPercent: Int? {
         let full = results.filter { $0.isFullVariantResult }
         guard !full.isEmpty else { return nil }
@@ -52,7 +51,6 @@ struct ProfileView: View {
         return Int((sum / Double(full.count)).rounded())
     }
 
-    /// Средняя по каждому предмету (`language` из результата), только полные варианты.
     private var lifetimePerSubjectRows: [SubjectAccuracyRow] {
         let full = results.filter { $0.isFullVariantResult }
         let grouped = Dictionary(grouping: full, by: \.language)
@@ -150,14 +148,18 @@ struct ProfileView: View {
                 }
             }
             .navigationTitle("Профиль")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    ExamixToolbarTitle(text: "Профиль")
+                }
+            }
             .alert("Подтверждение выхода", isPresented: $showingLogoutAlert) {
                 Button("Выйти", role: .destructive) {
                     do {
                         try authManager.signOut()
                         userSettings.selectedLanguage = nil
                     } catch {
-                        print("Ошибка при выходе: \(error.localizedDescription)")
                     }
                 }
                 Button("Отмена", role: .cancel) {}
@@ -191,12 +193,7 @@ struct ProfileView: View {
                         .trim(from: 0, to: CGFloat(percent) / 100)
                         .stroke(
                             AngularGradient(
-                                colors: [
-                                    ExamixStyle.accentDeep,
-                                    ExamixStyle.accentCool,
-                                    ExamixStyle.accentMuted,
-                                    ExamixStyle.accentDeep
-                                ],
+                                colors: ExamixStyle.scoreRingGradientColors,
                                 center: .center
                             ),
                             style: StrokeStyle(lineWidth: 10, lineCap: .round)
@@ -228,7 +225,7 @@ struct ProfileView: View {
             if !perSubject.isEmpty {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("По предметам")
-                        .font(.custom("MontserratAlternates-SemiBold", size: 13))
+                        .font(.custom("MontserratAlternates-Bold", size: 13))
                         .foregroundStyle(Color(.darkAccent).opacity(0.85))
 
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -359,13 +356,11 @@ struct ProfileView: View {
                 self.isLoading = false
             }
         } catch {
-            print("❌ Ошибка загрузки результатов: \(error)")
             await MainActor.run { isLoading = false }
         }
     }
 }
 
-/// Компактное кольцо средней точности по одному предмету (профиль).
 private struct SubjectAccuracyMiniRing: View {
     let title: String
     let percent: Int
@@ -390,11 +385,7 @@ private struct SubjectAccuracyMiniRing: View {
                     .trim(from: 0, to: CGFloat(percent) / 100)
                     .stroke(
                         AngularGradient(
-                            colors: [
-                                ExamixStyle.accentDeep.opacity(0.9),
-                                ExamixStyle.accentCool,
-                                ExamixStyle.accentMuted
-                            ],
+                            colors: ExamixStyle.scoreRingGradientColors,
                             center: .center
                         ),
                         style: StrokeStyle(lineWidth: 5, lineCap: .round)

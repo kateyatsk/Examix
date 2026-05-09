@@ -1,8 +1,8 @@
 //
 //  TestView.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 17.04.25.
+//  Created by Kate Yatskevich on 17.04.25.
 //
 
 import SwiftUI
@@ -16,7 +16,6 @@ private enum ExamixKeyboard {
     }
 }
 
-/// `UITextField` без панели подсказок/T9: отключены автокоррекция, inline‑prediction и кнопки над клавиатурой.
 private struct PlainAnswerTextField: UIViewRepresentable {
     let placeholder: String
     @Binding var text: String
@@ -383,7 +382,6 @@ private struct PassageSheetView: View {
     }
 }
 
-/// Превью фрагмента чтения: не более четырёх строк, затем ссылка на полный текст.
 private struct PassagePreviewBlock: View {
     let passage: String
     let onOpenFull: () -> Void
@@ -420,7 +418,6 @@ private struct PassagePreviewBlock: View {
     }
 }
 
-/// Отступы колонки — отдельный модификатор, чтобы не раздувать тип `ModifiedContent`.
 private struct ActiveTestScrollPadModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -429,7 +426,6 @@ private struct ActiveTestScrollPadModifier: ViewModifier {
     }
 }
 
-/// Реакции на смену варианта / языка / индекса вопроса.
 private struct ActiveTestScrollIndexEventsModifier: ViewModifier {
     @ObservedObject var viewModel: TestViewModel
     let test: TestVariant
@@ -458,7 +454,6 @@ private struct ActiveTestScrollIndexEventsModifier: ViewModifier {
     }
 }
 
-/// Реакции на ответы и завершение — отдельно от индекса, чтобы укоротить цепочку типов.
 private struct ActiveTestScrollAnswerEventsModifier: ViewModifier {
     @ObservedObject var viewModel: TestViewModel
     @EnvironmentObject private var userSettings: UserSettings
@@ -520,19 +515,15 @@ private struct ActiveTestScrollSheetsModifier: ViewModifier {
 struct TestView: View {
     @ObservedObject var viewModel: TestViewModel
     @EnvironmentObject private var userSettings: UserSettings
-    /// Одно задание подряд: компактный итог и колбэк вместо полного экрана результатов.
     var practiceMode: Bool = false
-    /// Узкая полоска «верно / неверно» + «Далее» без экрана «Поздравляем».
     var practiceInlineFeedback: Bool = false
     var practiceOnFinished: (() -> Void)? = nil
-    /// Для практики по темам/типам: доля решённых по всему выбранному каталогу (а не ответ на одном вопросе).
     var practiceCatalogSolved: Int? = nil
     var practiceCatalogTotal: Int? = nil
 
     @State private var showSummary = false
     @State private var showPassageSheet = false
     @State private var showHintSheet = false
-    /// Сколько раз за текущий проход теста пользователь открыл подсказку (учитывается при лимите из настроек).
     @State private var hintsUsedThisSession = 0
     @State private var isBookmarked = false
     @State private var showBookmarkToast = false
@@ -593,7 +584,7 @@ struct TestView: View {
             RoundedRectangle(cornerRadius: 16, style: .continuous)
                 .fill(
                     LinearGradient(
-                        colors: [ExamixStyle.accentCool, ExamixStyle.accentDeep.opacity(0.92)],
+                        colors: [ExamixStyle.actionSoftBlue, ExamixStyle.actionSoftAqua],
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     )
@@ -628,6 +619,16 @@ struct TestView: View {
                 useCatalogProgress: useCatalogProgress,
                 progressPercent: progressPercent
             )
+        }
+        .navigationTitle(test.language)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text(verbatim: test.language)
+                    .font(.custom("MontserratAlternates-Bold", size: 16))
+                    .foregroundStyle(Color(.darkAccent))
+                    .lineLimit(1)
+            }
         }
     }
 
@@ -708,24 +709,6 @@ struct TestView: View {
         useCatalogProgress: (solved: Int, total: Int)?,
         progressPercent: Int
     ) -> some View {
-        Text("Предмет")
-            .font(.custom("MontserratAlternates-Medium", size: 13))
-            .foregroundStyle(.secondary)
-            .textCase(.uppercase)
-            .tracking(0.6)
-
-        Text(verbatim: test.language)
-            .font(.custom("MontserratAlternates-Medium", size: 16))
-            .foregroundStyle(.white)
-                            .padding(.horizontal, 16)
-            .padding(.vertical, 10)
-            .background(
-                Capsule(style: .continuous)
-                    .fill(ExamixStyle.accentCool)
-            )
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .fixedSize(horizontal: false, vertical: true)
-
         VStack(alignment: .leading, spacing: 6) {
             variantTitleBlock(for: test)
             Text(practiceMode ? "Практика" : "Централизованное тестирование")
@@ -914,7 +897,7 @@ struct TestView: View {
                                 }
                             }) {
                                 Text(question.id.lowercased().contains("текст") ? "Далее" : "Проверить")
-                    .font(.custom("MontserratAlternates-SemiBold", size: 17))
+                    .font(.custom("MontserratAlternates-Bold", size: 17))
                     .foregroundStyle(.white)
                                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 16)
@@ -938,7 +921,7 @@ struct TestView: View {
                                 isBookmarked = false
                             }) {
                                 Text(viewModel.isLastQuestion ? "Завершить" : "Следующий")
-                    .font(.custom("MontserratAlternates-SemiBold", size: 17))
+                    .font(.custom("MontserratAlternates-Bold", size: 17))
                     .foregroundStyle(.white)
                                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 16)
@@ -989,6 +972,11 @@ struct TestView: View {
                                         .font(.custom("MontserratAlternates-Medium", size: 16))
                 .foregroundStyle(Color(.darkAccent))
                 .fixedSize(horizontal: false, vertical: true)
+        } else if trimmed == "Случайный сборный вариант" {
+            Text(verbatim: trimmed)
+                                            .font(.custom("MontserratAlternates-Medium", size: 16))
+                .foregroundStyle(Color(.darkAccent))
+                .fixedSize(horizontal: false, vertical: true)
         } else {
             Text(verbatim: "\(trimmed) · вариант \(v)")
                                             .font(.custom("MontserratAlternates-Medium", size: 16))
@@ -1010,7 +998,6 @@ struct TestView: View {
         return hintsUsedThisSession < cap
     }
 
-    /// Компактный счётчик подсказок в строке с прогрессом (осталось/всего; без лимита — «∞»).
     private var hintQuotaInline: String {
         let cap = userSettings.maxHintsPerTest
         if cap < 0 { return "∞" }
@@ -1068,7 +1055,7 @@ struct TestView: View {
 
             Button(action: { practiceOnFinished?() }) {
                 Text("Далее")
-                    .font(.custom("MontserratAlternates-SemiBold", size: 16))
+                    .font(.custom("MontserratAlternates-Bold", size: 16))
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 14)
@@ -1121,7 +1108,6 @@ struct TestView: View {
                 }
             }
         } catch {
-            print("Ошибка при переключении закладки: \(error)")
         }
     }
     
@@ -1138,7 +1124,6 @@ struct TestView: View {
                 isBookmarked = snapshot.exists
             }
         } catch {
-            print("Ошибка при проверке закладки: \(error)")
             await MainActor.run {
                 isBookmarked = false
             }
@@ -1148,6 +1133,5 @@ struct TestView: View {
 
 #Preview {
     ResultSummaryView(correctAnswers: 8, totalQuestions: 10, partialAnswers: 2) {
-        print("Продолжить")
     }
 }

@@ -2,7 +2,7 @@
 //  KeyboardDismissInstaller.swift
 //  Examix
 //
-//  Одноразовая установка жеста на окно: тап вне полей ввода скрывает клавиатуру.
+//  Created by Kate Yatskevich on 9.05.26.
 //
 
 import UIKit
@@ -13,7 +13,6 @@ enum ExamixAppKeyboard {
     }
 }
 
-/// Синглтон: добавляет на key window `UITapGestureRecognizer` с `cancelsTouchesInView = false`.
 final class KeyboardDismissInstaller: NSObject, UIGestureRecognizerDelegate {
     static let shared = KeyboardDismissInstaller()
 

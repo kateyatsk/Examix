@@ -1,8 +1,8 @@
 //
 //  LanguageSelectionView.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 19.02.25.
+//  Created by Kate Yatskevich on 19.02.25.
 //
 
 import SwiftUI
@@ -11,28 +11,41 @@ struct LanguageSelectionView: View {
     @ObservedObject var viewModel = LanguageSelectionViewModel()
     @EnvironmentObject var userSettings: UserSettings
     var onLanguageSelected: () -> Void
-    
+
+    private let contentWidth: CGFloat = 320
     
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 18) {
             Spacer()
-            HStack {
+            VStack(spacing: 12) {
+                (
                 Text(viewModel.titleText)
-                    .font(.custom("MontserratAlternates-Medium", size: 24))
+                    .font(.custom("MontserratAlternates-Medium", size: 23))
                     .foregroundColor(.darkAccent) +
                 Text(viewModel.boldText)
-                    .font(.custom("MontserratAlternates-Bold", size: 24))
+                    .font(.custom("MontserratAlternates-Bold", size: 23))
                     .foregroundColor(.stock)
+                )
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+
+                Text(viewModel.subtitleText)
+                    .font(.custom("MontserratAlternates-Medium", size: 14))
+                    .foregroundColor(.darkAccent.opacity(0.72))
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
             }
-            .multilineTextAlignment(.center)
-         Spacer()
+            .frame(maxWidth: contentWidth)
+            Spacer()
             ForEach(viewModel.languages, id: \.self) { language in
                 LanguageButton(language: language, isSelected: viewModel.selectedLanguage == language)
+                    .frame(maxWidth: contentWidth)
                     .contentShape(RoundedRectangle(cornerRadius: 12))
                     .onTapGesture {
                         viewModel.selectedLanguage = language
                     }
             }
+            .frame(maxWidth: .infinity)
             Spacer()
             Button(action: {
                 if let selected = viewModel.selectedLanguage {
@@ -61,4 +74,3 @@ struct LanguageSelectionView_Previews: PreviewProvider {
             .environmentObject(UserSettings())
     }
 }
-

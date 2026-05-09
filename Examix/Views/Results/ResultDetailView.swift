@@ -1,15 +1,14 @@
 //
 //  ResultDetailView.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 2.05.25.
+//  Created by Kate Yatskevich on 2.05.25.
 //
 
 import Foundation
 import SwiftUI
 import Charts
 
-// MARK: - Модель строки и детального листа
 
 private enum ResultAnswerStatus {
     case correct
@@ -42,9 +41,7 @@ private enum ResultAnswerStatus {
 }
 
 private struct QuestionResultDetailItem: Identifiable, Hashable {
-    /// Уникален в списке (при повторяющихся кодах типа A1/B1 в одном варианте).
     let rowIndex: Int
-    /// Код типа задания для словарей в `TestResult` и бейджа в UI.
     let typeCode: String
     var id: String { "row_\(rowIndex)_\(typeCode)" }
 
@@ -55,7 +52,6 @@ private struct QuestionResultDetailItem: Identifiable, Hashable {
     let questionType: String?
 }
 
-// MARK: - Карточка в списке
 
 private struct ResultAnswerCard: View {
     let item: QuestionResultDetailItem
@@ -129,7 +125,6 @@ private struct ResultAnswerCard: View {
     }
 }
 
-// MARK: - Подробный лист (анимация появления)
 
 private struct QuestionResultDetailSheet: View {
     let item: QuestionResultDetailItem
@@ -241,7 +236,7 @@ private struct QuestionResultDetailSheet: View {
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Готово") { dismiss() }
-                        .font(.custom("MontserratAlternates-SemiBold", size: 16))
+                        .font(.custom("MontserratAlternates-Bold", size: 16))
                 }
             }
         }
@@ -334,7 +329,6 @@ private struct QuestionResultDetailSheet: View {
     }
 }
 
-// MARK: - Построение строк из результата
 
 private enum ResultDetailBuilders {
 
@@ -406,7 +400,6 @@ private enum ResultDetailBuilders {
     }
 }
 
-// MARK: - Геро-блок итога (анимация при открытии разбора)
 
 private struct ResultDetailHeroCard: View {
     let result: TestResult
@@ -456,12 +449,7 @@ private struct ResultDetailHeroCard: View {
                         .trim(from: 0, to: ringProgress)
                         .stroke(
                             AngularGradient(
-                                colors: [
-                                    ExamixStyle.accentDeep,
-                                    ExamixStyle.accentCool,
-                                    ExamixStyle.accentMuted,
-                                    ExamixStyle.accentDeep
-                                ],
+                                colors: ExamixStyle.scoreRingGradientColors,
                                 center: .center
                             ),
                             style: StrokeStyle(lineWidth: 10, lineCap: .round)
@@ -533,7 +521,7 @@ private struct ResultDetailHeroCard: View {
                 .font(.system(size: 14, weight: .semibold))
                 .foregroundStyle(color)
             Text(text)
-                .font(.custom("MontserratAlternates-SemiBold", size: 13))
+                .font(.custom("MontserratAlternates-Bold", size: 13))
                 .foregroundStyle(Color(.darkAccent))
         }
         .padding(.horizontal, 12)
@@ -549,7 +537,6 @@ private struct ResultDetailHeroCard: View {
     }
 }
 
-// MARK: - Главный экран
 
 struct ResultDetailView: View {
     let result: TestResult
@@ -816,4 +803,3 @@ struct ResultDetailView: View {
         }
     }
 }
-

@@ -2,7 +2,7 @@
 //  VariantCatalogService.swift
 //  Examix
 //
-//  Импорт JSON → SQLite и загрузка тестов (приоритет над Firestore).
+//  Created by Kate Yatskevich on 9.05.26.
 //
 
 import Foundation
@@ -14,12 +14,10 @@ final class VariantCatalogService {
     private let local = LocalTestDatabase.shared
     private let firestore = FirestoreTestService()
 
-    /// Короткое имя из UI («Русский») → ключ как в Firestore («Русский язык»).
     func firestoreLanguageKey(from uiLanguage: String) -> String {
         uiLanguage.hasSuffix(" язык") ? uiLanguage : uiLanguage + " язык"
     }
 
-    /// Декодирует экспортированный JSON варианта и сохраняет в локальную БД.
     func importVariantJSON(data: Data) throws {
         let dto = try JSONDecoder().decode(ImportedVariantDTO.self, from: data)
         let test = ImportedVariantMapper.map(dto: dto)
@@ -31,8 +29,6 @@ final class VariantCatalogService {
         try importVariantJSON(data: data)
     }
 
-    /// Импортирует варианты из бандла: `CTVariants/*.json` и **любые** `.json` в корне `.app` (как файлы из группы Examix в Xcode).
-    /// Файлы не в формате `ImportedVariantDTO` тихо пропускаются.
     func importBundledCTVariants() {
         var candidateURLs: [URL] = []
         if let fromSubdir = Bundle.main.urls(forResourcesWithExtension: "json", subdirectory: "CTVariants") {
@@ -56,12 +52,10 @@ final class VariantCatalogService {
             do {
                 try importVariantJSON(at: url)
             } catch {
-                // не экспорт ЦТ — например English.json / test_sample.json
             }
         }
     }
 
-    /// Сначала локальная БД, затем Firestore.
     func fetchTest(uiLanguage: String, variant: Int) async throws -> TestVariant {
         let key = firestoreLanguageKey(from: uiLanguage)
         if let t = try local.fetch(language: key, variant: variant) {
@@ -70,21 +64,37 @@ final class VariantCatalogService {
         return try await firestore.fetchTest(language: uiLanguage, variant: variant)
     }
 
-    /// Случайный вариант только из локальной БД (без Firestore).
     func fetchRandomTest(uiLanguage: String) throws -> TestVariant? {
         importBundledCTVariants()
         let key = firestoreLanguageKey(from: uiLanguage)
-        return try local.fetchRandom(language: key)
+        let variants = try local.fetchAll(language: key)
+        guard !variants.isEmpty else { return nil }
+        let grouped = Dictionary(grouping: variants.flatMap { variant in
+            variant.questions.map { question in
+                RandomQuestionCandidate(question: question)
+            }
+        }, by: { $0.question.id })
+
+        let questions = grouped
+            .keys
+            .sorted(by: Self.questionIDComesBefore)
+            .compactMap { grouped[$0]?.randomElement()?.question }
+
+        guard !questions.isEmpty else { return try local.fetchRandom(language: key) }
+        return TestVariant(
+            language: key,
+            variant: Int.random(in: 900_000...999_999),
+            questions: questions,
+            sourceTitle: "Случайный сборный вариант"
+        )
     }
 
-    /// Все варианты из локальной БД для практики (импорт из бандла при необходимости).
     func fetchAllLocalVariants(uiLanguage: String) throws -> [TestVariant] {
         importBundledCTVariants()
         let key = firestoreLanguageKey(from: uiLanguage)
         return try local.fetchAll(language: key)
     }
 
-    /// Номера вариантов для экрана выбора: сначала из БД; если пусто — из Firestore.
     func listVariantNumbers(uiLanguage: String) async throws -> [Int] {
         let key = firestoreLanguageKey(from: uiLanguage)
         let localList = try local.listVariantNumbers(language: key)
@@ -104,5 +114,24 @@ final class VariantCatalogService {
             ($0.data()["variant"] as? NSNumber)?.intValue
         }
         return Array(Set(variants)).sorted()
+    }
+
+    private struct RandomQuestionCandidate {
+        let question: Question
+    }
+
+    private static func questionIDComesBefore(_ lhs: String, _ rhs: String) -> Bool {
+        let l = questionSortKey(lhs)
+        let r = questionSortKey(rhs)
+        if l.prefix != r.prefix { return l.prefix < r.prefix }
+        if l.number != r.number { return l.number < r.number }
+        return lhs.localizedStandardCompare(rhs) == .orderedAscending
+    }
+
+    private static func questionSortKey(_ id: String) -> (prefix: String, number: Int) {
+        let trimmed = id.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        let prefix = String(trimmed.prefix { !$0.isNumber })
+        let digits = String(trimmed.drop { !$0.isNumber }.prefix { $0.isNumber })
+        return (prefix.isEmpty ? trimmed : prefix, Int(digits) ?? Int.max)
     }
 }

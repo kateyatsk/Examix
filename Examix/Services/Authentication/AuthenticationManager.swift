@@ -1,8 +1,8 @@
 //
 //  AuthenticationManager.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 10.04.25.
+//  Created by Kate Yatskevich on 10.04.25.
 //
 
 import Foundation
@@ -25,6 +25,7 @@ struct AuthDataResultModel {
 
 enum AuthProviderOption: String {
     case google = "google.com"
+    case email = "password"
 }
 
 final class AuthenticationManager: ObservableObject {
@@ -106,7 +107,7 @@ extension AuthenticationManager {
             withIDToken: tokens.idToken,
             accessToken: tokens.accessToken
         )
-        let result = try await signIn(credential: credential)
+        _ = try await signIn(credential: credential)
         
         if let name = tokens.name {
             let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
@@ -118,6 +119,31 @@ extension AuthenticationManager {
             self.isAuthenticated = true
         }
         return try getAuthenticatedUser()
+    }
+
+    @discardableResult
+    func createUser(email: String, password: String, name: String?) async throws -> AuthDataResultModel {
+        let authDataResult = try await Auth.auth().createUser(withEmail: email, password: password)
+
+        if let name, !name.isEmpty {
+            let changeRequest = authDataResult.user.createProfileChangeRequest()
+            changeRequest.displayName = name
+            try await changeRequest.commitChanges()
+        }
+
+        DispatchQueue.main.async {
+            self.isAuthenticated = true
+        }
+        return AuthDataResultModel(user: authDataResult.user)
+    }
+
+    @discardableResult
+    func signInWithEmail(email: String, password: String) async throws -> AuthDataResultModel {
+        let authDataResult = try await Auth.auth().signIn(withEmail: email, password: password)
+        DispatchQueue.main.async {
+            self.isAuthenticated = true
+        }
+        return AuthDataResultModel(user: authDataResult.user)
     }
     
     private func signIn(credential: AuthCredential) async throws -> AuthDataResultModel {

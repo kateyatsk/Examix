@@ -1,8 +1,8 @@
 //
 //  LanguageModel.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 8.04.25.
+//  Created by Kate Yatskevich on 8.04.25.
 //
 
 import Foundation

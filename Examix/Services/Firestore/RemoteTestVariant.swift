@@ -1,8 +1,8 @@
 //
 //  RemoteTestVariant.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 4.05.25.
+//  Created by Kate Yatskevich on 4.05.25.
 //
 
 import Foundation

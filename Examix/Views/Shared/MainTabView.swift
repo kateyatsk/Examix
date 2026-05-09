@@ -1,8 +1,8 @@
 //
-//  TabView.swift
-//  Lingvistik
+//  MainTabView.swift
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 17.04.25.
+//  Created by Kate Yatskevich on 17.04.25.
 //
 
 import SwiftUI
@@ -43,7 +43,7 @@ struct MainTabView: View {
                 }
                 .tag(3)
         }
-        .accentColor(.stock) // активный цвет вкладки
+        .accentColor(ExamixStyle.accentCool)
         .onAppear {
             if !userSettings.hasCompletedFeatureOnboarding {
                 showFeatureOnboarding = true

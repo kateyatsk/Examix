@@ -1,8 +1,8 @@
 //
 //  UploadTests.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 3.05.25.
+//  Created by Kate Yatskevich on 3.05.25.
 //
 
 import Foundation
@@ -32,7 +32,6 @@ final class TestUploader {
 
     static func uploadTest(named fileName: String) {
         guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
-            print("Файл «\(fileName).json» не найден в бандле")
             return
         }
 
@@ -47,9 +46,7 @@ final class TestUploader {
                 try docRef.setData(from: test)
             }
 
-            print("\(tests.count) тест(ов) успешно загружено в Firestore")
         } catch {
-            print("Ошибка: \(error.localizedDescription)")
         }
     }
 }

@@ -1,8 +1,8 @@
 //
 //  LanguageDetailView.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 20.02.25.
+//  Created by Kate Yatskevich on 20.02.25.
 //
 
 import SwiftUI
@@ -53,7 +53,7 @@ struct LanguageDetailView: View {
                     VStack(spacing: 14) {
                         modeCard(
                             title: "Случайный вариант",
-                            subtitle: "Система подберёт вариант из базы",
+                            subtitle: "Соберётся из заданий разных вариантов",
                             icon: "shuffle.circle.fill",
                             iconGradient: ExamixStyle.practiceTypesGradient,
                             iconTint: ExamixStyle.practiceTypesGradientColors[1]
@@ -84,11 +84,12 @@ struct LanguageDetailView: View {
                 Button {
                     dismiss()
                 } label: {
-                    HStack(spacing: 6) {
-                        Text("‹")
-                            .font(.custom("MontserratAlternates-Bold", size: 20))
+                    Label {
                         Text("Назад")
                             .font(.custom("MontserratAlternates-Medium", size: 16))
+                    } icon: {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 15, weight: .semibold))
                     }
                     .foregroundStyle(ExamixStyle.accentCool)
                 }

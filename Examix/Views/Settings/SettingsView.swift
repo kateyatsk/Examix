@@ -1,8 +1,8 @@
 //
 //  SettingsView.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 17.04.25.
+//  Created by Kate Yatskevich on 17.04.25.
 //
 
 import SwiftUI
@@ -40,7 +40,12 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Настройки")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    ExamixToolbarTitle(text: "Настройки")
+                }
+            }
             .sheet(isPresented: $isPickerPresented) {
                 ImagePicker(image: $pickedUIImage) { selected in
                     if let uiImage = selected {
@@ -62,34 +67,19 @@ struct SettingsView: View {
                 .foregroundColor(.darkAccent)
 
             HStack(spacing: 18) {
-                ZStack {
-                    Group {
-                        if let image = avatarImage {
-                            image
-                                .resizable()
-                                .scaledToFill()
-                        } else {
-                            ZStack {
-                                Circle()
-                                    .fill(ExamixStyle.squircleFill)
-                                Image(systemName: "person.fill")
-                                    .font(.system(size: 28))
-                                    .foregroundStyle(.white.opacity(0.9))
-                            }
+                Group {
+                    if let image = avatarImage {
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    } else {
+                        ZStack {
+                            Circle()
+                                .fill(ExamixStyle.squircleFill)
+                            Image(systemName: "person.fill")
+                                .font(.system(size: 28))
+                                .foregroundStyle(.white.opacity(0.9))
                         }
-                    }
-                    VStack {
-                        Spacer(minLength: 0)
-                        Text(displayUserName)
-                            .font(.custom("MontserratAlternates-SemiBold", size: 11))
-                            .foregroundStyle(.white)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.65)
-                            .frame(maxWidth: 76)
-                            .padding(.horizontal, 6)
-                            .padding(.vertical, 6)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.black.opacity(0.48))
                     }
                 }
                 .frame(width: 76, height: 76)
@@ -100,9 +90,16 @@ struct SettingsView: View {
                 )
 
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Фото видно в профиле")
-                        .font(.custom("MontserratAlternates-Regular", size: 13))
-                        .foregroundColor(.secondary)
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(displayUserName)
+                            .font(.custom("MontserratAlternates-Bold", size: 17))
+                            .foregroundColor(.darkAccent)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.82)
+                        Text("Фото видно в профиле")
+                            .font(.custom("MontserratAlternates-Regular", size: 13))
+                            .foregroundColor(.secondary)
+                    }
 
                     Button {
                         isPickerPresented = true
@@ -251,7 +248,7 @@ struct SettingsView: View {
                 } label: {
                     HStack(alignment: .center, spacing: 10) {
                         Text(Self.hintLimitTitle(for: userSettings.maxHintsPerTest))
-                            .font(.custom("MontserratAlternates-SemiBold", size: 15))
+                            .font(.custom("MontserratAlternates-Medium", size: 15))
                             .foregroundStyle(Color(.darkAccent))
                             .multilineTextAlignment(.leading)
                             .lineLimit(2)
@@ -325,10 +322,10 @@ struct SettingsView: View {
                     ExamixSquircleIcon(systemName: "doc.text.fill", side: 44, iconPointSize: 17)
 
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Правила и условия")
+                        Text("Правила")
                             .font(.custom("MontserratAlternates-Medium", size: 16))
                             .foregroundColor(.darkAccent)
-                        Text("Экзамен, формат заданий, оценивание")
+                        Text("Сборник основных правил")
                             .font(.custom("MontserratAlternates-Regular", size: 12))
                             .foregroundColor(.secondary)
                     }
@@ -354,7 +351,7 @@ struct SettingsView: View {
 
     private var featureTourCard: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Экскурсия")
+            Text("О приложении")
                 .font(.custom("MontserratAlternates-Bold", size: 16))
                 .foregroundColor(.darkAccent)
 
@@ -377,8 +374,8 @@ struct SettingsView: View {
                         )
 
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("Показать экскурсию снова")
-                            .font(.custom("MontserratAlternates-SemiBold", size: 15))
+                        Text("Показать обзор приложения")
+                            .font(.custom("MontserratAlternates-Medium", size: 15))
                             .foregroundColor(.darkAccent)
                         Text("Полноэкранный сценарий из нескольких шагов")
                             .font(.custom("MontserratAlternates-Regular", size: 11))
@@ -412,7 +409,10 @@ struct SettingsView: View {
         RoundedRectangle(cornerRadius: 20, style: .continuous)
             .fill(
                 LinearGradient(
-                    colors: [Color.white, Color(red: 0.93, green: 0.96, blue: 1.0)],
+                    colors: [
+                        Color(.systemBackground),
+                        Color(red: 0.96, green: 0.98, blue: 1.0)
+                    ],
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 )
@@ -423,8 +423,8 @@ struct SettingsView: View {
                     .stroke(
                         LinearGradient(
                             colors: [
-                                ExamixStyle.practiceThemesGradientColors[0].opacity(0.26),
-                                ExamixStyle.practiceTypesGradientColors[1].opacity(0.22)
+                                ExamixStyle.accentCool.opacity(0.14),
+                                ExamixStyle.actionAqua.opacity(0.12)
                             ],
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
@@ -444,9 +444,7 @@ struct SettingsView: View {
     func saveAvatarLocally(_ image: UIImage) {
         if let data = image.jpegData(compressionQuality: 0.8) {
             UserDefaults.standard.set(data, forKey: "localAvatar")
-            print("✅ Аватар сохранён локально")
         } else {
-            print("❌ Не удалось сохранить аватар")
         }
     }
 }

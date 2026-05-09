@@ -1,8 +1,8 @@
 //
 //  TestViewLoader.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 4.05.25.
+//  Created by Kate Yatskevich on 4.05.25.
 //
 
 import SwiftUI
@@ -17,7 +17,6 @@ struct TestViewLoader: View {
     @State private var loadingTask: Task<Void, Never>? = nil
     @State private var interruptedDraft: PendingTestSession?
     @State private var fetchedVariant: TestVariant?
-    /// Кастомный диалог вместо `Alert`: шрифт Montserrat + второй шаг подтверждения удаления черновика.
     @State private var interruptOverlay: InterruptOverlayPhase = .none
 
     private enum InterruptOverlayPhase: Equatable {

@@ -1,8 +1,8 @@
 //
-//  SplashScreenViewModel.swift
-//  Lingvistik
+//  SplashViewModel.swift
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 19.02.25.
+//  Created by Kate Yatskevich on 19.02.25.
 //
 
 import SwiftUI

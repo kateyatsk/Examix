@@ -2,8 +2,7 @@
 //  ContributionHeatmapView.swift
 //  Examix
 //
-//  Карта активности: интенсивность = сумма верно решённых заданий за день
-//  по сохранённым результатам тестов. Тап — список тестов за день.
+//  Created by Kate Yatskevich on 9.05.26.
 //
 
 import SwiftUI
@@ -23,9 +22,7 @@ private struct ContributionDaySelection: Identifiable {
 }
 
 enum ContributionHeatmapPanelStyle {
-    /// Собственный тёмный фон и обводка.
     case standalone
-    /// Без внешней рамки — встроена в общую панель активности.
     case embedded
 }
 
@@ -34,7 +31,6 @@ struct ContributionHeatmapView: View {
     var panelStyle: ContributionHeatmapPanelStyle = .standalone
 
     @State private var selection: ContributionDaySelection?
-    /// Базовый множитель размера клеток (ползунок + итог щипка).
     @State private var gridZoom: CGFloat = 1.35
     @GestureState private var pinchMagnification: CGFloat = 1.0
 
@@ -62,7 +58,7 @@ struct ContributionHeatmapView: View {
 
     private var calendar: Calendar {
         var c = Calendar(identifier: .gregorian)
-        c.firstWeekday = 2 // Пн — первая строка сетки
+        c.firstWeekday = 2
         return c
     }
 
@@ -269,7 +265,6 @@ struct ContributionHeatmapView: View {
 }
 
 private enum ContributionPalette {
-    /// Светло-синяя шкала в духе `ExamixStyle` (без тёмно-зелёной сетки).
     static func color(level: Int) -> Color {
         switch level {
         case 0:

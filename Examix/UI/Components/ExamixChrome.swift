@@ -2,36 +2,48 @@
 //  ExamixChrome.swift
 //  Examix
 //
-//  Общие визуальные элементы: холодная палитра без акцента stock («жёлто-коричневого»).
+//  Created by Kate Yatskevich on 9.05.26.
 //
 
 import SwiftUI
 import Charts
 
 enum ExamixStyle {
-    /// Холодный фон экрана (вместо тёплого cream `lightBack`).
     static let screenCanvas = Color(red: 0.92, green: 0.93, blue: 0.96)
-    /// Карточка как в «Подробных ответах» (`systemBackground`).
     static let cardFill = Color(.systemBackground)
-    /// Единая тёмная панель с теплокартой активности.
     static let activityPanel = Color(red: 0.09, green: 0.11, blue: 0.14)
-    /// Мягкая карточка профиля (не чистый белый и не тёмная панель).
     static let softProfileCard = Color(red: 0.94, green: 0.96, blue: 0.99)
 
     static let accentDeep = Color(.darkAccent)
     static let accentCool = Color(red: 0.30, green: 0.50, blue: 0.60)
     static let accentMuted = Color(.secondaryBlue)
+    static let actionBlue = Color(red: 0.20, green: 0.44, blue: 0.74)
+    static let actionAqua = Color(red: 0.28, green: 0.66, blue: 0.82)
+    static let actionSoftBlue = Color(red: 0.36, green: 0.54, blue: 0.66)
+    static let actionSoftAqua = Color(red: 0.45, green: 0.68, blue: 0.74)
 
-    // MARK: Градиенты как на главной («По темам» / «По типу»)
 
     static let practiceThemesGradientColors: [Color] = [
-        Color(red: 0.25, green: 0.42, blue: 0.62),
-        Color(red: 0.38, green: 0.55, blue: 0.78)
+        Color(red: 0.18, green: 0.43, blue: 0.58),
+        Color(red: 0.42, green: 0.64, blue: 0.76)
     ]
 
     static let practiceTypesGradientColors: [Color] = [
-        Color(red: 0.22, green: 0.48, blue: 0.52),
-        Color(red: 0.32, green: 0.62, blue: 0.58)
+        Color(red: 0.10, green: 0.48, blue: 0.48),
+        Color(red: 0.48, green: 0.70, blue: 0.60)
+    ]
+
+    static let actionGradientColors: [Color] = [
+        actionSoftBlue,
+        actionSoftAqua,
+        Color(red: 0.62, green: 0.78, blue: 0.82)
+    ]
+
+    static let scoreRingGradientColors: [Color] = [
+        Color(red: 0.12, green: 0.43, blue: 0.47),
+        Color(red: 0.24, green: 0.60, blue: 0.64),
+        Color(red: 0.62, green: 0.74, blue: 0.55),
+        Color(red: 0.12, green: 0.43, blue: 0.47)
     ]
 
     static var practiceThemesGradient: LinearGradient {
@@ -50,7 +62,6 @@ enum ExamixStyle {
         )
     }
 
-    /// Мягкий «голубой» фон в духе экранов практики (типы / темы).
     static var practiceScreenWash: LinearGradient {
         LinearGradient(
             colors: [
@@ -63,7 +74,6 @@ enum ExamixStyle {
         )
     }
 
-    // MARK: Полоска / обводка строки «Результаты»
 
     private static func languageStudyAccentPair(uiLearningLanguage: String?, examVariantLanguage: String) -> (Color, Color) {
         let key = (uiLearningLanguage ?? examVariantLanguage).lowercased()
@@ -88,7 +98,6 @@ enum ExamixStyle {
         return (accentCool, accentMuted)
     }
 
-    /// Цвета вертикальной полоски: практика (день / тема / тип) или оттенок по языку обучения / языку варианта.
     static func resultStripeColors(entrySource: String?, uiLearningLanguage: String?, examVariantLanguage: String) -> [Color] {
         switch entrySource {
         case "practice_daily":
@@ -124,13 +133,12 @@ enum ExamixStyle {
 
     static var squircleFill: LinearGradient {
         LinearGradient(
-            colors: [accentDeep.opacity(0.95), accentCool.opacity(0.78)],
+            colors: actionGradientColors,
             startPoint: .topLeading,
             endPoint: .bottomTrailing
         )
     }
 
-    /// Статистика ответов: зелёный / холодный «частично» / приглушённый красный.
     static let statCorrect = Color(red: 0.14, green: 0.52, blue: 0.46)
     static let statPartial = Color(red: 0.34, green: 0.46, blue: 0.62)
     static let statWrong = Color(red: 0.55, green: 0.28, blue: 0.36)
@@ -143,7 +151,6 @@ enum ExamixStyle {
         )
     }
 
-    /// Линия графика на тёмном фоне (профиль внутри панели активности).
     static var chartLineOnDark: LinearGradient {
         LinearGradient(
             colors: [
@@ -165,7 +172,6 @@ enum ExamixStyle {
     }
 }
 
-// MARK: - Карточка в стиле «Подробный ответ» (нейтральная обводка)
 
 struct ExamixDetailAnswerChrome: ViewModifier {
     func body(content: Content) -> some View {
@@ -197,7 +203,16 @@ extension View {
     }
 }
 
-// MARK: - Иконка в скруглённом квадрате
+struct ExamixToolbarTitle: View {
+    let text: String
+
+    var body: some View {
+        Text(text)
+            .font(.custom("MontserratAlternates-Bold", size: 18))
+            .foregroundStyle(Color(.darkAccent))
+    }
+}
+
 
 struct ExamixSquircleIcon: View {
     let systemName: String
@@ -217,7 +232,6 @@ struct ExamixSquircleIcon: View {
     }
 }
 
-// MARK: - Кольцевая диаграмма + легенда
 
 struct ExamixStatRingSlice: Identifiable {
     let id: String
@@ -297,7 +311,6 @@ struct ExamixStatRingChart: View {
     }
 }
 
-// MARK: - Вертикальные столбики (альтернатива «плоским» барам)
 
 struct ExamixBarStat: Identifiable {
     let id: String
@@ -343,7 +356,6 @@ struct ExamixVerticalBarChart: View {
     }
 }
 
-// MARK: - Радиальный бейдж процента (список результатов)
 
 struct ExamixRadialScoreBadge: View {
     let percent: Int
@@ -358,12 +370,7 @@ struct ExamixRadialScoreBadge: View {
                 .trim(from: 0, to: CGFloat(percent) / 100)
                 .stroke(
                     AngularGradient(
-                        colors: [
-                            ExamixStyle.accentDeep,
-                            ExamixStyle.accentCool,
-                            ExamixStyle.accentMuted,
-                            ExamixStyle.accentDeep
-                        ],
+                        colors: ExamixStyle.scoreRingGradientColors,
                         center: .center
                     ),
                     style: StrokeStyle(lineWidth: 5, lineCap: .round)
@@ -378,9 +385,7 @@ struct ExamixRadialScoreBadge: View {
     }
 }
 
-// MARK: - Кастомный диалог (Montserrat, как в остальном приложении)
 
-/// Кнопка для `ExamixModalChoiceOverlay`.
 struct ExamixModalChoiceAction: Identifiable {
     let id: String
     let title: String
@@ -388,13 +393,12 @@ struct ExamixModalChoiceAction: Identifiable {
     let action: () -> Void
 }
 
-/// Полупрозрачный фон + карточка с текстом и кнопками (вместо системного `Alert` с чужим шрифтом).
 struct ExamixModalChoiceOverlay: View {
     let title: String
     let message: String
     let actions: [ExamixModalChoiceAction]
 
-    private static let buttonFont = Font.custom("MontserratAlternates-SemiBold", size: 16)
+    private static let buttonFont = Font.custom("MontserratAlternates-Bold", size: 16)
 
     var body: some View {
         ZStack {

@@ -1,8 +1,8 @@
 //
 //  TestViewModel.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 23.04.25.
+//  Created by Kate Yatskevich on 23.04.25.
 //
 
 import SwiftUI
@@ -15,13 +15,10 @@ final class TestViewModel: ObservableObject {
     @Published var isChecked = false
     @Published var currentIndex = 0
     @Published var finishedResult: TestResult? = nil
-    /// Сохранять ли итог в Firestore при завершении (для практики теперь тоже `true`).
     var persistToFirestore: Bool = true
-    /// См. `TestResult.entrySource` — для практики не `nil`.
     private var resultEntrySource: String?
     private var resultPracticeDetail: String?
     private var resultUILearningLanguage: String?
-    /// Параллельно `test.questions` при сохранении: индекс задания в полном варианте (для практики с одним заданием — реальный индекс, не 0).
     private var resultQuestionIndicesInVariant: [Int]?
 
     private let firestoreService = FirestoreService()
@@ -62,7 +59,6 @@ final class TestViewModel: ObservableObject {
         self.resultQuestionIndicesInVariant = questionIndicesInVariant
     }
 
-    /// Сброс после одного задания в режиме практики (перед следующим вопросом).
     func resetAfterPracticeRound() {
         finishedResult = nil
         isChecked = false
@@ -70,7 +66,6 @@ final class TestViewModel: ObservableObject {
         textAnswers = [:]
     }
 
-    /// Восстановление прогресса из локального черновика (незаконченный вариант).
     func applyPendingResume(_ draft: PendingTestSession) {
         guard let test else { return }
         guard test.language == draft.examLanguage, test.variant == draft.variant else { return }
@@ -171,7 +166,7 @@ final class TestViewModel: ObservableObject {
                     answers[question.id] = selectedText
                 }
 
-            default: // single
+            default:
                 let selected = selectedOptions[question.id] ?? []
                 let selectedTexts = Set(selected.map { $0.text })
 
@@ -220,7 +215,6 @@ final class TestViewModel: ObservableObject {
                     self.finishedResult = result
                 }
             } catch {
-                print("Ошибка сохранения результата: \(error)")
             }
         }
     }
@@ -263,7 +257,6 @@ final class TestViewModel: ObservableObject {
         return partial
     }
     deinit {
-        print("TestViewModel deallocated")
     }
 
     private static func normalizeTextAnswer(_ raw: String, mode: TextAnswerNormalization) -> String {
@@ -275,217 +268,6 @@ final class TestViewModel: ObservableObject {
             return String(trimmed.filter(\.isNumber).sorted())
         case .matchingKey:
             return trimmed.uppercased().filter { $0.isLetter || $0.isNumber }
-        }
-    }
-}
-
-enum TextAnswerNormalization: String, Codable, Hashable {
-    case none
-    case sortedDigits
-    case matchingKey
-}
-
-struct TestVariant: Codable {
-    let language: String
-    let variant: Int
-    let questions: [Question]
-    /// Подпись из JSON (`sourceTitle`); для экрана выбора варианта и шапки теста.
-    let sourceTitle: String?
-
-    init(language: String, variant: Int, questions: [Question], sourceTitle: String? = nil) {
-        self.language = language
-        self.variant = variant
-        self.questions = questions
-        self.sourceTitle = sourceTitle
-    }
-}
-
-struct Question: Identifiable, Codable, Hashable {
-    let id: String
-    let title: String
-    let text: String?
-    /// Разбор задания из импорта (`explanation` в JSON); для подсказки в тесте.
-    let explanation: String?
-    /// Тема из импорта ЦТ (`themeTitle`); для группировки в практике по темам.
-    let themeTitle: String?
-    let type: String
-    let options: [Option]
-    let textNormalization: TextAnswerNormalization
-
-    init(
-        id: String,
-        title: String,
-        text: String?,
-        explanation: String? = nil,
-        themeTitle: String? = nil,
-        type: String,
-        options: [Option],
-        textNormalization: TextAnswerNormalization = .none
-    ) {
-        self.id = id
-        self.title = title
-        self.text = text
-        self.explanation = explanation
-        self.themeTitle = themeTitle
-        self.type = type
-        self.options = options
-        self.textNormalization = textNormalization
-    }
-
-    enum CodingKeys: String, CodingKey {
-        case id, title, text, explanation, themeTitle, type, options, textNormalization
-        case titleHTML, textHTML
-    }
-
-    init(from decoder: Decoder) throws {
-        let c = try decoder.container(keyedBy: CodingKeys.self)
-        id = try c.decode(String.self, forKey: .id)
-        title = try c.decode(String.self, forKey: .title)
-        text = try c.decodeIfPresent(String.self, forKey: .text)
-        explanation = try c.decodeIfPresent(String.self, forKey: .explanation)
-        themeTitle = try c.decodeIfPresent(String.self, forKey: .themeTitle)
-        type = try c.decode(String.self, forKey: .type)
-        options = try c.decode([Option].self, forKey: .options)
-        textNormalization = try c.decodeIfPresent(TextAnswerNormalization.self, forKey: .textNormalization) ?? .none
-        _ = try c.decodeIfPresent(String.self, forKey: .titleHTML)
-        _ = try c.decodeIfPresent(String.self, forKey: .textHTML)
-    }
-
-    func encode(to encoder: Encoder) throws {
-        var c = encoder.container(keyedBy: CodingKeys.self)
-        try c.encode(id, forKey: .id)
-        try c.encode(title, forKey: .title)
-        try c.encodeIfPresent(text, forKey: .text)
-        try c.encodeIfPresent(explanation, forKey: .explanation)
-        try c.encodeIfPresent(themeTitle, forKey: .themeTitle)
-        try c.encode(type, forKey: .type)
-        try c.encode(options, forKey: .options)
-        try c.encode(textNormalization, forKey: .textNormalization)
-    }
-}
-
-struct Option: Identifiable, Codable, Hashable {
-    var id: String { text }
-    let text: String
-    let isCorrect: Bool
-
-    init(text: String, isCorrect: Bool) {
-        self.text = text
-        self.isCorrect = isCorrect
-    }
-
-    enum CodingKeys: String, CodingKey {
-        case text, isCorrect, html, id
-    }
-
-    init(from decoder: Decoder) throws {
-        let c = try decoder.container(keyedBy: CodingKeys.self)
-        text = try c.decode(String.self, forKey: .text)
-        isCorrect = try c.decode(Bool.self, forKey: .isCorrect)
-        _ = try c.decodeIfPresent(String.self, forKey: .html)
-        _ = try c.decodeIfPresent(String.self, forKey: .id)
-    }
-
-    func encode(to encoder: Encoder) throws {
-        var c = encoder.container(keyedBy: CodingKeys.self)
-        try c.encode(text, forKey: .text)
-        try c.encode(isCorrect, forKey: .isCorrect)
-    }
-}
-
-// MARK: - Незаконченные варианты (локально)
-
-struct PendingTestSession: Codable, Equatable, Identifiable {
-    /// Ключ хранения: язык экзамена + вариант + язык обучения из настроек.
-    var id: String {
-        Self.storageId(examLanguage: examLanguage, variant: variant, uiLearningLanguage: uiLearningLanguage)
-    }
-
-    let uiLearningLanguage: String
-    let examLanguage: String
-    let variant: Int
-    let sourceTitle: String?
-    let totalQuestions: Int
-    var currentIndex: Int
-    var isChecked: Bool
-    var textAnswers: [String: String]
-    /// id вопроса → выбранные формулировки вариантов (для восстановления `Option`).
-    var selectedOptionTexts: [String: [String]]
-    var updatedAt: Date
-
-    static func storageId(examLanguage: String, variant: Int, uiLearningLanguage: String) -> String {
-        "\(examLanguage)|\(variant)|\(uiLearningLanguage)"
-    }
-
-    var hasMeaningfulProgress: Bool {
-        if currentIndex > 0 { return true }
-        if isChecked { return true }
-        if textAnswers.values.contains(where: { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }) {
-            return true
-        }
-        return selectedOptionTexts.values.contains { !$0.isEmpty }
-    }
-
-    var displayTitleLine: String {
-        let s = sourceTitle?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        if s.isEmpty { return "Вариант \(variant)" }
-        return "\(s) · вар. \(variant)"
-    }
-}
-
-enum PendingTestSessionStore {
-    private static let defaultsKey = "examix.pendingTestSessions.v1"
-
-    static func allSessions() -> [PendingTestSession] {
-        guard let data = UserDefaults.standard.data(forKey: defaultsKey),
-              let list = try? JSONDecoder().decode([PendingTestSession].self, from: data) else { return [] }
-        return list.sorted { $0.updatedAt > $1.updatedAt }
-    }
-
-    static func sessions(uiLearningLanguage: String) -> [PendingTestSession] {
-        allSessions().filter { $0.uiLearningLanguage == uiLearningLanguage }
-    }
-
-    static func load(id: String) -> PendingTestSession? {
-        allSessions().first { $0.id == id }
-    }
-
-    static func upsert(_ session: PendingTestSession) {
-        var list = allSessions().filter { $0.id != session.id }
-        list.append(session)
-        persist(list)
-    }
-
-    static func remove(id: String) {
-        let list = allSessions().filter { $0.id != id }
-        persist(list)
-    }
-
-    static func remove(examLanguage: String, variant: Int, uiLearningLanguage: String) {
-        remove(id: PendingTestSession.storageId(examLanguage: examLanguage, variant: variant, uiLearningLanguage: uiLearningLanguage))
-    }
-
-    private static func persist(_ list: [PendingTestSession]) {
-        if let data = try? JSONEncoder().encode(list) {
-            UserDefaults.standard.set(data, forKey: defaultsKey)
-        }
-    }
-}
-
-enum TestLoader {
-    static func loadTest(named filename: String) -> TestVariant? {
-        guard let url = Bundle.main.url(forResource: filename, withExtension: "json") else {
-            print("Test file not found: \(filename)")
-            return nil
-        }
-
-        do {
-            let data = try Data(contentsOf: url)
-            let decoded = try JSONDecoder().decode([TestVariant].self, from: data)
-            return decoded.randomElement()
-        } catch {
-            print("Failed to decode test: \(error)")
-            return nil
         }
     }
 }

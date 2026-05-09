@@ -2,8 +2,7 @@
 //  HomeTestProgressChart.swift
 //  Examix
 //
-//  Прогресс по тестам на главной: зум меняет видимый интервал по оси X (плотность точек),
-//  сдвиг пальцем — панорама по времени.
+//  Created by Kate Yatskevich on 9.05.26.
 //
 
 import Charts
@@ -33,7 +32,6 @@ enum TestProgressChartBuilder {
     }
 }
 
-/// Карточка графика: масштаб по времени (не scaleEffect всего вида).
 struct HomeTestProgressChartCard: View {
     let chartData: [ChartData]
     let fullXDomain: ClosedRange<Date>
@@ -66,7 +64,6 @@ struct HomeTestProgressChartCard: View {
         max(paddedFullDomain.upperBound.timeIntervalSince(paddedFullDomain.lowerBound), 60)
     }
 
-    /// 1 = весь период, больше — крупнее по времени (уже окно).
     private var effectiveXZoom: CGFloat {
         min(max(xZoom * pinchScale, 1), 18)
     }

@@ -1,8 +1,8 @@
 //
 //  ChooseVariantView.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 25.04.25.
+//  Created by Kate Yatskevich on 25.04.25.
 //
 
 import FirebaseAuth
@@ -13,12 +13,10 @@ private struct VariantListItem: Identifiable, Hashable {
     let id: Int
     let variant: Int
     let sourceTitle: String?
-    /// Год из подписи (для сортировки); 0 — если не удалось извлечь.
     let sortYear: Int
 }
 
 private enum VariantTitleParsing {
-    /// Первый год вида 19xx/20xx в строке.
     static func year(from sourceTitle: String?) -> Int {
         let s = sourceTitle?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         guard !s.isEmpty,
@@ -51,7 +49,7 @@ struct ChooseVariantView: View {
                     VStack(alignment: .leading, spacing: 20) {
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Выбор варианта")
-                                .font(.custom("MontserratAlternates-SemiBold", size: 12))
+                                .font(.custom("MontserratAlternates-Bold", size: 12))
                                 .foregroundStyle(ExamixStyle.accentCool)
                                 .textCase(.uppercase)
                                 .tracking(0.9)
@@ -68,6 +66,8 @@ struct ChooseVariantView: View {
                         .padding(.horizontal, 4)
 
                         LazyVStack(spacing: 12) {
+                            randomVariantButton
+
                             ForEach(variantRows) { item in
                                 VariantChoiceCell(
                                     variant: item.variant,
@@ -95,11 +95,12 @@ struct ChooseVariantView: View {
                 Button {
                     path.removeLast()
                 } label: {
-                    HStack(spacing: 6) {
-                        Text("‹")
-                            .font(.custom("MontserratAlternates-Bold", size: 20))
+                    Label {
                         Text("Назад")
                             .font(.custom("MontserratAlternates-Medium", size: 16))
+                    } icon: {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 15, weight: .semibold))
                     }
                     .foregroundStyle(ExamixStyle.accentCool)
                 }
@@ -166,11 +167,59 @@ struct ChooseVariantView: View {
                     self.isLoading = false
                 }
             } catch {
-                print("Ошибка загрузки вариантов: \(error)")
                 await MainActor.run {
                     self.isLoading = false
                 }
             }
+        }
+    }
+
+    @ViewBuilder
+    private var randomVariantButton: some View {
+        if !variantRows.isEmpty {
+            Button {
+                guard let item = variantRows.randomElement() else { return }
+                userSettings.selectedVariant = item.variant
+                path.append(HomeView.Path.testView)
+            } label: {
+                HStack(spacing: 12) {
+                    Image(systemName: "shuffle")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundStyle(.white)
+                        .frame(width: 34, height: 34)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .fill(ExamixStyle.accentCool.opacity(0.84))
+                        )
+
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text("Запустить случайный")
+                            .font(.custom("MontserratAlternates-Bold", size: 15))
+                            .foregroundStyle(Color(.darkAccent))
+                        Text("Выберется один вариант из списка")
+                            .font(.custom("MontserratAlternates-Regular", size: 12))
+                            .foregroundStyle(.secondary)
+                    }
+
+                    Spacer(minLength: 8)
+
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundStyle(ExamixStyle.accentCool.opacity(0.55))
+                }
+                .padding(14)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .fill(Color(.systemBackground).opacity(0.9))
+                        .shadow(color: Color.black.opacity(0.04), radius: 10, x: 0, y: 3)
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .stroke(ExamixStyle.accentCool.opacity(0.24), lineWidth: 1)
+                )
+            }
+            .buttonStyle(.plain)
         }
     }
 }
@@ -223,7 +272,7 @@ private struct VariantChoiceCell: View {
 
                     if showVariantNumber {
                         Text("Вариант \(variant)")
-                            .font(.custom("MontserratAlternates-SemiBold", size: 15))
+                            .font(.custom("MontserratAlternates-Bold", size: 15))
                             .foregroundStyle(ExamixStyle.accentCool)
                     }
                 }

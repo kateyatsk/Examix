@@ -1,13 +1,12 @@
 //
 //  ResultsView.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 17.04.25.
+//  Created by Kate Yatskevich on 17.04.25.
 //
 
 import SwiftUI
 
-/// Слияние: верх видимой области (глобальный Y) + геометрия блока фильтров (глобальный низ и minY в scroll space).
 private struct ResultsFilterVisibilityPref: Equatable {
     var viewportTopGlobalY: CGFloat?
     var filtersBottomGlobalY: CGFloat?
@@ -25,12 +24,9 @@ private enum ResultsFilterVisibilityKey: PreferenceKey {
     }
 }
 
-// MARK: - Группировка практики по теме / типу (одна строка в списке, внутри — задания)
 
 private struct PracticeResultsCluster: Identifiable {
-    /// Стабильный ключ: источник + подпись сессии + язык + календарный день.
     let id: String
-    /// От новых к старым.
     var members: [TestResult]
 }
 
@@ -46,8 +42,35 @@ private enum ResultsDisplayRow: Identifiable {
     }
 }
 
+private enum LeaderboardDisplayRow: Identifiable {
+    case user(LeaderboardUserResult)
+    case separator
+
+    var id: String {
+        switch self {
+        case .user(let row): return row.id
+        case .separator: return "leaderboard-separator"
+        }
+    }
+}
+
+private enum ResultsScreenMode: String, CaseIterable, Identifiable {
+    case mine
+    case leaderboard
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .mine: return "Результаты"
+        case .leaderboard: return "Топ пользователей"
+        }
+    }
+}
+
 struct ResultsView: View {
     @StateObject private var viewModel = ResultsViewModel()
+    @State private var selectedMode: ResultsScreenMode = .mine
     @State private var searchText = ""
     @State private var selectedLanguageFilter: String = "Все"
     @State private var sortMode: ResultsSortMode = .dateNewest
@@ -95,7 +118,6 @@ struct ResultsView: View {
         return results
     }
 
-    /// Практика по теме/типу: несколько записей за один день с одной подписью сессии — одна строка с суммой и раскрытием.
     private var filteredDisplayRows: [ResultsDisplayRow] {
         let rows = buildPracticeDisplayRows(from: filteredResults)
         switch sortMode {
@@ -216,6 +238,20 @@ struct ResultsView: View {
         sortMode.shortLabel
     }
 
+    private var displayedLeaderboardRows: [LeaderboardDisplayRow] {
+        let topTen = viewModel.leaderboard.prefix(10).map { LeaderboardDisplayRow.user($0) }
+        guard let currentUserRow = viewModel.leaderboard.first(where: \.isCurrentUser),
+              currentUserRow.rank > 10 else {
+            return topTen
+        }
+
+        if currentUserRow.rank == 11 {
+            return topTen + [.user(currentUserRow)]
+        }
+
+        return topTen + [.separator, .user(currentUserRow)]
+    }
+
     var body: some View {
         NavigationStack {
             ScrollViewReader { scroll in
@@ -225,56 +261,65 @@ struct ResultsView: View {
 
                     ScrollView(.vertical, showsIndicators: true) {
                         VStack(alignment: .leading, spacing: 16) {
-                            resultsFiltersSection
-                                .id("resultsFiltersTop")
+                            resultsHeaderSection
                                 .padding(.horizontal, 20)
-                                .padding(.top, 6)
-                                .background(
-                                    GeometryReader { geo in
-                                        Color.clear.preference(
-                                            key: ResultsFilterVisibilityKey.self,
-                                            value: ResultsFilterVisibilityPref(
-                                                viewportTopGlobalY: nil,
-                                                filtersBottomGlobalY: geo.frame(in: .global).maxY,
-                                                filtersMinYInScroll: geo.frame(in: .named("resultsScroll")).minY
-                                            )
-                                        )
-                                    }
-                                )
 
-                            if filteredResults.isEmpty {
-                                emptyState
-                                    .frame(maxWidth: .infinity)
-                                    .padding(.horizontal, 24)
-                                    .padding(.top, 20)
-                                    .padding(.bottom, 40)
-                            } else {
-                                LazyVStack(spacing: 14) {
-                                    ForEach(filteredDisplayRows) { row in
-                                        Group {
-                                            switch row {
-                                            case .single(let result):
-                                                NavigationLink(destination: ResultDetailView(result: result)) {
-                                                    resultRowCard(result)
+                            if selectedMode == .mine {
+                                resultsFiltersSection
+                                    .id("resultsFiltersTop")
+                                    .padding(.horizontal, 20)
+                                    .background(
+                                        GeometryReader { geo in
+                                            Color.clear.preference(
+                                                key: ResultsFilterVisibilityKey.self,
+                                                value: ResultsFilterVisibilityPref(
+                                                    viewportTopGlobalY: nil,
+                                                    filtersBottomGlobalY: geo.frame(in: .global).maxY,
+                                                    filtersMinYInScroll: geo.frame(in: .named("resultsScroll")).minY
+                                                )
+                                            )
+                                        }
+                                    )
+
+                                if filteredResults.isEmpty {
+                                    emptyState
+                                        .frame(maxWidth: .infinity)
+                                        .padding(.horizontal, 24)
+                                        .padding(.top, 20)
+                                        .padding(.bottom, 40)
+                                } else {
+                                    LazyVStack(spacing: 14) {
+                                        ForEach(filteredDisplayRows) { row in
+                                            Group {
+                                                switch row {
+                                                case .single(let result):
+                                                    NavigationLink(destination: ResultDetailView(result: result)) {
+                                                        resultRowCard(result)
+                                                    }
+                                                    .buttonStyle(.plain)
+                                                case .cluster(let cluster):
+                                                    practiceClusterSection(cluster)
                                                 }
-                                                .buttonStyle(.plain)
-                                            case .cluster(let cluster):
-                                                practiceClusterSection(cluster)
                                             }
                                         }
                                     }
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.horizontal, 20)
+                                    .padding(.bottom, 32)
                                 }
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.horizontal, 20)
-                                .padding(.bottom, 32)
+                            } else {
+                                leaderboardSection
+                                    .padding(.horizontal, 20)
+                                    .padding(.bottom, 32)
                             }
                         }
+                        .padding(.top, 10)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     .coordinateSpace(name: "resultsScroll")
                     .scrollDismissesKeyboard(.interactively)
 
-                    if showJumpToFilters {
+                    if showJumpToFilters && selectedMode == .mine {
                         Button {
                             withAnimation(.spring(response: 0.38, dampingFraction: 0.86)) {
                                 scroll.scrollTo("resultsFiltersTop", anchor: .top)
@@ -286,7 +331,7 @@ struct ResultsView: View {
                                     .symbolRenderingMode(.hierarchical)
                                     .foregroundStyle(.white.opacity(0.95))
                                 Text("К фильтрам")
-                                    .font(.custom("MontserratAlternates-SemiBold", size: 13))
+                                    .font(.custom("MontserratAlternates-Bold", size: 13))
                                     .tracking(0.2)
                                     .foregroundStyle(.white)
                             }
@@ -354,25 +399,34 @@ struct ResultsView: View {
                     if let minScroll = pref.filtersMinYInScroll {
                         filtersScrolledAway = filtersScrolledAway || (minScroll < -6)
                     }
+                    if selectedMode != .mine {
+                        filtersScrolledAway = false
+                    }
                     if filtersScrolledAway != showJumpToFilters {
                         withAnimation(.easeInOut(duration: 0.2)) {
                             showJumpToFilters = filtersScrolledAway
                         }
                     }
                 }
-                .navigationTitle("Результаты")
-            .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        ExamixToolbarTitle(text: "Результаты")
+                    }
+                }
                 .sheet(isPresented: $showCustomPeriodSheet) {
                     customPeriodSheet
             }
             .onAppear {
                 Task {
                     await viewModel.loadResults()
+                    await viewModel.loadMonthlyLeaderboard()
                 }
             }
         }
     }
-}
+    }
 
     private var customPeriodSheet: some View {
         NavigationStack {
@@ -409,7 +463,137 @@ struct ResultsView: View {
         .presentationDetents([.medium])
     }
 
-    /// Фильтры: предмет, тип заданий, поиск; период и порядок — компактная строка из двух меню.
+    private var resultsHeaderSection: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            ResultsModeSegmentedControl(selection: $selectedMode)
+        }
+    }
+
+    private var leaderboardSection: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(alignment: .center, spacing: 12) {
+                    ExamixSquircleIcon(systemName: "trophy.fill", side: 44, iconPointSize: 17)
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text("Рейтинг за месяц")
+                            .font(.custom("MontserratAlternates-Bold", size: 17))
+                            .foregroundStyle(Color(.darkAccent))
+                        Text("Место считается по точности с начала текущего месяца")
+                            .font(.custom("MontserratAlternates-Regular", size: 12))
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                Divider()
+                    .overlay(ExamixStyle.accentCool.opacity(0.18))
+
+                HStack(spacing: 12) {
+                    Image(systemName: "clock.arrow.circlepath")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundStyle(ExamixStyle.accentCool)
+                    Text("Период обновляется каждый день")
+                        .font(.custom("MontserratAlternates-Medium", size: 12))
+                        .foregroundStyle(.secondary)
+                    Spacer(minLength: 8)
+                    LeaderboardMidnightCountdown()
+                }
+            }
+            .padding(16)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .fill(Color.white.opacity(0.94))
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .stroke(ExamixStyle.accentCool.opacity(0.18), lineWidth: 1)
+            )
+
+            if viewModel.leaderboard.isEmpty {
+                VStack(spacing: 12) {
+                    Image(systemName: "person.3.sequence.fill")
+                        .font(.system(size: 42))
+                        .foregroundStyle(ExamixStyle.accentCool.opacity(0.72))
+                    Text("Топ за месяц ещё пуст")
+                        .font(.custom("MontserratAlternates-Bold", size: 18))
+                        .foregroundStyle(Color(.darkAccent))
+                    Text("Когда пользователи сохранят результаты в текущем месяце, здесь появятся места в рейтинге.")
+                        .font(.custom("MontserratAlternates-Regular", size: 14))
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+                .padding(24)
+                .frame(maxWidth: .infinity)
+                .background(
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .fill(Color.white.opacity(0.9))
+                )
+            } else {
+                LazyVStack(spacing: 12) {
+                    ForEach(displayedLeaderboardRows) { row in
+                        switch row {
+                        case .user(let userRow):
+                            leaderboardRow(userRow)
+                        case .separator:
+                            leaderboardSeparator
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private var leaderboardSeparator: some View {
+        HStack(spacing: 6) {
+            ForEach(0..<3, id: \.self) { _ in
+                Circle()
+                    .fill(ExamixStyle.accentCool.opacity(0.42))
+                    .frame(width: 5, height: 5)
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 2)
+        .accessibilityLabel("Пропущенные места рейтинга")
+    }
+
+    private func leaderboardRow(_ row: LeaderboardUserResult) -> some View {
+        HStack(spacing: 12) {
+            ZStack {
+                Circle()
+                    .fill(row.isCurrentUser ? ExamixStyle.squircleFill : ExamixStyle.chipFill)
+                    .frame(width: 46, height: 46)
+                Text("\(row.rank)")
+                    .font(.custom("MontserratAlternates-Bold", size: 17))
+                    .foregroundStyle(row.isCurrentUser ? .white : ExamixStyle.accentDeep)
+            }
+
+            VStack(alignment: .leading, spacing: 5) {
+                Text(row.displayName)
+                    .font(.custom("MontserratAlternates-Bold", size: 15))
+                    .foregroundStyle(Color(.darkAccent))
+                Text("\(row.correctAnswers) из \(row.totalQuestions) · \(row.attempts) записей")
+                    .font(.custom("MontserratAlternates-Regular", size: 12))
+                    .foregroundStyle(.secondary)
+            }
+
+            Spacer(minLength: 8)
+
+            Text("\(row.accuracy)%")
+                .font(.custom("MontserratAlternates-Bold", size: 20))
+                .foregroundStyle(row.isCurrentUser ? ExamixStyle.statCorrect : ExamixStyle.accentCool)
+                .monospacedDigit()
+        }
+        .padding(14)
+        .background(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .fill(row.isCurrentUser ? Color.white : Color.white.opacity(0.92))
+                .shadow(color: Color.black.opacity(row.isCurrentUser ? 0.08 : 0.05), radius: 10, x: 0, y: 4)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(row.isCurrentUser ? ExamixStyle.statCorrect.opacity(0.32) : ExamixStyle.accentCool.opacity(0.16), lineWidth: 1)
+        )
+    }
+
     private var resultsFiltersSection: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(alignment: .center, spacing: 12) {
@@ -438,7 +622,7 @@ struct ResultsView: View {
                 }
                 Spacer(minLength: 8)
                 Text("\(filteredResults.count)")
-                    .font(.custom("MontserratAlternates-SemiBold", size: 13))
+                    .font(.custom("MontserratAlternates-Bold", size: 13))
                     .foregroundStyle(ExamixStyle.accentCool)
                     .padding(.horizontal, 11)
                     .padding(.vertical, 6)
@@ -450,15 +634,16 @@ struct ResultsView: View {
             .padding(.bottom, 10)
 
             filterRowLabel("Предмет", systemImage: "book.closed.fill")
-            Picker("Предмет", selection: $selectedLanguageFilter) {
+            Menu {
                 ForEach(allLanguages, id: \.self) { lang in
-                    Text(lang == "Все" ? "Все предметы" : lang).tag(lang)
+                    Button(lang == "Все" ? "Все предметы" : lang) {
+                        selectedLanguageFilter = lang
+                    }
                 }
+            } label: {
+                filterSelectionLabel(value: selectedLanguageFilter == "Все" ? "Все предметы" : selectedLanguageFilter)
             }
-            .pickerStyle(.menu)
             .tint(ExamixStyle.accentCool)
-            .font(.custom("MontserratAlternates-Medium", size: 15))
-            .foregroundStyle(Color(.darkAccent))
             .padding(.horizontal, 12)
             .padding(.vertical, 11)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -466,15 +651,16 @@ struct ResultsView: View {
             .padding(.bottom, 10)
 
             filterRowLabel("Тип заданий", systemImage: "square.stack.3d.up.fill")
-            Picker("Тип заданий", selection: $originFilter) {
+            Menu {
                 ForEach(ResultsOriginFilter.allCases) { item in
-                    Text(item.menuTitle).tag(item)
+                    Button(item.menuTitle) {
+                        originFilter = item
+                    }
                 }
+            } label: {
+                filterSelectionLabel(value: originFilter.menuTitle)
             }
-            .pickerStyle(.menu)
             .tint(ExamixStyle.accentCool)
-            .font(.custom("MontserratAlternates-Medium", size: 15))
-            .foregroundStyle(Color(.darkAccent))
             .padding(.horizontal, 12)
             .padding(.vertical, 11)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -581,6 +767,21 @@ struct ResultsView: View {
         }
         .padding(.horizontal, 6)
         .padding(.vertical, 4)
+    }
+
+    private func filterSelectionLabel(value: String) -> some View {
+        HStack(spacing: 10) {
+            Text(value)
+                .font(.custom("MontserratAlternates-Medium", size: 15))
+                .foregroundStyle(Color(.darkAccent))
+                .lineLimit(1)
+                .minimumScaleFactor(0.82)
+            Spacer(minLength: 8)
+            Image(systemName: "chevron.up.chevron.down")
+                .font(.system(size: 11, weight: .semibold))
+                .foregroundStyle(ExamixStyle.accentCool.opacity(0.8))
+        }
+        .contentShape(Rectangle())
     }
 
     private func filterRowLabel(_ title: String, systemImage: String) -> some View {
@@ -928,6 +1129,78 @@ struct ResultsView: View {
                     lineWidth: 1
                 )
         )
+    }
+}
+
+private struct ResultsModeSegmentedControl: View {
+    @Binding var selection: ResultsScreenMode
+
+    var body: some View {
+        HStack(spacing: 4) {
+            ForEach(ResultsScreenMode.allCases) { mode in
+                Button {
+                    withAnimation(.spring(response: 0.32, dampingFraction: 0.86)) {
+                        selection = mode
+                    }
+                } label: {
+                    Text(mode.title)
+                        .font(.custom("MontserratAlternates-Bold", size: 14))
+                        .foregroundStyle(selection == mode ? .white : ExamixStyle.accentDeep.opacity(0.76))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.82)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 11)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                .fill(selection == mode ? ExamixStyle.squircleFill : LinearGradient(colors: [.clear], startPoint: .leading, endPoint: .trailing))
+                        )
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding(4)
+        .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(Color.white.opacity(0.78))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .stroke(ExamixStyle.accentCool.opacity(0.18), lineWidth: 1)
+        )
+    }
+}
+
+private struct LeaderboardMidnightCountdown: View {
+    var body: some View {
+        TimelineView(.periodic(from: .now, by: 1)) { context in
+            let seconds = Self.secondsUntilEndOfCalendarDay(from: context.date)
+            HStack(alignment: .firstTextBaseline, spacing: 0) {
+                Text(Self.formatHMS(seconds))
+                    .font(.custom("MontserratAlternates-Bold", size: 13))
+                    .foregroundStyle(ExamixStyle.accentCool)
+                    .monospacedDigit()
+            }
+            .padding(.horizontal, 10)
+            .padding(.vertical, 7)
+            .background(
+                Capsule(style: .continuous)
+                    .fill(Color.white.opacity(0.82))
+            )
+        }
+    }
+
+    private static func secondsUntilEndOfCalendarDay(from date: Date) -> Int {
+        let calendar = Calendar.current
+        let start = calendar.startOfDay(for: date)
+        guard let next = calendar.date(byAdding: .day, value: 1, to: start) else { return 0 }
+        return max(0, Int(next.timeIntervalSince(date)))
+    }
+
+    private static func formatHMS(_ seconds: Int) -> String {
+        let h = seconds / 3600
+        let m = (seconds % 3600) / 60
+        let s = seconds % 60
+        return String(format: "%02d:%02d:%02d", h, m, s)
     }
 }
 

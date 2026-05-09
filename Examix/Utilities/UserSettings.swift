@@ -1,8 +1,8 @@
 //
 //  UserSettings.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 10.04.25.
+//  Created by Kate Yatskevich on 10.04.25.
 //
 
 import Foundation
@@ -19,21 +19,18 @@ class UserSettings: ObservableObject {
     
     @Published var selectedVariant: Int?
 
-    /// Лимит открытий подсказки за один проход теста: **-1** — без ограничения, **0** — подсказки отключены, **1…20** — не больше N раз за сессию.
     @Published var maxHintsPerTest: Int = -1 {
         didSet {
             UserDefaults.standard.set(maxHintsPerTest, forKey: Self.maxHintsPerTestKey)
         }
     }
 
-    /// Показ экскурсии по разделам приложения (первый запуск или из настроек).
     @Published var hasCompletedFeatureOnboarding: Bool = false {
         didSet {
             UserDefaults.standard.set(hasCompletedFeatureOnboarding, forKey: Self.featureOnboardingCompletedKey)
         }
     }
 
-    /// Увеличивается при запросе повторной экскурсии — `MainTabView` подписывается через `onChange`.
     @Published private(set) var featureOnboardingReplaySignal: Int = 0
 
     init() {

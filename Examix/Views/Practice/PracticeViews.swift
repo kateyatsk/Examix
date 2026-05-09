@@ -2,15 +2,24 @@
 //  PracticeViews.swift
 //  Examix
 //
-//  Практика: задание дня, по типу (A1, B1…), по теме.
+//  Created by Kate Yatskevich on 9.05.26.
 //
 
 import SwiftUI
 
-// MARK: - Общее оформление
 
 private enum PracticeStyle {
-    /// Степень решённости: от очень светлого голубого к насыщенному синевато‑голубому.
+    static let restingBorder = Color(red: 0.48, green: 0.61, blue: 0.70).opacity(0.42)
+    static let selectedBorder = Color(red: 0.08, green: 0.26, blue: 0.38).opacity(0.96)
+    static let selectedFill = LinearGradient(
+        colors: [
+            Color(red: 0.12, green: 0.34, blue: 0.48),
+            Color(red: 0.18, green: 0.46, blue: 0.58)
+        ],
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
+
     static func progressBlueFill(fraction: Double) -> Color {
         let t = min(max(fraction, 0), 1)
         let light = (r: 0.90, g: 0.95, b: 1.0)
@@ -24,6 +33,10 @@ private enum PracticeStyle {
 
     static func progressLabelColor(fraction: Double) -> Color {
         fraction > 0.48 ? Color.white : Color(.darkAccent)
+    }
+
+    static func cardLabelColor(isSelected: Bool, fraction: Double) -> Color {
+        isSelected ? .white : progressLabelColor(fraction: fraction)
     }
 }
 
@@ -53,7 +66,6 @@ private struct MidnightCountdownView: View {
     }
 }
 
-// MARK: - Задание дня
 
 struct PracticeDailyView: View {
     let uiLanguage: String
@@ -215,7 +227,6 @@ struct PracticeDailyView: View {
     }
 }
 
-// MARK: - Выбор типа задания
 
 struct PracticeTypePickerView: View {
     @Binding var path: NavigationPath
@@ -254,6 +265,7 @@ struct PracticeTypePickerView: View {
                             .foregroundColor(.secondary)
                             .frame(maxWidth: .infinity)
                             .multilineTextAlignment(.center)
+                        selectAllButton(totalCount: types.count, allValues: types)
                         LazyVGrid(columns: columns, spacing: 14) {
                             ForEach(types, id: \.self) { code in
                                 typeCell(code: code)
@@ -267,24 +279,64 @@ struct PracticeTypePickerView: View {
             }
         }
         .navigationTitle("Типы заданий")
-        .navigationBarTitleDisplayMode(.large)
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
+            ToolbarItem(placement: .principal) {
+                ExamixToolbarTitle(text: "Типы заданий")
+            }
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     let codes = selected.sorted()
                     guard !codes.isEmpty else { return }
                     path.append(HomeView.Path.practiceTypeSession(codes))
                 } label: {
-                    Image(systemName: "checkmark.circle.fill")
-                        .font(.title2)
-                        .symbolRenderingMode(.monochrome)
-                        .foregroundStyle(selected.isEmpty ? Color.gray.opacity(0.55) : ExamixStyle.accentCool)
+                    HStack(spacing: 5) {
+                        Text("\(selected.count)")
+                            .font(.custom("MontserratAlternates-Bold", size: 13))
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.system(size: 21, weight: .semibold))
+                            .symbolRenderingMode(.monochrome)
+                    }
+                    .foregroundStyle(selected.isEmpty ? Color.gray.opacity(0.55) : ExamixStyle.accentCool)
                 }
                 .disabled(selected.isEmpty)
                 .accessibilityLabel("Начать практику")
             }
         }
         .onAppear(perform: load)
+    }
+
+    @ViewBuilder
+    private func selectAllButton(totalCount: Int, allValues: [String]) -> some View {
+        if totalCount > 0 {
+            Button {
+                if selected.count == totalCount {
+                    selected.removeAll()
+                } else {
+                    selected = Set(allValues)
+                }
+            } label: {
+                HStack(spacing: 8) {
+                    Image(systemName: selected.count == totalCount ? "xmark.circle" : "checkmark.circle")
+                        .font(.system(size: 15, weight: .semibold))
+                    Text(selected.count == totalCount ? "Снять все" : "Выбрать все")
+                        .font(.custom("MontserratAlternates-Medium", size: 14))
+                    Spacer(minLength: 0)
+                }
+                .foregroundStyle(ExamixStyle.accentCool)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 10)
+                .background(
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .fill(Color.white.opacity(0.72))
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .stroke(PracticeStyle.restingBorder, lineWidth: 1)
+                )
+            }
+            .buttonStyle(.plain)
+        }
     }
 
     @ViewBuilder
@@ -302,19 +354,19 @@ struct PracticeTypePickerView: View {
             VStack(spacing: 6) {
                 Text(code)
                     .font(.custom("MontserratAlternates-Bold", size: 17))
-                    .foregroundColor(PracticeStyle.progressLabelColor(fraction: frac))
+                    .foregroundColor(PracticeStyle.cardLabelColor(isSelected: isOn, fraction: frac))
                 Text("\(stats.solved)/\(stats.total) · \(Int((frac * 100).rounded()))%")
                     .font(.custom("MontserratAlternates-Medium", size: 11))
-                    .foregroundColor(PracticeStyle.progressLabelColor(fraction: frac).opacity(0.92))
+                    .foregroundColor(PracticeStyle.cardLabelColor(isSelected: isOn, fraction: frac).opacity(0.92))
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 14)
             .background(
                 RoundedRectangle(cornerRadius: 14)
-                    .fill(PracticeStyle.progressBlueFill(fraction: frac))
+                    .fill(isOn ? AnyShapeStyle(PracticeStyle.selectedFill) : AnyShapeStyle(PracticeStyle.progressBlueFill(fraction: frac)))
                     .overlay(
                         RoundedRectangle(cornerRadius: 14)
-                            .stroke(isOn ? ExamixStyle.accentCool.opacity(0.85) : Color.clear, lineWidth: 3)
+                            .stroke(isOn ? PracticeStyle.selectedBorder : PracticeStyle.restingBorder, lineWidth: isOn ? 3 : 1.5)
                     )
             )
         }
@@ -334,7 +386,6 @@ struct PracticeTypePickerView: View {
     }
 }
 
-// MARK: - Сессия по типу (один или несколько типов)
 
 struct PracticeByTypeSessionView: View {
     @Binding var path: NavigationPath
@@ -481,7 +532,6 @@ struct PracticeByTypeSessionView: View {
     }
 }
 
-// MARK: - Список тем
 
 struct PracticeThemeListView: View {
     @Binding var path: NavigationPath
@@ -510,6 +560,7 @@ struct PracticeThemeListView: View {
                             .foregroundColor(.secondary)
                             .frame(maxWidth: .infinity)
                             .multilineTextAlignment(.center)
+                        selectAllButton(totalCount: rows.count, allValues: rows.map(\.title))
 
                         ForEach(rows, id: \.title) { row in
                             themeRow(row: row)
@@ -521,18 +572,25 @@ struct PracticeThemeListView: View {
             }
         }
         .navigationTitle("Темы")
-        .navigationBarTitleDisplayMode(.large)
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
+            ToolbarItem(placement: .principal) {
+                ExamixToolbarTitle(text: "Темы")
+            }
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     let titles = selected.sorted()
                     guard !titles.isEmpty else { return }
                     path.append(HomeView.Path.practiceThemeSession(titles))
                 } label: {
-                    Image(systemName: "checkmark.circle.fill")
-                        .font(.title2)
-                        .symbolRenderingMode(.monochrome)
-                        .foregroundStyle(selected.isEmpty ? Color.gray.opacity(0.55) : ExamixStyle.accentCool)
+                    HStack(spacing: 5) {
+                        Text("\(selected.count)")
+                            .font(.custom("MontserratAlternates-Bold", size: 13))
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.system(size: 21, weight: .semibold))
+                            .symbolRenderingMode(.monochrome)
+                    }
+                    .foregroundStyle(selected.isEmpty ? Color.gray.opacity(0.55) : ExamixStyle.accentCool)
                 }
                 .disabled(selected.isEmpty)
                 .accessibilityLabel("Начать практику по темам")
@@ -556,30 +614,63 @@ struct PracticeThemeListView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(row.title)
                         .font(.custom("MontserratAlternates-Medium", size: 15))
-                        .foregroundColor(PracticeStyle.progressLabelColor(fraction: frac))
+                        .foregroundColor(PracticeStyle.cardLabelColor(isSelected: isOn, fraction: frac))
                         .multilineTextAlignment(.leading)
                     Text("\(stats.solved)/\(stats.total) · \(Int((frac * 100).rounded()))%")
                         .font(.custom("MontserratAlternates-Medium", size: 12))
-                        .foregroundColor(PracticeStyle.progressLabelColor(fraction: frac).opacity(0.9))
+                        .foregroundColor(PracticeStyle.cardLabelColor(isSelected: isOn, fraction: frac).opacity(0.9))
                 }
                 Spacer()
                 Text("\(stats.total)")
                     .font(.custom("MontserratAlternates-Bold", size: 14))
-                    .foregroundColor(PracticeStyle.progressLabelColor(fraction: frac).opacity(0.88))
+                    .foregroundColor(PracticeStyle.cardLabelColor(isSelected: isOn, fraction: frac).opacity(0.88))
                     .accessibilityHidden(true)
             }
             .padding(14)
             .background(
                 RoundedRectangle(cornerRadius: 14)
-                    .fill(PracticeStyle.progressBlueFill(fraction: frac))
+                    .fill(isOn ? AnyShapeStyle(PracticeStyle.selectedFill) : AnyShapeStyle(PracticeStyle.progressBlueFill(fraction: frac)))
                     .overlay(
                         RoundedRectangle(cornerRadius: 14)
-                            .stroke(isOn ? ExamixStyle.accentCool.opacity(0.85) : Color.clear, lineWidth: 3)
+                            .stroke(isOn ? PracticeStyle.selectedBorder : PracticeStyle.restingBorder, lineWidth: isOn ? 3 : 1.5)
                     )
             )
         }
         .buttonStyle(.plain)
         .padding(.bottom, 4)
+    }
+
+    @ViewBuilder
+    private func selectAllButton(totalCount: Int, allValues: [String]) -> some View {
+        if totalCount > 0 {
+            Button {
+                if selected.count == totalCount {
+                    selected.removeAll()
+                } else {
+                    selected = Set(allValues)
+                }
+            } label: {
+                HStack(spacing: 8) {
+                    Image(systemName: selected.count == totalCount ? "xmark.circle" : "checkmark.circle")
+                        .font(.system(size: 15, weight: .semibold))
+                    Text(selected.count == totalCount ? "Снять все" : "Выбрать все")
+                        .font(.custom("MontserratAlternates-Medium", size: 14))
+                    Spacer(minLength: 0)
+                }
+                .foregroundStyle(ExamixStyle.accentCool)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 10)
+                .background(
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .fill(Color.white.opacity(0.72))
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .stroke(PracticeStyle.restingBorder, lineWidth: 1)
+                )
+            }
+            .buttonStyle(.plain)
+        }
     }
 
     private func load() {
@@ -595,7 +686,6 @@ struct PracticeThemeListView: View {
     }
 }
 
-// MARK: - Сессия по теме (одна или несколько тем)
 
 struct PracticeByThemeSessionView: View {
     @Binding var path: NavigationPath

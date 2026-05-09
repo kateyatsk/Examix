@@ -1,8 +1,8 @@
 //
 //  RootView.swift
-//  Lingvistik
+//  Examix
 //
-//  Created by Екатерина Яцкевич on 10.04.25.
+//  Created by Kate Yatskevich on 10.04.25.
 //
 
 import SwiftUI
